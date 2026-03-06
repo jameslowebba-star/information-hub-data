@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0f1216"/>
+  <rect x="4" y="18" width="56" height="28" rx="14" fill="none" stroke="#d4a017" stroke-width="2.5"/>
+  <text x="16" y="37.5" font-family="sans-serif" font-size="13" font-weight="300" fill="#e4e6ea" letter-spacing="0.5">I</text>
+  <text x="23" y="37.5" font-family="sans-serif" font-size="13" font-weight="700" fill="#d4a017" letter-spacing="0.5">HUB</text>
+</svg>
