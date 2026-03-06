@@ -62,6 +62,9 @@
       }
     });
     if (hamburger && hamburger.classList.contains('open')) hamburger.click();
+    // Hide the global Deep Dive Brief section on quiz tab (quiz has its own)
+    var ddb = document.getElementById('deepDiveBrief');
+    if (ddb) ddb.style.display = (tabId === 'quiz') ? 'none' : '';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
