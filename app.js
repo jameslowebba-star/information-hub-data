@@ -424,6 +424,89 @@
     });
   }
 
+  // ===== "WHAT THE DATA SAYS" CALLOUTS =====
+  (async function loadDataCallouts() {
+    const grid = document.getElementById('dataCalloutsGrid');
+    if (!grid) return;
+    grid.innerHTML = '<div class="data-callout-loading">Loading live data...</div>';
+    try {
+      var risks = [];
+      try {
+        var res = await fetch('https://raw.githubusercontent.com/jameslowebba-star/information-hub-data/main/geo-risks.json?t=' + Date.now(), { signal: AbortSignal.timeout(8000) });
+        if (!res.ok) throw new Error(res.status);
+        var data = await res.json();
+        risks = data.risks || [];
+      } catch (fetchErr) {
+        // Fallback: try sessionStorage from tracker, or use embedded defaults
+        try {
+          var stored = sessionStorage.getItem('ih_tracker_data');
+          if (stored) {
+            var parsed = JSON.parse(stored);
+            // Only use if risks have the impacts field (full data)
+            if (parsed.risks && parsed.risks.length > 0 && parsed.risks[0].impacts) risks = parsed.risks;
+          }
+        } catch (_) {}
+        if (risks.length === 0) {
+          // Embedded minimal defaults
+          risks = [
+            { name: 'Middle East Regional War', score: 9.2, likelihood: 'high', impacts: ['Oil & Gas', 'Gold', 'Brent Crude', 'S&P 500', 'Defense Stocks'] },
+            { name: 'U.S.\u2013China Strategic Competition', score: 8.8, likelihood: 'high', impacts: ['Tech Stocks', 'Semiconductors', 'Bitcoin', 'USD/CNY', 'Taiwan ETFs'] },
+            { name: 'Global Trade Fragmentation', score: 8.5, likelihood: 'high', impacts: ['S&P 500', 'Manufacturing', 'USD/ZAR', 'Emerging Markets', 'Commodities'] },
+            { name: 'Global Energy Disruption', score: 8.1, likelihood: 'high', impacts: ['Brent Crude', 'Natural Gas', 'Energy Stocks', 'Airlines', 'Emerging Markets'] },
+            { name: 'Russia\u2013NATO Confrontation', score: 7.6, likelihood: 'medium', impacts: ['European Equities', 'Natural Gas', 'Defense Stocks', 'EUR/USD', 'Gold'] },
+            { name: 'Major Cyber Attack', score: 7.2, likelihood: 'medium', impacts: ['Cybersecurity Stocks', 'Tech Stocks', 'Banking', 'Crypto Exchanges', 'Insurance'] },
+            { name: 'Western Alliance Fractures', score: 7.0, likelihood: 'medium', impacts: ['EUR/USD', 'NATO Defense ETFs', 'European Equities', 'USD', 'Treasury Bonds'] },
+            { name: 'African Political Instability', score: 6.8, likelihood: 'medium', impacts: ['JSE All Share', 'USD/ZAR', 'Mining Stocks', 'Platinum', 'Rare Earth Minerals'] },
+            { name: 'Crypto Regulatory Crackdown', score: 6.5, likelihood: 'medium', impacts: ['Bitcoin', 'Ethereum', 'Exchange Tokens', 'DeFi', 'Stablecoins'] },
+            { name: 'Emerging Market Debt Crisis', score: 6.3, likelihood: 'medium', impacts: ['EM Bonds', 'USD/ZAR', 'EM Equities', 'Commodities', 'Gold'] }
+          ];
+        }
+      }
+      if (risks.length === 0) { grid.innerHTML = ''; return; }
+
+      // 1. Highest risk
+      const highest = risks.reduce(function(a, b) { return a.score > b.score ? a : b; });
+
+      // 2. Most assets at risk
+      const mostAssets = risks.reduce(function(a, b) { return (a.impacts || []).length > (b.impacts || []).length ? a : b; });
+
+      // 3. Composite score
+      const compositeRaw = risks.reduce(function(sum, r) { return sum + r.score; }, 0) / risks.length;
+      const composite = compositeRaw.toFixed(1);
+      var levelLabel, levelClass;
+      if (compositeRaw >= 8.0) { levelLabel = 'CRITICAL'; levelClass = 'level-critical'; }
+      else if (compositeRaw >= 6.5) { levelLabel = 'ELEVATED'; levelClass = 'level-elevated'; }
+      else if (compositeRaw >= 4.0) { levelLabel = 'MODERATE'; levelClass = 'level-moderate'; }
+      else { levelLabel = 'LOW'; levelClass = 'level-low'; }
+
+      grid.innerHTML = ''
+        // Card 1: Highest Risk
+        + '<div class="data-callout-card">'
+        + '  <div class="data-callout-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>'
+        + '  <h3 class="data-callout-headline"><span class="callout-accent">' + escHtml(highest.name) + '</span> at ' + highest.score + '</h3>'
+        + '  <p class="data-callout-desc">The top threat to global markets right now, scored by BlackRock BGRI intelligence data.</p>'
+        + '</div>'
+        // Card 2: Most assets at risk
+        + '<div class="data-callout-card">'
+        + '  <div class="data-callout-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>'
+        + '  <h3 class="data-callout-headline"><span class="callout-accent">' + escHtml(mostAssets.name) + '</span> impacts ' + (mostAssets.impacts || []).length + ' assets</h3>'
+        + '  <p class="data-callout-desc">The risk with the broadest portfolio exposure across equities, commodities, and currencies.</p>'
+        + '</div>'
+        // Card 3: Composite Score
+        + '<div class="data-callout-card">'
+        + '  <div class="data-callout-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>'
+        + '  <h3 class="data-callout-headline">Global risk index at <span class="callout-accent">' + composite + '/10</span></h3>'
+        + '  <p class="data-callout-desc">Composite score across ' + risks.length + ' tracked geopolitical risks, updated automatically.</p>'
+        + '  <span class="data-callout-meter ' + levelClass + '">' + levelLabel + '</span>'
+        + '</div>';
+
+      console.log('[DataCallouts] Rendered from live geo-risks.json');
+    } catch (e) {
+      console.warn('[DataCallouts] Failed to load:', e.message);
+      grid.innerHTML = '';
+    }
+  })();
+
   // Smooth scroll for anchor links to #deepDiveBrief
   document.querySelectorAll('a[href="#deepDiveBrief"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
