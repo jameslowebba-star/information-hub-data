@@ -2,7 +2,7 @@ name: Geopolitical Risk Tracker
 
 on:
   schedule:
-    - cron: '45 */6 * * *'
+    - cron: '0 * * * *'  # Every hour on the hour
   workflow_dispatch:
 
 jobs:
