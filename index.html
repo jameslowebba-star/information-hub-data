@@ -26,3 +26,1407 @@
   <link rel="stylesheet" href="./checker.css">
   <link rel="stylesheet" href="./tracker.css">
 </head>
+<body>
+  <a href="#main-content" class="sr-only" style="position:absolute;top:0;left:0;padding:8px 16px;background:var(--color-primary);color:#fff;z-index:999;text-decoration:none;" onfocus="this.style.position='relative'" onblur="this.style.position='absolute'">Skip to content</a>
+
+  <!-- TRADINGVIEW REAL-TIME TICKER -->
+  <div class="tv-ticker-wrap">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
+          {"proName": "BITSTAMP:ETHUSD", "title": "ETH/USD"},
+          {"proName": "BINANCE:SOLUSDT", "title": "SOL/USD"},
+          {"proName": "BINANCE:BNBUSDT", "title": "BNB/USD"},
+          {"proName": "BINANCE:XRPUSDT", "title": "XRP/USD"},
+          {"proName": "BINANCE:ADAUSDT", "title": "ADA/USD"},
+          {"proName": "FOREXCOM:XAUUSD", "title": "Gold"},
+          {"proName": "FOREXCOM:XAGUSD", "title": "Silver"},
+          {"proName": "NASDAQ:NDX", "title": "NASDAQ 100"},
+          {"proName": "TVC:DJI", "title": "Dow Jones"},
+          {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
+          {"proName": "FX:USDZAR", "title": "USD/ZAR"},
+          {"proName": "NYMEX:BZ1!", "title": "Brent Crude"}
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": true,
+        "displayMode": "regular",
+        "colorTheme": "dark",
+        "locale": "en"
+      }
+      </script>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE TOOLS BAR -->
+  <div class="tools-bar">
+    <div class="tools-bar-inner">
+      <span class="tools-bar-label">INTELLIGENCE TOOLS</span>
+      <div class="tools-bar-items">
+        <button class="tools-bar-item" onclick="switchTab('tracker');">
+          <span class="tools-bar-dot" style="background:#06b6d4;"></span>
+          <span>Geopolitical Tracker</span>
+        </button>
+        <span class="tools-bar-sep"></span>
+        <button class="tools-bar-item" onclick="switchTab('quiz');">
+          <span class="tools-bar-dot" style="background:#d4a843;"></span>
+          <span>K-Shaped Quiz</span>
+        </button>
+        <span class="tools-bar-sep"></span>
+        <button class="tools-bar-item" onclick="switchTab('strategy');">
+          <span class="tools-bar-dot" style="background:#8b5cf6;"></span>
+          <span>Strategy Advisor</span>
+        </button>
+        <span class="tools-bar-sep"></span>
+        <button class="tools-bar-item" onclick="switchTab('portfolio');">
+          <span class="tools-bar-dot" style="background:#ef4444;"></span>
+          <span>Portfolio Checker</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+    <div class="nav-row-top">
+      <div class="nav-inner">
+        <a href="#" class="logo-pill" onclick="switchTab('home'); return false;" aria-label="Information Hub Home">
+          <span class="logo-text"><span class="light">INFORMATION</span><span class="bold">HUB</span></span>
+        </a>
+        <div class="nav-right">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+          </button>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-row-bottom">
+      <div class="nav-inner">
+        <ul class="nav-tabs" role="tablist" id="navTabs">
+          <li role="tab" class="nav-tab tab-home active" data-tab="home" aria-selected="true" tabindex="0">HOME</li>
+          <li role="tab" class="nav-tab tab-crypto" data-tab="crypto" aria-selected="false" tabindex="0">CRYPTO</li>
+          <li role="tab" class="nav-tab tab-africa" data-tab="africa" aria-selected="false" tabindex="0">AFRICA</li>
+          <li role="tab" class="nav-tab tab-usa" data-tab="usa" aria-selected="false" tabindex="0">USA</li>
+          <li role="tab" class="nav-tab tab-europe" data-tab="europe" aria-selected="false" tabindex="0">EUROPE</li>
+          <li role="tab" class="nav-tab tab-finance" data-tab="finance" aria-selected="false" tabindex="0">FINANCE</li>
+          <li role="tab" class="nav-tab tab-suggestions" data-tab="suggestions" aria-selected="false" tabindex="0">SUGGESTIONS</li>
+          <li role="tab" class="nav-tab tab-tracker" data-tab="tracker" aria-selected="false" tabindex="0" style="color:#06b6d4;">GEO TRACKER</li>
+          <li role="tab" class="nav-tab tab-quiz" data-tab="quiz" aria-selected="false" tabindex="0" style="color:var(--color-finance);">QUIZ</li>
+          <li role="tab" class="nav-tab tab-strategy" data-tab="strategy" aria-selected="false" tabindex="0" style="color:#8b5cf6;">STRATEGY</li>
+          <li role="tab" class="nav-tab tab-portfolio" data-tab="portfolio" aria-selected="false" tabindex="0" style="color:#ef4444;">PORTFOLIO</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+    <ul role="list">
+      <li role="tab" class="mob-tab tab-home active" data-tab="home" tabindex="0">HOME</li>
+      <li role="tab" class="mob-tab tab-crypto" data-tab="crypto" tabindex="0">CRYPTO</li>
+      <li role="tab" class="mob-tab tab-africa" data-tab="africa" tabindex="0">AFRICA</li>
+      <li role="tab" class="mob-tab tab-usa" data-tab="usa" tabindex="0">USA</li>
+      <li role="tab" class="mob-tab tab-europe" data-tab="europe" tabindex="0">EUROPE</li>
+      <li role="tab" class="mob-tab tab-finance" data-tab="finance" tabindex="0">FINANCE</li>
+      <li role="tab" class="mob-tab tab-suggestions" data-tab="suggestions" tabindex="0">SUGGESTIONS</li>
+      <li role="tab" class="mob-tab tab-tracker" data-tab="tracker" tabindex="0" style="color:#06b6d4;">GEO TRACKER</li>
+      <li role="tab" class="mob-tab tab-quiz" data-tab="quiz" tabindex="0" style="color:var(--color-finance);">QUIZ</li>
+      <li role="tab" class="mob-tab tab-strategy" data-tab="strategy" tabindex="0" style="color:#8b5cf6;">STRATEGY</li>
+      <li role="tab" class="mob-tab tab-portfolio" data-tab="portfolio" tabindex="0" style="color:#ef4444;">PORTFOLIO</li>
+    </ul>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- HOME TAB -->
+    <div class="tab-content active" id="tab-home" role="tabpanel">
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-bg-image"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+          <div class="hero-badge">Verified &middot; Real-Time &middot; Global</div>
+          <h1 class="hero-title">News &amp; Market<br><span class="accent">Intelligence</span></h1>
+          <p class="hero-subtitle">Covering world news, politics, business, finance, crypto and African markets — fact-checked and delivered in real time.</p>
+          <div class="hero-stats">
+            <div class="hero-stats-ticker">
+              <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                  "symbols": [
+                    {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
+                    {"proName": "FOREXCOM:XAUUSD", "title": "Gold/oz"}
+                  ],
+                  "showSymbolLogo": true,
+                  "isTransparent": true,
+                  "displayMode": "regular",
+                  "colorTheme": "dark",
+                  "locale": "en"
+                }
+                </script>
+              </div>
+            </div>
+            <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Coverage</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intelligence Tools Showcase -->
+      <section class="tools-showcase">
+        <div class="tools-showcase-header">
+          <h2 class="tools-showcase-title">Intelligence Tools</h2>
+          <p class="tools-showcase-sub">Interactive tools powered by real research and live data</p>
+        </div>
+        <div class="tools-showcase-grid">
+          <div class="tool-card tool-card-featured" onclick="switchTab('tracker')" role="button" tabindex="0" aria-label="Open Geopolitical Risk Tracker">
+            <div class="tool-card-badge" style="background:#06b6d4;">NEW</div>
+            <div class="tool-card-icon" style="color:#06b6d4;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.3"/></svg>
+            </div>
+            <h3 class="tool-card-name">Geopolitical Risk Tracker</h3>
+            <p class="tool-card-desc">10 active risks scored by BlackRock BGRI, asset impact maps, and an events calendar. Auto-updated intelligence.</p>
+            <span class="tool-card-cta" style="color:#06b6d4;">Explore Tracker &rarr;</span>
+          </div>
+          <div class="tool-card" onclick="switchTab('quiz')" role="button" tabindex="0" aria-label="Take the K-Shaped Economy Quiz">
+            <div class="tool-card-icon" style="color:#d4a843;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3 class="tool-card-name">K-Shaped Economy Quiz</h3>
+            <p class="tool-card-desc">Find out which side of the economic divide you're on with 6 data-driven questions.</p>
+            <span class="tool-card-cta" style="color:#d4a843;">Take the Quiz &rarr;</span>
+          </div>
+          <div class="tool-card" onclick="switchTab('strategy')" role="button" tabindex="0" aria-label="Open Strategy Advisor">
+            <div class="tool-card-icon" style="color:#8b5cf6;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3 class="tool-card-name">Strategy Advisor</h3>
+            <p class="tool-card-desc">Get a personalized strategy brief across Shield, Build, Earn, and Watch pillars.</p>
+            <span class="tool-card-cta" style="color:#8b5cf6;">Build Strategy &rarr;</span>
+          </div>
+          <div class="tool-card" onclick="switchTab('portfolio')" role="button" tabindex="0" aria-label="Open Portfolio Exposure Checker">
+            <div class="tool-card-icon" style="color:#ef4444;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="tool-card-name">Portfolio Exposure Checker</h3>
+            <p class="tool-card-desc">Analyze your holdings against geopolitical risks from our deep dive research.</p>
+            <span class="tool-card-cta" style="color:#ef4444;">Check Portfolio &rarr;</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Division Navigator Strip -->
+      <section class="divisions-strip">
+        <h3 class="strip-heading">Coverage Divisions</h3>
+        <div class="strip-scroll">
+          <button class="strip-chip chip-crypto" onclick="switchTab('crypto')" aria-label="Go to Crypto section">
+            <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M22.5 14.5c.9-1.2 1.5-2.7 1.5-4.3C24 6.4 20.9 3.5 17 3.1V0h-2v3h-2V0H11v3H6v3h2v20H6v3h5v3h2v-3h2v3h2v-3c3.9-.4 7-3.3 7-7.2 0-1.9-.8-3.6-2-4.8zM11 6h6c2.2 0 4 1.8 4 4s-1.8 4-4 4h-6V6zm7 20h-7V16h7c2.2 0 4 1.8 4 4s-1.8 6-4 6z"/></svg>
+            <span>Crypto</span>
+          </button>
+          <button class="strip-chip chip-africa" onclick="switchTab('africa')" aria-label="Go to Africa section">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span>Africa</span>
+          </button>
+          <button class="strip-chip chip-finance" onclick="switchTab('finance')" aria-label="Go to Finance section">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span>Finance</span>
+          </button>
+          <button class="strip-chip chip-world" onclick="switchTab('home')" aria-label="World News">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            <span>World</span>
+          </button>
+          <button class="strip-chip chip-europe" onclick="switchTab('europe')" aria-label="Go to Europe section">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span>Europe</span>
+          </button>
+          <button class="strip-chip chip-usa" onclick="switchTab('usa')" aria-label="Go to USA section">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>USA</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Latest / Breaking News on Home -->
+      <section class="home-feed-section">
+        <div class="home-feed-header">
+          <h2 class="home-feed-title"><span class="live-badge">LIVE</span> Latest News</h2>
+          <p class="home-feed-sub">Breaking stories as they develop</p>
+        </div>
+        <div class="news-grid" id="homeBreakingGrid">
+          <p class="feed-placeholder">Loading latest news&hellip;</p>
+        </div>
+      </section>
+
+      <!-- ICYMI Recap on Home -->
+      <section class="home-feed-section">
+        <div class="home-feed-header">
+          <h2 class="home-feed-title">&#128240; In Case You Missed It</h2>
+          <p class="home-feed-sub">Today's top stories across all categories</p>
+        </div>
+        <div class="news-grid" id="homeIcymiGrid">
+          <p class="feed-placeholder">Loading recap&hellip;</p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- CRYPTO TAB -->
+    <div class="tab-content" id="tab-crypto" role="tabpanel">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head-bar" style="--bar-color: var(--color-crypto);"></div>
+          <div>
+            <h2 class="section-head-title">Crypto Markets</h2>
+            <p class="section-head-sub">Live prices &middot; Real-time streaming</p>
+          </div>
+        </header>
+
+        <!-- TradingView Crypto Market Overview Widget -->
+        <div class="tv-section-widget">
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+            {
+              "width": "100%",
+              "height": 550,
+              "symbolsGroups": [
+                {
+                  "name": "Major",
+                  "symbols": [
+                    {"name": "BITSTAMP:BTCUSD", "displayName": "Bitcoin"},
+                    {"name": "BITSTAMP:ETHUSD", "displayName": "Ethereum"},
+                    {"name": "BINANCE:SOLUSDT", "displayName": "Solana"},
+                    {"name": "BINANCE:BNBUSDT", "displayName": "BNB"},
+                    {"name": "BINANCE:XRPUSDT", "displayName": "XRP"}
+                  ]
+                },
+                {
+                  "name": "Altcoins",
+                  "symbols": [
+                    {"name": "BINANCE:ADAUSDT", "displayName": "Cardano"},
+                    {"name": "BINANCE:DOTUSDT", "displayName": "Polkadot"},
+                    {"name": "BINANCE:AVAXUSDT", "displayName": "Avalanche"},
+                    {"name": "BINANCE:LINKUSDT", "displayName": "Chainlink"},
+                    {"name": "BINANCE:POLUSDT", "displayName": "Polygon"}
+                  ]
+                }
+              ],
+              "showSymbolLogo": true,
+              "isTransparent": true,
+              "colorTheme": "dark",
+              "locale": "en"
+            }
+            </script>
+          </div>
+        </div>
+
+        <!-- TradingView BTC Chart -->
+        <div class="tv-section-widget" style="margin-top: var(--space-6);">
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+            {
+              "symbols": [
+                ["Bitcoin", "BITSTAMP:BTCUSD|1D"],
+                ["Ethereum", "BITSTAMP:ETHUSD|1D"],
+                ["Solana", "BINANCE:SOLUSDT|1D"]
+              ],
+              "chartOnly": false,
+              "width": "100%",
+              "height": 400,
+              "colorTheme": "dark",
+              "showVolume": false,
+              "showMA": false,
+              "hideDateRanges": false,
+              "hideMarketStatus": false,
+              "hideSymbolLogo": false,
+              "scalePosition": "right",
+              "scaleMode": "Normal",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "10",
+              "noTimeScale": false,
+              "valuesTracking": "1",
+              "changeMode": "price-and-percent",
+              "chartType": "area",
+              "lineWidth": 2,
+              "lineType": 0,
+              "dateRanges": ["1d|1", "1w|15", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"],
+              "isTransparent": true,
+              "locale": "en"
+            }
+            </script>
+          </div>
+        </div>
+
+        <header class="section-head" style="margin-top: var(--space-8);">
+          <div class="section-head-bar" style="--bar-color: var(--color-crypto);"></div>
+          <div>
+            <h2 class="section-head-title">Latest Crypto News</h2>
+          </div>
+        </header>
+        <div class="news-grid" id="cryptoNewsGrid">
+          <p class="feed-placeholder">Loading crypto news&hellip;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFRICA TAB -->
+    <div class="tab-content" id="tab-africa" role="tabpanel">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head-bar" style="--bar-color: var(--color-africa);"></div>
+          <div>
+            <h2 class="section-head-title">Latest from Africa</h2>
+            <p class="section-head-sub">South Africa &middot; East Africa &middot; West Africa &middot; Continental</p>
+          </div>
+        </header>
+
+        <div class="chip-row">
+          <button class="chip active">All</button>
+          <button class="chip">South Africa</button>
+          <button class="chip">East Africa</button>
+          <button class="chip">West Africa</button>
+          <button class="chip">Continental</button>
+        </div>
+
+        <div class="news-grid" id="africaNewsGrid">
+          <p class="feed-placeholder">Loading Africa news&hellip;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINANCE TAB -->
+    <div class="tab-content" id="tab-finance" role="tabpanel">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head-bar" style="--bar-color: var(--color-finance);"></div>
+          <div>
+            <h2 class="section-head-title">Finance &amp; Markets</h2>
+            <p class="section-head-sub">Live prices &middot; Indices &middot; Commodities &middot; Forex</p>
+          </div>
+        </header>
+
+        <div class="market-overview" id="financeMarketOverview">
+          <!-- TradingView Market Quotes Widget — streams real-time -->
+          <div class="tradingview-widget-container" style="width:100%;">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+            {
+              "width": "100%",
+              "height": 460,
+              "symbolsGroups": [
+                {
+                  "name": "Commodities",
+                  "symbols": [
+                    {"name": "FOREXCOM:XAUUSD", "displayName": "Gold / oz"},
+                    {"name": "FOREXCOM:XAGUSD", "displayName": "Silver / oz"},
+                    {"name": "NYMEX:BZ1!", "displayName": "Brent Crude"}
+                  ]
+                },
+                {
+                  "name": "Indices",
+                  "symbols": [
+                    {"name": "FOREXCOM:SPXUSD", "displayName": "S&P 500"},
+                    {"name": "TVC:DJI", "displayName": "Dow Jones"},
+                    {"name": "NASDAQ:NDX", "displayName": "NASDAQ 100"},
+                    {"name": "TVC:JSEASI", "displayName": "JSE All Share"}
+                  ]
+                },
+                {
+                  "name": "Forex",
+                  "symbols": [
+                    {"name": "FX:USDZAR", "displayName": "USD/ZAR"},
+                    {"name": "FX:EURUSD", "displayName": "EUR/USD"}
+                  ]
+                }
+              ],
+              "showSymbolLogo": true,
+              "isTransparent": true,
+              "colorTheme": "dark",
+              "locale": "en"
+            }
+            </script>
+          </div>
+        </div>
+
+        <!-- TradingView Gold & Commodities Chart -->
+        <div class="tv-section-widget" style="margin-top: var(--space-6);">
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+            {
+              "symbols": [
+                ["Gold", "FOREXCOM:XAUUSD|1D"],
+                ["Silver", "FOREXCOM:XAGUSD|1D"],
+                ["Brent Crude", "TVC:BRENT|1D"],
+                ["USD/ZAR", "FX:USDZAR|1D"]
+              ],
+              "chartOnly": false,
+              "width": "100%",
+              "height": 400,
+              "colorTheme": "dark",
+              "showVolume": false,
+              "showMA": false,
+              "hideDateRanges": false,
+              "hideMarketStatus": false,
+              "hideSymbolLogo": false,
+              "scalePosition": "right",
+              "scaleMode": "Normal",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "10",
+              "noTimeScale": false,
+              "valuesTracking": "1",
+              "changeMode": "price-and-percent",
+              "chartType": "area",
+              "lineWidth": 2,
+              "lineType": 0,
+              "dateRanges": ["1d|1", "1w|15", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"],
+              "isTransparent": true,
+              "locale": "en"
+            }
+            </script>
+          </div>
+        </div>
+
+        <header class="section-head" style="margin-top: var(--space-8);">
+          <div class="section-head-bar" style="--bar-color: var(--color-finance);"></div>
+          <div><h2 class="section-head-title">Latest Finance News</h2></div>
+        </header>
+        <div class="news-grid" id="financeNewsGrid">
+          <p class="feed-placeholder">Loading finance news&hellip;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EUROPE TAB -->
+    <div class="tab-content" id="tab-europe" role="tabpanel">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head-bar" style="--bar-color: var(--color-europe);"></div>
+          <div>
+            <h2 class="section-head-title">Latest from Europe</h2>
+            <p class="section-head-sub">EU &middot; UK &middot; Germany &middot; France &middot; Continental</p>
+          </div>
+        </header>
+
+        <div class="chip-row">
+          <button class="chip active">All</button>
+          <button class="chip">EU</button>
+          <button class="chip">UK</button>
+          <button class="chip">Germany</button>
+          <button class="chip">France</button>
+        </div>
+
+        <div class="news-grid" id="europeNewsGrid">
+          <p class="feed-placeholder">Loading Europe news&hellip;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- USA TAB -->
+    <div class="tab-content" id="tab-usa" role="tabpanel">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head-bar" style="--bar-color: var(--color-usa);"></div>
+          <div>
+            <h2 class="section-head-title">Latest from the USA</h2>
+            <p class="section-head-sub">Politics &middot; Security &middot; Economy &middot; Society</p>
+          </div>
+        </header>
+
+        <div class="chip-row">
+          <button class="chip active">All</button>
+          <button class="chip">Politics</button>
+          <button class="chip">Security</button>
+          <button class="chip">Economy</button>
+          <button class="chip">Society</button>
+        </div>
+
+        <div class="news-grid" id="usaNewsGrid">
+          <p class="feed-placeholder">Loading USA news&hellip;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUGGESTIONS TAB -->
+    <div class="tab-content" id="tab-suggestions" role="tabpanel">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head-bar" style="--bar-color: var(--color-success);"></div>
+          <div>
+            <h2 class="section-head-title">Share Your Voice</h2>
+            <p class="section-head-sub">Help shape what we cover next</p>
+          </div>
+        </header>
+        <p class="sug-intro">Tell us what topics you want covered, stories we should investigate, or features you'd like to see.</p>
+
+        <div class="suggestion-layout">
+          <div class="suggestion-form" id="suggestionForm">
+            <form action="https://formspree.io/f/xgoneypk" method="POST" id="suggestionFormEl">
+            <input type="hidden" name="_subject" value="New Suggestion — Information Hub">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="sug-name">Name <span class="optional">(optional)</span></label>
+                <input type="text" id="sug-name" name="name" placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="sug-email">Email <span class="optional">(optional)</span></label>
+                <input type="email" id="sug-email" name="email" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="sug-category">Category</label>
+              <select id="sug-category" name="category">
+                <option value="general">General</option>
+                <option value="crypto">Crypto</option>
+                <option value="africa">Africa</option>
+                <option value="finance">Finance</option>
+                <option value="europe">Europe</option>
+                <option value="usa">USA</option>
+                <option value="world">World News</option>
+                <option value="feature">Feature Request</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sug-message">Your Suggestion</label>
+              <textarea id="sug-message" name="suggestion" placeholder="What would you like us to cover?"></textarea>
+            </div>
+            <button class="btn-submit" type="submit" id="submitSuggestion">
+              Submit Suggestion
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            </form>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <h3>Thank You</h3>
+            <p>Your suggestion has been received. We appreciate your input.</p>
+          </div>
+        </div>
+
+        <header class="section-head sm">
+          <div class="section-head-bar" style="--bar-color: var(--color-success);"></div>
+          <div><h2 class="section-head-title">Popular Suggestions</h2></div>
+        </header>
+        <div class="suggestion-cards">
+          <div class="suggestion-item fade-in">
+            <p class="sug-text">"Weekly deep-dive into South African tech startups and the venture capital landscape."</p>
+            <button class="vote-btn" onclick="upvote(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5m-7 7l7-7 7 7"/></svg>
+              <span>42</span>
+            </button>
+          </div>
+          <div class="suggestion-item fade-in">
+            <p class="sug-text">"A crypto portfolio tracker with alerts for major price movements."</p>
+            <button class="vote-btn" onclick="upvote(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5m-7 7l7-7 7 7"/></svg>
+              <span>38</span>
+            </button>
+          </div>
+          <div class="suggestion-item fade-in">
+            <p class="sug-text">"More coverage on rare earth minerals and Africa's role in the global supply chain."</p>
+            <button class="vote-btn" onclick="upvote(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5m-7 7l7-7 7 7"/></svg>
+              <span>31</span>
+            </button>
+          </div>
+          <div class="suggestion-item fade-in">
+            <p class="sug-text">"Daily 5-minute market briefing email summarising everything important."</p>
+            <button class="vote-btn" onclick="upvote(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5m-7 7l7-7 7 7"/></svg>
+              <span>27</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT TAB -->
+    <div class="tab-content" id="tab-about" role="tabpanel">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head-bar" style="--bar-color: var(--color-primary);"></div>
+          <div>
+            <h2 class="section-head-title">About Information Hub</h2>
+            <p class="section-head-sub">Our Mission &middot; What We Cover &middot; Our Values</p>
+          </div>
+        </header>
+
+        <div class="about-content">
+          <div class="about-mission">
+            <h3>Our Mission</h3>
+            <p>Information Hub is a verified news and market intelligence platform delivering real-time coverage of world news, politics, business, finance, crypto, and regional developments across Africa, Europe, and the USA. Fact-checked. No noise.</p>
+          </div>
+
+          <h3 class="about-section-title">What We Cover</h3>
+          <div class="about-grid">
+            <div class="about-card">
+              <div class="about-icon">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="currentColor"><path d="M22.5 14.5c.9-1.2 1.5-2.7 1.5-4.3C24 6.4 20.9 3.5 17 3.1V0h-2v3h-2V0H11v3H6v3h2v20H6v3h5v3h2v-3h2v3h2v-3c3.9-.4 7-3.3 7-7.2 0-1.9-.8-3.6-2-4.8zM11 6h6c2.2 0 4 1.8 4 4s-1.8 4-4 4h-6V6zm7 20h-7V16h7c2.2 0 4 1.8 4 4s-1.8 6-4 6z"/></svg>
+              </div>
+              <h4>Crypto &amp; Digital Assets</h4>
+              <p>Live cryptocurrency prices, blockchain developments, DeFi trends, and digital asset analysis.</p>
+            </div>
+            <div class="about-card">
+              <div class="about-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h4>Africa</h4>
+              <p>South African markets, continental politics, trade developments, and regional business intelligence.</p>
+            </div>
+            <div class="about-card">
+              <div class="about-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h4>Finance &amp; Markets</h4>
+              <p>Commodities, precious metals, forex, indices, and global economic analysis.</p>
+            </div>
+            <div class="about-card">
+              <div class="about-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+              </div>
+              <h4>Europe</h4>
+              <p>EU policy, UK developments, NATO updates, and continental European affairs.</p>
+            </div>
+            <div class="about-card">
+              <div class="about-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h4>USA</h4>
+              <p>US politics, military operations, economic policy, and domestic affairs.</p>
+            </div>
+            <div class="about-card">
+              <div class="about-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+              </div>
+              <h4>World News</h4>
+              <p>Breaking international news, geopolitics, conflicts, and global developments.</p>
+            </div>
+          </div>
+
+          <h3 class="about-section-title">Our Values</h3>
+          <div class="about-values">
+            <div class="about-value">
+              <span class="about-value-icon">&#10003;</span>
+              <div>
+                <h4>Accuracy</h4>
+                <p>Every story is fact-checked before publication. We correct errors promptly and transparently.</p>
+              </div>
+            </div>
+            <div class="about-value">
+              <span class="about-value-icon">&#9889;</span>
+              <div>
+                <h4>Speed</h4>
+                <p>Real-time coverage with live market data. Breaking news delivered as it happens.</p>
+              </div>
+            </div>
+            <div class="about-value">
+              <span class="about-value-icon">&#9878;</span>
+              <div>
+                <h4>Independence</h4>
+                <p>Editorially independent. We report facts without political or corporate bias.</p>
+              </div>
+            </div>
+            <div class="about-value">
+              <span class="about-value-icon">&#9776;</span>
+              <div>
+                <h4>Accessibility</h4>
+                <p>Free, open access to verified news. Clean design that works on any device.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="about-section-title">Meet the Founder</h3>
+          <div class="founder-section">
+            <div class="founder-info">
+              <div class="founder-name-row">
+                <h4 class="founder-name">Sifiso</h4>
+                <span class="founder-title">Mining Professional &amp; Media Entrepreneur</span>
+              </div>
+              <p class="founder-bio">Sifiso works in South Africa's mining industry by day and builds Information Hub by night. Based in Gauteng, South Africa, he launched this platform out of a simple frustration: news moves fast, but most of it comes wrapped in noise, bias, or clickbait.</p>
+              <p class="founder-bio">As a crypto enthusiast who follows precious metals and tracks global markets, I needed a news source that was fast, verified, and straight to the point. When I couldn't find one that met that standard &mdash; I built it.</p>
+            </div>
+            <div class="founder-quote-block">
+              <div class="founder-quote-bar"></div>
+              <div class="founder-quote-content">
+                <h4>Why Information Hub Matters to Me</h4>
+                <p>&ldquo;I come from an industry where precision matters &mdash; in mining, bad data can cost lives. I brought that same standard to news. Every story on Information Hub is fact-checked against multiple sources before it goes live. No speculation, no clickbait, no noise.</p>
+                <p>I built this for people like me &mdash; professionals, investors, and everyday people who want to know what&rsquo;s happening in the world without having to dig through junk to find it. Whether it&rsquo;s a breaking geopolitical event, a gold price surge, or a crypto market shift, you should be able to get the facts in seconds.</p>
+                <p>Information Hub is where speed meets accuracy. That&rsquo;s the promise.&rdquo;</p>
+                <span class="founder-sig">&mdash; Sifiso, Founder</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="about-note">Follow us on Instagram for real-time updates.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT TAB -->
+    <div class="tab-content" id="tab-contact" role="tabpanel">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head-bar" style="--bar-color: var(--color-primary);"></div>
+          <div>
+            <h2 class="section-head-title">Contact Us</h2>
+            <p class="section-head-sub">Get in touch with the Information Hub team</p>
+          </div>
+        </header>
+
+        <p class="sug-intro">For press inquiries, partnerships, or advertising, reach out through the form below.</p>
+
+        <div class="suggestion-layout">
+          <div class="suggestion-form" id="contactForm">
+            <form action="https://formspree.io/f/xgoneypk" method="POST" id="contactFormEl">
+            <input type="hidden" name="_subject" value="New Contact Message — Information Hub">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" placeholder="What is this regarding?">
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Your message..." required></textarea>
+            </div>
+            <button class="btn-submit" type="submit" id="submitContact">
+              Send Message
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            </form>
+          </div>
+          <div class="form-success" id="contactSuccess">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <h3>Message Sent</h3>
+            <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIVACY POLICY TAB -->
+    <div class="tab-content" id="tab-privacy" role="tabpanel">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head-bar" style="--bar-color: var(--color-primary);"></div>
+          <div>
+            <h2 class="section-head-title">Privacy Policy</h2>
+            <p class="section-head-sub">Effective March 2026</p>
+          </div>
+        </header>
+
+        <div class="legal-content">
+          <h3>1. Introduction</h3>
+          <p>Information Hub ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.</p>
+
+          <h3>2. Data Collection</h3>
+          <p>We collect minimal data. Our suggestion form collects an optional name and email address, along with your suggestion message. This information is submitted voluntarily and is used solely to process and respond to your suggestions.</p>
+
+          <h3>3. Cookies</h3>
+          <p>Information Hub does not use cookies. We do not track your browsing activity across other websites, and we do not use any third-party analytics or advertising cookies.</p>
+
+          <h3>4. Third-Party APIs</h3>
+          <p>We use TradingView embedded widgets to display real-time market data including cryptocurrency prices, stock indices, commodities, and forex rates. When you visit the site, your browser loads these widgets from TradingView's servers. We recommend reviewing <a href="https://www.tradingview.com/privacy-policy/" target="_blank" rel="noopener noreferrer">TradingView's privacy policy</a> for details on their data practices.</p>
+
+          <h3>5. Data Sharing</h3>
+          <p>We do not sell, trade, or otherwise transfer your personal information to third parties. We do not share your data with advertisers, data brokers, or any external organisations.</p>
+
+          <h3>6. Data Security</h3>
+          <p>We implement reasonable security measures to protect any personal information submitted through our forms. However, no method of transmission over the internet is 100% secure.</p>
+
+          <h3>7. Your Rights</h3>
+          <p>You have the right to request access to, correction of, or deletion of any personal information you have provided to us. To exercise these rights, please contact us through our contact form.</p>
+
+          <h3>8. Changes to This Policy</h3>
+          <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.</p>
+
+          <h3>9. Contact</h3>
+          <p>If you have questions about this Privacy Policy, please reach out via our <a href="#" onclick="switchTab('contact'); return false;">contact form</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TERMS OF USE TAB -->
+    <div class="tab-content" id="tab-terms" role="tabpanel">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head-bar" style="--bar-color: var(--color-primary);"></div>
+          <div>
+            <h2 class="section-head-title">Terms of Use</h2>
+            <p class="section-head-sub">Effective March 2026</p>
+          </div>
+        </header>
+
+        <div class="legal-content">
+          <h3>1. Acceptance of Terms</h3>
+          <p>By accessing and using Information Hub, you agree to be bound by these Terms of Use. If you do not agree with any part of these terms, please do not use our website.</p>
+
+          <h3>2. Informational Purposes Only</h3>
+          <p>All content on Information Hub is provided for informational and educational purposes only. Nothing on this website constitutes financial advice, investment advice, trading advice, or any other form of professional advice. You should consult a qualified professional before making any financial decisions.</p>
+
+          <h3>3. No Warranty on Accuracy</h3>
+          <p>While we strive for accuracy and fact-check our content, we make no warranties or representations about the completeness, accuracy, reliability, or suitability of the information presented. Market data, including cryptocurrency prices, is sourced from third-party APIs and may be delayed or inaccurate.</p>
+
+          <h3>4. Intellectual Property</h3>
+          <p>All content, design, graphics, and code on Information Hub are the intellectual property of Information Hub and are protected by applicable copyright and trademark laws. You may not reproduce, distribute, or create derivative works without our written permission.</p>
+
+          <h3>5. User Submissions</h3>
+          <p>By submitting suggestions or messages through our forms, you grant Information Hub a non-exclusive, royalty-free licence to use, display, and incorporate your submissions for the purpose of improving our service.</p>
+
+          <h3>6. Limitation of Liability</h3>
+          <p>Information Hub, its owners, and contributors shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of the website or reliance on any information provided herein. Use of this site is entirely at your own risk.</p>
+
+          <h3>7. Third-Party Links</h3>
+          <p>Our website may contain links to external sites. We are not responsible for the content, privacy practices, or terms of any third-party websites.</p>
+
+          <h3>8. Modifications</h3>
+          <p>We reserve the right to modify these Terms of Use at any time. Continued use of the website after changes are posted constitutes acceptance of the revised terms.</p>
+
+          <h3>9. Governing Law</h3>
+          <p>These Terms of Use shall be governed by and construed in accordance with the laws of the Republic of South Africa. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of South African courts.</p>
+
+          <h3>10. Contact</h3>
+          <p>For questions about these Terms of Use, please reach out via our <a href="#" onclick="switchTab('contact'); return false;">contact form</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEEP DIVE BRIEF -->
+    <section class="coming-soon" id="deepDiveBrief">
+      <div class="coming-inner">
+
+        <!-- FREE DEEP DIVES FIRST — Lead with value -->
+        <div class="ddb-free-section">
+          <div class="ddb-free-label">PREVIEW OUR WORK</div>
+          <div class="cs-grid">
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">01</div>
+              <h3>Sea Trade Route Race</h3>
+              <p>How the Strait of Hormuz crisis is reshaping global maritime trade</p>
+              <a href="./sea-trade-route-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">02</div>
+              <h3>The K-Shaped Economy</h3>
+              <p>Top or Bottom of the K — the divide reshaping America, South Africa, and the world</p>
+              <a href="./k-shaped-economy-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">03</div>
+              <h3>The Thucydides Trap</h3>
+              <p>USA vs China — the falling superpower, the rising superpower, and the path forward</p>
+              <a href="./thucydides-trap-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">04</div>
+              <h3>Gold in 2026</h3>
+              <p>A comprehensive look at precious metals in an era of uncertainty</p>
+              <form class="ddb-waitlist-form" style="display:inline-flex;gap:0.5rem;align-items:center;flex-wrap:wrap;" action="https://formspree.io/f/xgoneypk" method="POST">
+                <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" class="ddb-waitlist-input" style="max-width:180px;font-size:0.85rem;">
+                <input type="hidden" name="_subject" value="Notify Me — Gold in 2026">
+                <button type="submit" class="btn-notify">Notify Me</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- PREMIUM INTELLIGENCE — After they've seen the value -->
+        <div class="ddb-subscription-card">
+          <div class="ddb-glow"></div>
+          <div class="ddb-layout">
+            <div class="ddb-content">
+              <div class="ddb-badge">Premium Intelligence</div>
+              <h2 class="ddb-title">THE DEEP DIVE BRIEF</h2>
+              <p class="ddb-subtitle">Weekly intelligence reports that go beyond the headlines</p>
+
+          <ul class="ddb-value-list">
+            <li>
+              <svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              4 deep dives per month — geopolitics, markets, crypto, Africa
+            </li>
+            <li>
+              <svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Mindset book breakdowns — 2-part series each month
+            </li>
+            <li>
+              <svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Email delivery — deep dives sent straight to your inbox
+            </li>
+            <li>
+              <svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Original analysis you won't find anywhere else
+            </li>
+          </ul>
+
+          <div class="ddb-founding-pill">FOUNDING MEMBER — Only <span id="spotsRemaining">20</span> spots</div>
+
+          <div class="ddb-price">
+            <span class="ddb-price-current">R99<span class="ddb-price-period">/month</span></span>
+            <span class="ddb-price-original">R149/month</span>
+          </div>
+
+          <a href="https://paystack.shop/pay/sv2a1f-7t-" target="_blank" rel="noopener noreferrer" id="paystack-subscribe-btn" class="ddb-cta-btn">BECOME A FOUNDING MEMBER</a>
+          <p class="ddb-fine-print">First 20 subscribers lock in R99/month forever. Price goes to R149 after that.</p>
+
+          <!-- Email Waitlist -->
+          <div class="ddb-waitlist">
+            <p class="ddb-waitlist-label">Not ready yet? Join the waitlist.</p>
+            <form id="waitlist-form" class="ddb-waitlist-form" action="https://formspree.io/f/xgoneypk" method="POST">
+              <input type="email" id="waitlist-email" name="email" placeholder="you@email.com" required autocomplete="email" class="ddb-waitlist-input">
+              <input type="hidden" name="_subject" value="New Waitlist Signup — Deep Dive Brief">
+              <button type="submit" class="ddb-waitlist-btn">Join Waitlist</button>
+            </form>
+          </div>
+            </div><!-- end ddb-content -->
+            <div class="ddb-mockup">
+              <img src="./deep-dive-mockup.jpg" alt="Deep Dive Brief intelligence reports" loading="lazy" width="400" height="300">
+            </div>
+          </div><!-- end ddb-layout -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUIZ TAB -->
+    <div class="tab-content" id="tab-quiz" role="tabpanel" style="display:none;">
+      <div class="quiz-page">
+
+        <!-- 1. Quiz Hero -->
+        <div class="quiz-hero">
+          <a href="#" class="logo-pill" onclick="switchTab('home'); return false;" aria-label="Home" style="margin-bottom:var(--space-6);display:inline-flex;">
+            <span class="logo-text"><span class="light">INFORMATION</span><span class="bold">HUB</span></span>
+          </a>
+          <div class="quiz-badge">Interactive Tool</div>
+          <h1>Which Side of the <span class="accent">K</span> Are You On?</h1>
+          <p>The economy isn't recovering equally. Answer 6 quick questions to find out where you stand in the K-shaped divide — and what the data says about your position.</p>
+        </div>
+
+        <!-- Quiz App (rendered by quiz.js) -->
+        <div id="quizApp"></div>
+
+      </div>
+
+      <!-- 2. Deep Dives — Show the work -->
+      <div class="coming-inner" style="max-width:1100px;margin:0 auto;padding:0 var(--space-5) var(--space-12);">
+        <div class="ddb-free-section">
+          <div class="ddb-free-label">PREVIEW OUR WORK</div>
+          <div class="cs-grid">
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">01</div>
+              <h3>Sea Trade Route Race</h3>
+              <p>How the Strait of Hormuz crisis is reshaping global maritime trade</p>
+              <a href="./sea-trade-route-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">02</div>
+              <h3>The K-Shaped Economy</h3>
+              <p>Top or Bottom of the K — the divide reshaping America, South Africa, and the world</p>
+              <a href="./k-shaped-economy-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">03</div>
+              <h3>The Thucydides Trap</h3>
+              <p>USA vs China — the falling superpower, the rising superpower, and the path forward</p>
+              <a href="./thucydides-trap-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">04</div>
+              <h3>Gold in 2026</h3>
+              <p>A comprehensive look at precious metals in an era of uncertainty</p>
+              <form class="ddb-waitlist-form" style="display:inline-flex;gap:0.5rem;align-items:center;flex-wrap:wrap;" action="https://formspree.io/f/xgoneypk" method="POST">
+                <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" class="ddb-waitlist-input" style="max-width:180px;font-size:0.85rem;">
+                <input type="hidden" name="_subject" value="Notify Me — Gold in 2026">
+                <button type="submit" class="btn-notify">Notify Me</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Premium Intelligence — One time only -->
+      <div class="coming-inner" style="max-width:900px;margin:0 auto;padding:0 var(--space-5) var(--space-16);">
+        <div class="ddb-subscription-card">
+          <div class="ddb-glow"></div>
+          <div class="ddb-layout">
+            <div class="ddb-content">
+              <div class="ddb-badge">Premium Intelligence</div>
+              <h2 class="ddb-title">THE DEEP DIVE BRIEF</h2>
+              <p class="ddb-subtitle">Weekly intelligence reports that go beyond the headlines</p>
+
+              <ul class="ddb-value-list">
+                <li>
+                  <svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  4 deep dives per month — geopolitics, markets, crypto, Africa
+                </li>
+                <li>
+                  <svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Mindset book breakdowns — 2-part series each month
+                </li>
+                <li>
+                  <svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Email delivery — deep dives sent straight to your inbox
+                </li>
+                <li>
+                  <svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Original analysis you won't find anywhere else
+                </li>
+              </ul>
+
+              <div class="ddb-founding-pill">FOUNDING MEMBER — Only 20 spots</div>
+
+              <div class="ddb-price">
+                <span class="ddb-price-current">R99<span class="ddb-price-period">/month</span></span>
+                <span class="ddb-price-original">R149/month</span>
+              </div>
+
+              <a href="https://paystack.shop/pay/sv2a1f-7t-" target="_blank" rel="noopener noreferrer" class="ddb-cta-btn">BECOME A FOUNDING MEMBER</a>
+              <p class="ddb-fine-print">First 20 subscribers lock in R99/month forever. Price goes to R149 after that.</p>
+            </div><!-- end ddb-content -->
+          </div><!-- end ddb-layout -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STRATEGY TAB -->
+    <div class="tab-content" id="tab-strategy" role="tabpanel" style="display:none;">
+      <div class="quiz-page">
+
+        <!-- Advisor Hero -->
+        <div class="adv-hero">
+          <a href="#" class="logo-pill" onclick="switchTab('home'); return false;" aria-label="Home" style="margin-bottom:var(--space-6);display:inline-flex;">
+            <span class="logo-text"><span class="light">INFORMATION</span><span class="bold">HUB</span></span>
+          </a>
+          <div class="adv-hero-badge">Interactive Tool</div>
+          <h1>Your Personalized <span class="accent">Strategy Brief</span></h1>
+          <p>Answer 4 questions about your financial goals, budget, risk tolerance, and time horizon. We combine this with your K-position to generate actionable strategy across 4 pillars: Shield, Build, Earn, and Watch.</p>
+          <a href="#" class="adv-quiz-link" onclick="switchTab('quiz'); return false;">Haven't taken the K-Shaped Quiz yet? Start there first &rarr;</a>
+        </div>
+
+        <!-- Advisor App (rendered by advisor.js) -->
+        <div id="advisorApp"></div>
+
+      </div>
+
+      <!-- Deep Dives -->
+      <div class="coming-inner" style="max-width:1100px;margin:0 auto;padding:0 var(--space-5) var(--space-12);">
+        <div class="ddb-free-section">
+          <div class="ddb-free-label">PREVIEW OUR WORK</div>
+          <div class="cs-grid">
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">01</div>
+              <h3>Sea Trade Route Race</h3>
+              <p>How the Strait of Hormuz crisis is reshaping global maritime trade</p>
+              <a href="./sea-trade-route-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">02</div>
+              <h3>The K-Shaped Economy</h3>
+              <p>Top or Bottom of the K — the divide reshaping America, South Africa, and the world</p>
+              <a href="./k-shaped-economy-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">03</div>
+              <h3>The Thucydides Trap</h3>
+              <p>USA vs China — the falling superpower, the rising superpower, and the path forward</p>
+              <a href="./thucydides-trap-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">04</div>
+              <h3>Gold in 2026</h3>
+              <p>A comprehensive look at precious metals in an era of uncertainty</p>
+              <form class="ddb-waitlist-form" style="display:inline-flex;gap:0.5rem;align-items:center;flex-wrap:wrap;" action="https://formspree.io/f/xgoneypk" method="POST">
+                <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" class="ddb-waitlist-input" style="max-width:180px;font-size:0.85rem;">
+                <input type="hidden" name="_subject" value="Notify Me — Gold in 2026">
+                <button type="submit" class="btn-notify">Notify Me</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Intelligence -->
+      <div class="coming-inner" style="max-width:900px;margin:0 auto;padding:0 var(--space-5) var(--space-16);">
+        <div class="ddb-subscription-card">
+          <div class="ddb-glow"></div>
+          <div class="ddb-layout">
+            <div class="ddb-content">
+              <div class="ddb-badge">Premium Intelligence</div>
+              <h2 class="ddb-title">THE DEEP DIVE BRIEF</h2>
+              <p class="ddb-subtitle">Weekly intelligence reports that go beyond the headlines</p>
+              <ul class="ddb-value-list">
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>4 deep dives per month — geopolitics, markets, crypto, Africa</li>
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Mindset book breakdowns — 2-part series each month</li>
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Email delivery — deep dives sent straight to your inbox</li>
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Original analysis you won’t find anywhere else</li>
+              </ul>
+              <div class="ddb-founding-pill">FOUNDING MEMBER — Only 20 spots</div>
+              <div class="ddb-price">
+                <span class="ddb-price-current">R99<span class="ddb-price-period">/month</span></span>
+                <span class="ddb-price-original">R149/month</span>
+              </div>
+              <a href="https://paystack.shop/pay/sv2a1f-7t-" target="_blank" rel="noopener noreferrer" class="ddb-cta-btn">BECOME A FOUNDING MEMBER</a>
+              <p class="ddb-fine-print">First 20 subscribers lock in R99/month forever. Price goes to R149 after that.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO TAB -->
+    <div class="tab-content" id="tab-portfolio" role="tabpanel" style="display:none;">
+      <div class="quiz-page">
+
+        <!-- Checker Hero -->
+        <div class="checker-hero">
+          <a href="#" class="logo-pill" onclick="switchTab('home'); return false;" aria-label="Home" style="margin-bottom:var(--space-6);display:inline-flex;">
+            <span class="logo-text"><span class="light">INFORMATION</span><span class="bold">HUB</span></span>
+          </a>
+          <div class="checker-hero-badge">Interactive Tool</div>
+          <h1>Portfolio <span style="color:#ef4444;">Exposure</span> Checker</h1>
+          <p>Select the assets you hold. We'll analyze your geopolitical risk exposure using intelligence from our deep dive research — Thucydides Trap, Sea Trade Routes, and K-Shaped Economy data.</p>
+          <a href="#" class="checker-quiz-link" onclick="switchTab('strategy'); return false;">Haven't built your strategy yet? Start with the Strategy Advisor &rarr;</a>
+        </div>
+
+        <!-- Checker App (rendered by checker.js) -->
+        <div id="checkerApp"></div>
+
+      </div>
+
+      <!-- Deep Dives -->
+      <div class="coming-inner" style="max-width:1100px;margin:0 auto;padding:0 var(--space-5) var(--space-12);">
+        <div class="ddb-free-section">
+          <div class="ddb-free-label">THE RESEARCH BEHIND YOUR RISK REPORT</div>
+          <div class="cs-grid">
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">01</div>
+              <h3>Sea Trade Route Race</h3>
+              <p>How the Strait of Hormuz crisis is reshaping global maritime trade</p>
+              <a href="./sea-trade-route-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">02</div>
+              <h3>The K-Shaped Economy</h3>
+              <p>Top or Bottom of the K — the divide reshaping America, South Africa, and the world</p>
+              <a href="./k-shaped-economy-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">03</div>
+              <h3>The Thucydides Trap</h3>
+              <p>USA vs China — the falling superpower, the rising superpower, and the path forward</p>
+              <a href="./thucydides-trap-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">04</div>
+              <h3>Gold in 2026</h3>
+              <p>A comprehensive look at precious metals in an era of uncertainty</p>
+              <form class="ddb-waitlist-form" style="display:inline-flex;gap:0.5rem;align-items:center;flex-wrap:wrap;" action="https://formspree.io/f/xgoneypk" method="POST">
+                <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" class="ddb-waitlist-input" style="max-width:180px;font-size:0.85rem;">
+                <input type="hidden" name="_subject" value="Notify Me — Gold in 2026">
+                <button type="submit" class="btn-notify">Notify Me</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Intelligence -->
+      <div class="coming-inner" style="max-width:900px;margin:0 auto;padding:0 var(--space-5) var(--space-16);">
+        <div class="ddb-subscription-card">
+          <div class="ddb-glow"></div>
+          <div class="ddb-layout">
+            <div class="ddb-img-col">
+              <img src="./deep-dive-mockup.jpg" alt="Deep Dive Brief collection" class="ddb-mockup-img" loading="lazy">
+            </div>
+            <div class="ddb-content">
+              <div class="ddb-badge">Premium Intelligence</div>
+              <h3 class="ddb-title">The Deep Dive Brief</h3>
+              <p class="ddb-desc">Monthly intelligence reports covering the stories that move markets, shape policy, and impact your money. Delivered straight to your inbox.</p>
+              <ul class="ddb-features">
+                <li>Monthly deep dive reports (10-15 pages)</li>
+                <li>Data-driven analysis with full source citations</li>
+                <li>Email delivery — deep dives sent straight to your inbox</li>
+                <li>Access to the full archive of past reports</li>
+              </ul>
+              <div class="ddb-founding-pill">FOUNDING MEMBER — Only <span id="spotsRemainingPortfolio">20</span> spots</div>
+              <div class="ddb-price">
+                <span class="ddb-amount">R99</span><span class="ddb-period">/month</span>
+              </div>
+              <a href="https://paystack.shop/pay/sv2a1f-7t-" target="_blank" rel="noopener noreferrer" class="ddb-cta-btn">BECOME A FOUNDING MEMBER</a>
+              <p class="ddb-fine-print">First 20 subscribers lock in R99/month forever. Price goes to R149 after that.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRACKER TAB -->
+    <div class="tab-content" id="tab-tracker" role="tabpanel" style="display:none;">
+      <div class="quiz-page">
+
+        <!-- Tracker Hero -->
+        <div class="tracker-hero">
+          <a href="#" class="logo-pill" onclick="switchTab('home'); return false;" aria-label="Home" style="margin-bottom:var(--space-6);display:inline-flex;">
+            <span class="logo-text"><span class="light">INFORMATION</span><span class="bold">HUB</span></span>
+          </a>
+          <div class="tracker-hero-badge">Live Intelligence</div>
+          <h1>Geopolitical <span style="color:#06b6d4;">Risk Tracker</span></h1>
+          <p>10 active global risks scored using the BlackRock Geopolitical Risk Indicator (BGRI), Stifel's Geopolitical Dashboard, and J.P. Morgan's GPR Index. See how each risk impacts specific assets in your portfolio.</p>
+          <a href="#" class="tracker-quiz-link" onclick="switchTab('portfolio'); return false;">Check how these risks affect your holdings &rarr;</a>
+        </div>
+
+        <!-- Tracker App (rendered by tracker.js) -->
+        <div id="trackerApp"></div>
+
+      </div>
+
+      <!-- Deep Dives -->
+      <div class="coming-inner" style="max-width:1100px;margin:0 auto;padding:0 var(--space-5) var(--space-12);">
+        <div class="ddb-free-section">
+          <div class="ddb-free-label">THE RESEARCH BEHIND OUR RISK DATA</div>
+          <div class="cs-grid">
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">01</div>
+              <h3>Sea Trade Route Race</h3>
+              <p>How the Strait of Hormuz crisis is reshaping global maritime trade</p>
+              <a href="./sea-trade-route-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">02</div>
+              <h3>The K-Shaped Economy</h3>
+              <p>Top or Bottom of the K — the divide reshaping America, South Africa, and the world</p>
+              <a href="./k-shaped-economy-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">03</div>
+              <h3>The Thucydides Trap</h3>
+              <p>USA vs China — the falling superpower, the rising superpower, and the path forward</p>
+              <a href="./thucydides-trap-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">04</div>
+              <h3>Gold in 2026</h3>
+              <p>A comprehensive look at precious metals in an era of uncertainty</p>
+              <form class="ddb-waitlist-form" style="display:inline-flex;gap:0.5rem;align-items:center;flex-wrap:wrap;" action="https://formspree.io/f/xgoneypk" method="POST">
+                <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" class="ddb-waitlist-input" style="max-width:180px;font-size:0.85rem;">
+                <input type="hidden" name="_subject" value="Notify Me — Gold in 2026">
+                <button type="submit" class="btn-notify">Notify Me</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Intelligence -->
+      <div class="coming-inner" style="max-width:900px;margin:0 auto;padding:0 var(--space-5) var(--space-16);">
+        <div class="ddb-subscription-card">
+          <div class="ddb-glow"></div>
+          <div class="ddb-layout">
+            <div class="ddb-content">
+              <div class="ddb-badge">Premium Intelligence</div>
+              <h2 class="ddb-title">THE DEEP DIVE BRIEF</h2>
+              <p class="ddb-subtitle">Weekly intelligence reports that go beyond the headlines</p>
+              <ul class="ddb-value-list">
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>4 deep dives per month — geopolitics, markets, crypto, Africa</li>
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Mindset book breakdowns — 2-part series each month</li>
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Email delivery — deep dives sent straight to your inbox</li>
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Original analysis you won't find anywhere else</li>
+              </ul>
+              <div class="ddb-founding-pill">FOUNDING MEMBER — Only 20 spots</div>
+              <div class="ddb-price">
+                <span class="ddb-price-current">R99<span class="ddb-price-period">/month</span></span>
+                <span class="ddb-price-original">R149/month</span>
+              </div>
+              <a href="https://paystack.shop/pay/sv2a1f-7t-" target="_blank" rel="noopener noreferrer" class="ddb-cta-btn">BECOME A FOUNDING MEMBER</a>
+              <p class="ddb-fine-print">First 20 subscribers lock in R99/month forever. Price goes to R149 after that.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="#" class="logo-pill" onclick="switchTab('home'); window.scrollTo({top:0,behavior:'smooth'}); return false;" aria-label="Home">
+          <span class="logo-text"><span class="light">INFORMATION</span><span class="bold">HUB</span></span>
+        </a>
+        <p class="footer-tagline">Verified news. Real-time intelligence. No noise.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/informationhub_news/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:#9ca3af;transition:color 0.2s;margin-right:12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C16.67.014 16.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://x.com/HubInforma272" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" style="color:#9ca3af;transition:color 0.2s;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Sections</h4>
+        <ul class="footer-nav">
+          <li><a href="#" onclick="switchTab('home'); return false;">Home</a></li>
+          <li><a href="#" onclick="switchTab('crypto'); return false;">Crypto</a></li>
+          <li><a href="#" onclick="switchTab('africa'); return false;">Africa</a></li>
+          <li><a href="#" onclick="switchTab('usa'); return false;">USA</a></li>
+          <li><a href="#" onclick="switchTab('europe'); return false;">Europe</a></li>
+          <li><a href="#" onclick="switchTab('finance'); return false;">Finance</a></li>
+          <li><a href="#" onclick="switchTab('tracker'); return false;" style="color:#06b6d4;">Geo Tracker</a></li>
+          <li><a href="#" onclick="switchTab('quiz'); return false;" style="color:var(--color-finance);">K-Shaped Quiz</a></li>
+          <li><a href="#" onclick="switchTab('strategy'); return false;" style="color:#8b5cf6;">Strategy Advisor</a></li>
+          <li><a href="#" onclick="switchTab('portfolio'); return false;" style="color:#ef4444;">Portfolio Checker</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Company</h4>
+        <ul class="footer-nav">
+          <li><a href="#" onclick="switchTab('about'); return false;">About</a></li>
+          <li><a href="#" onclick="switchTab('contact'); return false;">Contact</a></li>
+          <li><a href="#" onclick="switchTab('privacy'); return false;">Privacy Policy</a></li>
+          <li><a href="#" onclick="switchTab('terms'); return false;">Terms of Use</a></li>
+          <li><a href="#deepDiveBrief" onclick="document.getElementById('deepDiveBrief').scrollIntoView({behavior:'smooth'}); return false;">Deep Dive Brief</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Information Hub. All rights reserved.</p>
+      <p class="footer-updated" id="lastUpdated">Last updated: 7 March 2026, 12:00 AM SAST</p>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <script src="./app.js"></script>
+  <script src="./quiz.js"></script>
+  <script src="./advisor.js"></script>
+  <script src="./checker.js"></script>
+  <script src="./tracker.js"></script>
+</body>
+</html>
