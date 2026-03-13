@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="./base.css">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./quiz.css">
+  <link rel="stylesheet" href="./advisor.css">
 </head>
 <body>
   <a href="#main-content" class="sr-only" style="position:absolute;top:0;left:0;padding:8px 16px;background:var(--color-primary);color:#fff;z-index:999;text-decoration:none;" onfocus="this.style.position='relative'" onblur="this.style.position='absolute'">Skip to content</a>
@@ -54,6 +55,15 @@
         "locale": "en"
       }
       </script>
+    </div>
+  </div>
+
+  <!-- STRATEGY PROMO BANNER -->
+  <div class="strategy-promo-banner" onclick="switchTab('strategy');" role="button" tabindex="0" aria-label="Get Your Personalized Strategy">
+    <div class="strategy-promo-inner">
+      <span class="strategy-promo-badge">NEW</span>
+      <span class="strategy-promo-text">Get Your Personalized <strong>Strategy Brief</strong> — tailored to your financial profile</span>
+      <svg class="strategy-promo-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </div>
   </div>
 
@@ -99,6 +109,7 @@
           <li role="tab" class="nav-tab tab-finance" data-tab="finance" aria-selected="false" tabindex="0">FINANCE</li>
           <li role="tab" class="nav-tab tab-suggestions" data-tab="suggestions" aria-selected="false" tabindex="0">SUGGESTIONS</li>
           <li role="tab" class="nav-tab tab-quiz" data-tab="quiz" aria-selected="false" tabindex="0" style="color:var(--color-finance);">QUIZ</li>
+          <li role="tab" class="nav-tab tab-strategy" data-tab="strategy" aria-selected="false" tabindex="0" style="color:#8b5cf6;">STRATEGY</li>
         </ul>
       </div>
     </div>
@@ -115,6 +126,7 @@
       <li role="tab" class="mob-tab tab-finance" data-tab="finance" tabindex="0">FINANCE</li>
       <li role="tab" class="mob-tab tab-suggestions" data-tab="suggestions" tabindex="0">SUGGESTIONS</li>
       <li role="tab" class="mob-tab tab-quiz" data-tab="quiz" tabindex="0" style="color:var(--color-finance);">QUIZ</li>
+      <li role="tab" class="mob-tab tab-strategy" data-tab="strategy" tabindex="0" style="color:#8b5cf6;">STRATEGY</li>
     </ul>
   </div>
 
@@ -1068,6 +1080,91 @@
 
     </div>
 
+    <!-- STRATEGY TAB -->
+    <div class="tab-content" id="tab-strategy" role="tabpanel" style="display:none;">
+      <div class="quiz-page">
+
+        <!-- Advisor Hero -->
+        <div class="adv-hero">
+          <a href="#" class="logo-pill" onclick="switchTab('home'); return false;" aria-label="Home" style="margin-bottom:var(--space-6);display:inline-flex;">
+            <span class="logo-text"><span class="light">INFORMATION</span><span class="bold">HUB</span></span>
+          </a>
+          <div class="adv-hero-badge">Interactive Tool</div>
+          <h1>Your Personalized <span class="accent">Strategy Brief</span></h1>
+          <p>Answer 4 questions about your financial goals, budget, risk tolerance, and time horizon. We combine this with your K-position to generate actionable strategy across 4 pillars: Shield, Build, Earn, and Watch.</p>
+          <a href="#" class="adv-quiz-link" onclick="switchTab('quiz'); return false;">Haven't taken the K-Shaped Quiz yet? Start there first &rarr;</a>
+        </div>
+
+        <!-- Advisor App (rendered by advisor.js) -->
+        <div id="advisorApp"></div>
+
+      </div>
+
+      <!-- Deep Dives -->
+      <div class="coming-inner" style="max-width:1100px;margin:0 auto;padding:0 var(--space-5) var(--space-12);">
+        <div class="ddb-free-section">
+          <div class="ddb-free-label">PREVIEW OUR WORK</div>
+          <div class="cs-grid">
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">01</div>
+              <h3>Sea Trade Route Race</h3>
+              <p>How the Strait of Hormuz crisis is reshaping global maritime trade</p>
+              <a href="./sea-trade-route-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">02</div>
+              <h3>The K-Shaped Economy</h3>
+              <p>Top or Bottom of the K — the divide reshaping America, South Africa, and the world</p>
+              <a href="./k-shaped-economy-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">03</div>
+              <h3>The Thucydides Trap</h3>
+              <p>USA vs China — the falling superpower, the rising superpower, and the path forward</p>
+              <a href="./thucydides-trap-deep-dive.pdf" download class="btn-notify" style="text-decoration:none;display:inline-block;">Download Free PDF</a>
+            </div>
+            <div class="cs-card fade-in">
+              <div class="cs-card-num">04</div>
+              <h3>Gold in 2026</h3>
+              <p>A comprehensive look at precious metals in an era of uncertainty</p>
+              <form class="ddb-waitlist-form" style="display:inline-flex;gap:0.5rem;align-items:center;flex-wrap:wrap;" action="https://formspree.io/f/xgoneypk" method="POST">
+                <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" class="ddb-waitlist-input" style="max-width:180px;font-size:0.85rem;">
+                <input type="hidden" name="_subject" value="Notify Me — Gold in 2026">
+                <button type="submit" class="btn-notify">Notify Me</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Intelligence -->
+      <div class="coming-inner" style="max-width:900px;margin:0 auto;padding:0 var(--space-5) var(--space-16);">
+        <div class="ddb-subscription-card">
+          <div class="ddb-glow"></div>
+          <div class="ddb-layout">
+            <div class="ddb-content">
+              <div class="ddb-badge">Premium Intelligence</div>
+              <h2 class="ddb-title">THE DEEP DIVE BRIEF</h2>
+              <p class="ddb-subtitle">Weekly intelligence reports that go beyond the headlines</p>
+              <ul class="ddb-value-list">
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>4 deep dives per month — geopolitics, markets, crypto, Africa</li>
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Mindset book breakdowns — 2-part series each month</li>
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Email delivery — deep dives sent straight to your inbox</li>
+                <li><svg class="ddb-check" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Original analysis you won’t find anywhere else</li>
+              </ul>
+              <div class="ddb-founding-pill">FOUNDING MEMBER — Only 20 spots</div>
+              <div class="ddb-price">
+                <span class="ddb-price-current">R99<span class="ddb-price-period">/month</span></span>
+                <span class="ddb-price-original">R149/month</span>
+              </div>
+              <a href="https://paystack.shop/pay/sv2a1f-7t-" target="_blank" rel="noopener noreferrer" class="ddb-cta-btn">BECOME A FOUNDING MEMBER</a>
+              <p class="ddb-fine-print">First 20 subscribers lock in R99/month forever. Price goes to R149 after that.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- FOOTER -->
@@ -1097,6 +1194,7 @@
           <li><a href="#" onclick="switchTab('europe'); return false;">Europe</a></li>
           <li><a href="#" onclick="switchTab('finance'); return false;">Finance</a></li>
           <li><a href="#" onclick="switchTab('quiz'); return false;" style="color:var(--color-finance);">K-Shaped Quiz</a></li>
+          <li><a href="#" onclick="switchTab('strategy'); return false;" style="color:#8b5cf6;">Strategy Advisor</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1126,5 +1224,6 @@
 
   <script src="./app.js"></script>
   <script src="./quiz.js"></script>
+  <script src="./advisor.js"></script>
 </body>
 </html>

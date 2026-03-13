@@ -245,7 +245,8 @@
 
     html += '</div>' +
       '<div class="quiz-result-cta">' +
-      '<a href="./k-shaped-economy-deep-dive.pdf" download class="quiz-cta-primary">Download the Full Deep Dive</a>' +
+      '<button class="quiz-cta-primary" id="quizToAdvisor" style="border:none;cursor:pointer;">Get Your Personalized Strategy &rarr;</button>' +
+      '<a href="./k-shaped-economy-deep-dive.pdf" download class="quiz-cta-secondary" style="text-decoration:none;display:inline-block;">Download the Full Deep Dive</a>' +
       '<button class="quiz-cta-secondary" id="quizRetake">Retake Quiz</button>' +
       '</div>' +
       '<div class="quiz-share">' +
@@ -267,6 +268,27 @@
       render();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Strategy Advisor CTA
+    var advBtn = document.getElementById('quizToAdvisor');
+    if (advBtn) {
+      advBtn.addEventListener('click', function() {
+        var quizPayload = {
+          resultKey: getResultKey(),
+          score: calcScore(),
+          emailCaptured: true
+        };
+        if (typeof window.startAdvisor === 'function') {
+          window.startAdvisor(quizPayload);
+        } else {
+          sessionStorage.setItem('ih_quiz_data', JSON.stringify(quizPayload));
+        }
+        if (typeof window.switchTab === 'function') {
+          window.switchTab('strategy');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    }
   }
 
   // Initialize when visible
