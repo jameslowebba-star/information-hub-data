@@ -388,6 +388,13 @@
       '<p class="adv-sub-fine">First 20 subscribers lock in R99/month forever.</p>' +
       '</div>';
 
+    // Portfolio Checker CTA
+    html += '<div class="adv-portfolio-cta" style="text-align:center;margin:var(--space-8) 0;padding:var(--space-6);border-radius:12px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);">' +
+      '<h3 style="color:#ef4444;margin-bottom:0.5rem;">How Exposed Is Your Portfolio?</h3>' +
+      '<p style="color:var(--text-muted);margin-bottom:1rem;">You have a strategy. Now check if your current holdings have hidden geopolitical risks.</p>' +
+      '<a href="#" onclick="if(typeof switchTab===\'function\')switchTab(\'portfolio\');return false;" style="display:inline-block;padding:0.75rem 2rem;background:#ef4444;color:#fff;border-radius:8px;font-weight:600;text-decoration:none;">Check Your Portfolio Exposure &rarr;</a>' +
+      '</div>';
+
     // Actions
     html += '<div class="adv-actions">' +
       '<button class="adv-action-btn adv-action-retake" id="advRetake">Retake Strategy Advisor</button>' +
