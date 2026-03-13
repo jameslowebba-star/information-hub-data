@@ -6,6 +6,7 @@
   // ===== CONFIGURATION =====
   const TRACKER_COLOR = '#06b6d4';
   const RISK_DATA_URL = 'https://raw.githubusercontent.com/jameslowebba-star/information-hub-data/main/geo-risks.json';
+  const HISTORY_DATA_URL = 'https://raw.githubusercontent.com/jameslowebba-star/information-hub-data/main/geo-risks-history.json';
 
   // ===== RISK DATABASE — BlackRock BGRI March 2026 =====
   const DEFAULT_RISKS = [
@@ -194,6 +195,10 @@
   let events = [...DEFAULT_EVENTS];
   let selectedRisk = null;
   let filterLikelihood = 'all';
+  let historyData = null;
+  let trendRange = '7d';
+  let compositeChart = null;
+  let sparklineCharts = {};
 
   // ===== INIT =====
   const container = document.getElementById('trackerApp');
@@ -201,6 +206,7 @@
 
   // Try to load live data
   fetchLiveRiskData();
+  fetchHistoryData();
 
   // Initial render
   render();
@@ -222,6 +228,237 @@
     } catch (e) {
       console.log('[GeoTracker] Using embedded risk data (live fetch unavailable)');
     }
+  }
+
+  // ===== FETCH HISTORY DATA =====
+  async function fetchHistoryData() {
+    try {
+      const res = await fetch(HISTORY_DATA_URL + '?t=' + Date.now(), { signal: AbortSignal.timeout(10000) });
+      if (!res.ok) throw new Error(res.status);
+      historyData = await res.json();
+      render();
+      console.log('[GeoTracker] History data loaded:', historyData.total_snapshots, 'snapshots');
+    } catch (e) {
+      console.log('[GeoTracker] Remote history unavailable, trying local fallback...');
+      try {
+        const res2 = await fetch('./geo-risks-history.json?t=' + Date.now(), { signal: AbortSignal.timeout(5000) });
+        if (!res2.ok) throw new Error(res2.status);
+        historyData = await res2.json();
+        render();
+        console.log('[GeoTracker] Local history data loaded:', historyData.total_snapshots, 'snapshots');
+      } catch (e2) {
+        console.log('[GeoTracker] History data unavailable:', e2.message);
+      }
+    }
+  }
+
+  // ===== TREND HELPERS =====
+  function getFilteredSnapshots(range) {
+    if (!historyData || !historyData.snapshots) return [];
+    const now = new Date();
+    let cutoff;
+    switch (range) {
+      case '24h': cutoff = new Date(now - 24 * 60 * 60 * 1000); break;
+      case '14d': cutoff = new Date(now - 14 * 24 * 60 * 60 * 1000); break;
+      case '7d': default: cutoff = new Date(now - 7 * 24 * 60 * 60 * 1000); break;
+    }
+    return historyData.snapshots.filter(s => new Date(s.timestamp) >= cutoff);
+  }
+
+  function getThemeColors() {
+    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+    return {
+      text: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.6)',
+      textFaint: isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.2)',
+      grid: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
+      surface: isDark ? '#0f1419' : '#ffffff'
+    };
+  }
+
+  function renderTrendsHTML() {
+    if (!historyData) {
+      return `
+        <div class="trk-trends-section">
+          <div class="trk-trends-header">
+            <h3 class="trk-trends-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="${TRACKER_COLOR}" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Risk Trends
+            </h3>
+          </div>
+          <p class="trk-trends-sub">Loading historical data...</p>
+        </div>
+      `;
+    }
+    const riskIds = Object.keys(historyData.snapshots[0]?.scores || {});
+    return `
+      <div class="trk-trends-section">
+        <div class="trk-trends-header">
+          <h3 class="trk-trends-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="${TRACKER_COLOR}" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Risk Trends
+          </h3>
+        </div>
+        <p class="trk-trends-sub">Composite risk index over time — based on hourly snapshots</p>
+        <div class="trk-trends-toggles">
+          <button class="trk-trends-toggle ${trendRange === '24h' ? 'active' : ''}" data-range="24h">24h</button>
+          <button class="trk-trends-toggle ${trendRange === '7d' ? 'active' : ''}" data-range="7d">7d</button>
+          <button class="trk-trends-toggle ${trendRange === '14d' ? 'active' : ''}" data-range="14d">14d</button>
+        </div>
+        <div class="trk-trends-chart">
+          <canvas id="trkCompositeChart"></canvas>
+        </div>
+        <p class="trk-sparklines-label">Individual Risk Sparklines</p>
+        <div class="trk-sparklines-grid">
+          ${riskIds.map(id => {
+            const risk = risks.find(r => r.id === id);
+            if (!risk) return '';
+            const scoreClass = risk.likelihood === 'high' ? 'high' : risk.likelihood === 'medium' ? 'medium' : 'low';
+            return `
+              <div class="trk-sparkline-card">
+                <div class="trk-sparkline-top">
+                  <span class="trk-sparkline-name">${risk.name}</span>
+                  <span class="trk-sparkline-score ${scoreClass}">${risk.score}</span>
+                </div>
+                <canvas class="trk-sparkline-canvas" id="trkSparkline_${id}"></canvas>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderCharts() {
+    if (!historyData || typeof Chart === 'undefined') return;
+    const snapshots = getFilteredSnapshots(trendRange);
+    if (snapshots.length === 0) return;
+    const colors = getThemeColors();
+
+    // Destroy existing charts
+    if (compositeChart) { compositeChart.destroy(); compositeChart = null; }
+    Object.values(sparklineCharts).forEach(c => c.destroy());
+    sparklineCharts = {};
+
+    // Downsample if needed for performance
+    const maxPoints = trendRange === '24h' ? 24 : trendRange === '7d' ? 84 : 168;
+    let displaySnapshots = snapshots;
+    if (snapshots.length > maxPoints) {
+      const step = Math.ceil(snapshots.length / maxPoints);
+      displaySnapshots = snapshots.filter((_, i) => i % step === 0);
+    }
+
+    const labels = displaySnapshots.map(s => {
+      const d = new Date(s.timestamp);
+      if (trendRange === '24h') return d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+      return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    });
+    const compositeValues = displaySnapshots.map(s => s.composite);
+
+    // === COMPOSITE CHART ===
+    const compositeCanvas = document.getElementById('trkCompositeChart');
+    if (compositeCanvas) {
+      const ctx = compositeCanvas.getContext('2d');
+      const gradient = ctx.createLinearGradient(0, 0, 0, compositeCanvas.parentElement.clientHeight || 300);
+      gradient.addColorStop(0, 'rgba(6, 182, 212, 0.25)');
+      gradient.addColorStop(1, 'rgba(6, 182, 212, 0.01)');
+
+      compositeChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Composite Risk Index',
+            data: compositeValues,
+            borderColor: '#06b6d4',
+            backgroundColor: gradient,
+            borderWidth: 2.5,
+            fill: true,
+            tension: 0.4,
+            pointRadius: 0,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#06b6d4',
+            pointHoverBorderColor: colors.surface,
+            pointHoverBorderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: colors.surface === '#0f1419' ? 'rgba(15,20,25,0.95)' : 'rgba(255,255,255,0.95)',
+              titleColor: colors.text,
+              bodyColor: colors.text,
+              borderColor: 'rgba(6,182,212,0.3)',
+              borderWidth: 1,
+              padding: 10,
+              displayColors: false,
+              callbacks: {
+                label: function(ctx) { return 'Risk Index: ' + ctx.parsed.y.toFixed(1); }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: colors.grid, drawBorder: false },
+              ticks: {
+                color: colors.textFaint,
+                font: { size: 10 },
+                maxTicksLimit: trendRange === '24h' ? 12 : 7,
+                maxRotation: 0
+              }
+            },
+            y: {
+              min: 5,
+              max: 10,
+              grid: { color: colors.grid, drawBorder: false },
+              ticks: {
+                color: colors.textFaint,
+                font: { size: 10 },
+                callback: function(v) { return v.toFixed(1); }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // === SPARKLINE CHARTS ===
+    const riskIds = Object.keys(displaySnapshots[0]?.scores || {});
+    riskIds.forEach(id => {
+      const canvas = document.getElementById('trkSparkline_' + id);
+      if (!canvas) return;
+      const risk = risks.find(r => r.id === id);
+      const lineColor = risk && risk.likelihood === 'high' ? '#ef4444' : '#f59e0b';
+      const values = displaySnapshots.map(s => s.scores[id] || 0);
+
+      sparklineCharts[id] = new Chart(canvas.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            borderColor: lineColor,
+            borderWidth: 1.5,
+            fill: false,
+            tension: 0.4,
+            pointRadius: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { enabled: false } },
+          scales: {
+            x: { display: false },
+            y: { display: false, min: Math.min(...values) - 0.5, max: Math.max(...values) + 0.5 }
+          },
+          elements: { point: { radius: 0 } }
+        }
+      });
+    });
   }
 
   // ===== COMPOSITE SCORE =====
@@ -345,6 +582,9 @@
         ${selectedRisk ? renderDetailPanel(selectedRisk) : ''}
       </div>
 
+      <!-- Risk Trends -->
+      ${renderTrendsHTML()}
+
       <!-- Asset Impact Map -->
       <div class="trk-section">
         <div class="trk-section-header">
@@ -404,6 +644,9 @@
 
     // Attach event listeners
     attachListeners();
+
+    // Render trend charts after DOM is ready
+    requestAnimationFrame(() => renderCharts());
   }
 
   // ===== RENDER RISK CARD =====
@@ -580,6 +823,16 @@
       });
     });
 
+    // Trend range toggles
+    container.querySelectorAll('.trk-trends-toggle').forEach(btn => {
+      btn.addEventListener('click', function() {
+        trendRange = this.dataset.range;
+        // Update active states without full re-render
+        container.querySelectorAll('.trk-trends-toggle').forEach(b => b.classList.toggle('active', b.dataset.range === trendRange));
+        renderCharts();
+      });
+    });
+
     // Event risk links
     container.querySelectorAll('.trk-event-risk-link').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -597,6 +850,18 @@
       });
     });
   }
+
+  // ===== THEME OBSERVER =====
+  // Re-render charts when theme changes
+  const themeObserver = new MutationObserver(function(mutations) {
+    for (const m of mutations) {
+      if (m.attributeName === 'data-theme') {
+        requestAnimationFrame(() => renderCharts());
+        break;
+      }
+    }
+  });
+  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
   // Store tracker data in sessionStorage for cross-tool reference
   sessionStorage.setItem('ih_tracker_data', JSON.stringify({
