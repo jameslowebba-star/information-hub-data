@@ -1,0 +1,1231 @@
+/* checker.css — Portfolio Exposure Checker Styles */
+
+/* ─── SELECTION SCREEN ─── */
+.chk-selection {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chk-sel-header {
+  text-align: center;
+  margin-bottom: var(--space-8, 2rem);
+}
+
+.chk-sel-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.chk-sel-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  font-weight: 700;
+  color: var(--color-text, #f1f1f1);
+  margin-bottom: var(--space-2, 8px);
+}
+
+.chk-sel-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--color-muted, #9ca3af);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ─── CATEGORY SECTIONS ─── */
+.chk-cat {
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.chk-cat-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #ef4444;
+  margin-bottom: var(--space-3, 12px);
+  padding-left: 2px;
+}
+
+.chk-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-3, 12px);
+}
+
+/* ─── ASSET CARDS ─── */
+.chk-asset-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: var(--space-4, 1rem) var(--space-3, 12px);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text, #e5e5e5);
+}
+
+.chk-asset-card:hover {
+  border-color: rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.chk-asset-card.selected {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.3), 0 0 20px rgba(239, 68, 68, 0.08);
+}
+
+.chk-asset-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.chk-asset-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f1f1f1);
+}
+
+.chk-asset-desc {
+  font-size: 0.65rem;
+  color: var(--color-muted, #9ca3af);
+  line-height: 1.3;
+}
+
+.chk-asset-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  transition: all 0.2s ease;
+  color: transparent;
+}
+
+.chk-asset-card.selected .chk-asset-check {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+}
+
+/* ─── SELECTION FOOTER ─── */
+.chk-sel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-6, 1.5rem);
+  padding-top: var(--space-5, 1.25rem);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  gap: var(--space-4, 1rem);
+}
+
+.chk-sel-count {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-muted, #9ca3af);
+}
+
+/* ─── BUTTONS ─── */
+.chk-btn {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: var(--space-3, 12px) var(--space-6, 1.5rem);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chk-btn-primary {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+}
+
+.chk-btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.3);
+}
+
+.chk-btn-primary:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ─── EMAIL GATE ─── */
+.chk-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: var(--space-8, 2rem) var(--space-6, 1.5rem);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.chk-gate {
+  text-align: center;
+  padding: var(--space-4, 1rem) 0;
+}
+
+.chk-gate-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  margin-bottom: var(--space-5, 1.25rem);
+}
+
+.chk-gate h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-text, #f1f1f1);
+  margin-bottom: var(--space-3, 12px);
+}
+
+.chk-gate p {
+  color: var(--color-muted, #9ca3af);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 420px;
+  margin: 0 auto var(--space-6, 1.5rem);
+}
+
+.chk-gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.chk-gate-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: var(--space-3, 12px) var(--space-4, 1rem);
+  color: var(--color-text, #e5e5e5);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.chk-gate-input:focus {
+  border-color: #ef4444;
+}
+
+.chk-gate-skip {
+  display: inline-block;
+  margin-top: var(--space-4, 1rem);
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-muted, #9ca3af);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.chk-gate-skip:hover {
+  color: var(--color-text, #e5e5e5);
+}
+
+.chk-gate-fine {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.25);
+  margin-top: var(--space-3, 12px);
+}
+
+/* ─── RESULTS PAGE ─── */
+.chk-results {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ─── PORTFOLIO SUMMARY ─── */
+.chk-summary {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: var(--space-8, 2rem) var(--space-6, 1.5rem);
+  margin-bottom: var(--space-8, 2rem);
+}
+
+.chk-summary-header {
+  text-align: center;
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.chk-summary-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text, #f1f1f1);
+  margin-bottom: var(--space-2, 8px);
+}
+
+.chk-summary-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-muted, #9ca3af);
+}
+
+/* ─── RISK METER ─── */
+.chk-meter-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6, 1.5rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.chk-meter {
+  flex: 1;
+}
+
+.chk-meter-track {
+  height: 10px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.chk-meter-fill {
+  height: 100%;
+  border-radius: 5px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.chk-meter-fill.animate {
+  /* width set inline — the transition handles the animation */
+}
+
+.chk-meter-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted, #9ca3af);
+  margin-top: 6px;
+}
+
+.chk-meter-score {
+  text-align: center;
+  flex-shrink: 0;
+  min-width: 80px;
+}
+
+.chk-meter-number {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.chk-meter-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  color: var(--color-muted, #9ca3af);
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+/* ─── LEVEL BADGE ─── */
+.chk-level-badge {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.chk-level-badge-sm {
+  font-size: 0.55rem;
+  padding: 2px 8px;
+}
+
+/* ─── TOP RISKS ─── */
+.chk-top-risks {
+  margin-bottom: var(--space-5, 1.25rem);
+}
+
+.chk-top-risks-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-muted, #9ca3af);
+  margin-bottom: var(--space-3, 12px);
+}
+
+.chk-top-risks-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+}
+
+.chk-top-risk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3, 12px);
+  padding: var(--space-3, 12px);
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+}
+
+.chk-top-risk-rank {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 8px;
+}
+
+.chk-top-risk-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.chk-top-risk-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text, #f1f1f1);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chk-top-risk-factor {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: var(--color-muted, #9ca3af);
+  line-height: 1.4;
+}
+
+.chk-top-risk-score {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ─── BLIND SPOT ─── */
+.chk-blindspot {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4, 1rem);
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: 12px;
+  padding: var(--space-5, 1.25rem);
+}
+
+.chk-blindspot-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.12);
+  border-radius: 10px;
+  color: #ef4444;
+}
+
+.chk-blindspot-content {
+  flex: 1;
+}
+
+.chk-blindspot-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #ef4444;
+  margin-bottom: 4px;
+}
+
+.chk-blindspot-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text, #f1f1f1);
+  margin-bottom: 6px;
+}
+
+.chk-blindspot-watch {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-muted, #9ca3af);
+  line-height: 1.5;
+}
+
+/* ─── CARDS HEADER ─── */
+.chk-cards-header {
+  margin-bottom: var(--space-5, 1.25rem);
+}
+
+.chk-cards-header h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text, #f1f1f1);
+}
+
+/* ─── INDIVIDUAL RISK CARDS ─── */
+.chk-risk-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5, 1.25rem);
+  margin-bottom: var(--space-10, 2.5rem);
+}
+
+.chk-risk-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: var(--space-5, 1.25rem);
+  border-top: 3px solid var(--risk-color, #ef4444);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.chk-risk-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chk-risk-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.chk-risk-card-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+}
+
+.chk-risk-card-icon {
+  font-size: 1.4rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.chk-risk-card-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text, #f1f1f1);
+  margin-bottom: 4px;
+}
+
+.chk-risk-card-score {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.chk-risk-card-score span {
+  font-size: 0.7rem;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+/* ─── RISK SCORE BAR ─── */
+.chk-risk-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.chk-risk-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── RISK FACTORS LIST ─── */
+.chk-risk-factors {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4, 1rem) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+}
+
+.chk-risk-factors li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.75);
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.chk-risk-factors li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--risk-color, #ef4444);
+  opacity: 0.6;
+}
+
+/* ─── WHAT TO WATCH ─── */
+.chk-risk-watch {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  padding: var(--space-3, 12px);
+}
+
+.chk-risk-watch-icon {
+  flex-shrink: 0;
+  color: var(--risk-color, #ef4444);
+  margin-top: 1px;
+}
+
+.chk-risk-watch-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-muted, #9ca3af);
+}
+
+.chk-risk-watch-text strong {
+  color: var(--color-text, #e5e5e5);
+}
+
+/* ─── CTAs ─── */
+.chk-ctas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4, 1rem);
+  margin-bottom: var(--space-8, 2rem);
+}
+
+.chk-cta-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: var(--space-5, 1.25rem);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+}
+
+.chk-cta-card:hover {
+  transform: translateY(-2px);
+}
+
+.chk-cta-strategy:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(139, 92, 246, 0.04);
+}
+
+.chk-cta-deepdives:hover {
+  border-color: rgba(212, 168, 67, 0.4);
+  background: rgba(212, 168, 67, 0.04);
+}
+
+.chk-cta-premium:hover {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.chk-cta-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  color: var(--color-muted, #9ca3af);
+}
+
+.chk-cta-strategy .chk-cta-icon { color: #8b5cf6; background: rgba(139, 92, 246, 0.1); }
+.chk-cta-deepdives .chk-cta-icon { color: #d4a843; background: rgba(212, 168, 67, 0.1); }
+.chk-cta-premium .chk-cta-icon { color: #ef4444; background: rgba(239, 68, 68, 0.1); }
+
+.chk-cta-card h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text, #f1f1f1);
+}
+
+.chk-cta-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: var(--color-muted, #9ca3af);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.chk-cta-link {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: auto;
+}
+
+.chk-cta-strategy .chk-cta-link { color: #8b5cf6; }
+.chk-cta-deepdives .chk-cta-link { color: #d4a843; }
+.chk-cta-premium .chk-cta-link { color: #ef4444; }
+
+/* ─── ACTIONS ROW ─── */
+.chk-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4, 1rem);
+}
+
+.chk-action-retake {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: var(--space-3, 12px) var(--space-5, 1.25rem);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted, #9ca3af);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chk-action-retake:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--color-text, #e5e5e5);
+}
+
+.chk-share {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+}
+
+.chk-share span {
+  font-size: 0.75rem;
+  color: var(--color-muted, #9ca3af);
+  font-family: 'Inter', sans-serif;
+}
+
+.chk-share a {
+  color: var(--color-muted, #9ca3af);
+  transition: color 0.2s;
+}
+
+.chk-share a:hover {
+  color: var(--color-text, #e5e5e5);
+}
+
+/* ─── PULSE ANIMATION FOR CRITICAL ITEMS ─── */
+@keyframes chk-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.chk-risk-card[style*="--risk-color: #ef4444"] .chk-level-badge {
+  animation: chk-pulse 2s ease-in-out infinite;
+}
+
+/* ─── FADE IN ANIMATION ─── */
+@keyframes chk-fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chk-summary {
+  animation: chk-fadeIn 0.5s ease both;
+}
+
+/* ─── CHECKER HERO ─── */
+.chk-hero {
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-5, 1.25rem) var(--space-8, 2rem);
+}
+
+.chk-hero-badge {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.06);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.chk-hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-text, #f1f1f1);
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.chk-hero h1 .accent {
+  color: #ef4444;
+}
+
+.chk-hero p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-muted, #9ca3af);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ─── CHECKER PROMO BANNER ─── */
+.checker-promo-banner {
+  background: rgba(239, 68, 68, 0.04);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.12);
+  padding: 10px var(--space-5, 1.25rem);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.checker-promo-banner:hover {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.checker-promo-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.checker-promo-badge {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: #ef4444;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.checker-promo-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.checker-promo-text strong {
+  color: #ef4444;
+}
+
+.checker-promo-arrow {
+  transition: transform 0.2s;
+  color: #ef4444;
+}
+
+.checker-promo-banner:hover .checker-promo-arrow {
+  transform: translateX(4px);
+}
+
+/* ─── MOBILE RESPONSIVE ─── */
+@media (max-width: 700px) {
+  .chk-cat-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .chk-risk-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .chk-ctas {
+    grid-template-columns: 1fr;
+  }
+
+  .chk-summary-title {
+    font-size: 1.3rem;
+  }
+
+  .chk-meter-wrap {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .chk-meter {
+    width: 100%;
+  }
+
+  .chk-meter-number {
+    font-size: 2.2rem;
+  }
+
+  .chk-sel-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .chk-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .checker-promo-banner .checker-promo-text {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chk-cat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chk-asset-card {
+    padding: var(--space-3, 12px) var(--space-2, 8px);
+  }
+
+  .chk-asset-icon {
+    font-size: 1.2rem;
+  }
+
+  .chk-asset-name {
+    font-size: 0.72rem;
+  }
+
+  .chk-asset-desc {
+    font-size: 0.6rem;
+  }
+
+  .chk-actions {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .chk-share {
+    justify-content: center;
+  }
+
+  .chk-top-risk-item {
+    flex-wrap: wrap;
+  }
+
+  .chk-card {
+    padding: var(--space-6, 1.5rem) var(--space-4, 1rem);
+  }
+}
+
+/* ─── LIGHT MODE ─── */
+[data-theme="light"] .chk-card {
+  background: rgba(0,0,0,0.02);
+  border-color: rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .chk-asset-card {
+  background: rgba(0,0,0,0.02);
+  border-color: rgba(0,0,0,0.1);
+  color: #1a1a2e;
+}
+
+[data-theme="light"] .chk-asset-card:hover {
+  background: rgba(239, 68, 68, 0.04);
+}
+
+[data-theme="light"] .chk-asset-card.selected {
+  background: rgba(239, 68, 68, 0.06);
+}
+
+[data-theme="light"] .chk-asset-name {
+  color: #1a1a2e;
+}
+
+[data-theme="light"] .chk-asset-check {
+  border-color: rgba(0,0,0,0.15);
+}
+
+[data-theme="light"] .chk-risk-card {
+  background: rgba(0,0,0,0.015);
+  border-color: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .chk-risk-factors li {
+  color: rgba(0,0,0,0.7);
+}
+
+[data-theme="light"] .chk-risk-watch {
+  background: rgba(0,0,0,0.03);
+}
+
+[data-theme="light"] .chk-summary {
+  background: rgba(0,0,0,0.015);
+  border-color: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .chk-top-risk-item {
+  background: rgba(0,0,0,0.02);
+}
+
+[data-theme="light"] .chk-blindspot {
+  background: rgba(239, 68, 68, 0.04);
+  border-color: rgba(239, 68, 68, 0.1);
+}
+
+[data-theme="light"] .chk-cta-card {
+  background: rgba(0,0,0,0.02);
+  border-color: rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .chk-meter-track {
+  background: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .chk-risk-bar {
+  background: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .chk-gate-input {
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.12);
+  color: #1a1a2e;
+}
+
+[data-theme="light"] .chk-sel-title,
+[data-theme="light"] .chk-summary-title,
+[data-theme="light"] .chk-cards-header h3,
+[data-theme="light"] .chk-gate h2,
+[data-theme="light"] .chk-hero h1,
+[data-theme="light"] .chk-risk-card-name,
+[data-theme="light"] .chk-top-risk-name,
+[data-theme="light"] .chk-blindspot-name,
+[data-theme="light"] .chk-cta-card h4 {
+  color: #1a1a2e;
+}
+
+[data-theme="light"] .chk-risk-watch-text strong {
+  color: #1a1a2e;
+}
+
+[data-theme="light"] .chk-risk-card-icon {
+  background: rgba(0,0,0,0.04);
+}
+
+[data-theme="light"] .chk-sel-icon {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+[data-theme="light"] .chk-gate-icon {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+[data-theme="light"] .chk-sel-footer {
+  border-top-color: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .chk-action-retake {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .chk-action-retake:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .chk-cta-icon {
+  background: rgba(0,0,0,0.04);
+}
+
+[data-theme="light"] .chk-cta-strategy .chk-cta-icon { background: rgba(139, 92, 246, 0.08); }
+[data-theme="light"] .chk-cta-deepdives .chk-cta-icon { background: rgba(212, 168, 67, 0.08); }
+[data-theme="light"] .chk-cta-premium .chk-cta-icon { background: rgba(239, 68, 68, 0.08); }
+
+[data-theme="light"] .chk-hero-badge {
+  background: rgba(239, 68, 68, 0.04);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+[data-theme="light"] .checker-promo-banner {
+  background: rgba(239, 68, 68, 0.03);
+  border-bottom-color: rgba(239, 68, 68, 0.08);
+}
+
+[data-theme="light"] .checker-promo-text {
+  color: rgba(0,0,0,0.6);
+}
+
+[data-theme="light"] .chk-blindspot-icon {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+[data-theme="light"] .chk-top-risk-rank {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+/* ── PROMO BANNER ── */
+.checker-promo-banner {
+  background: linear-gradient(90deg, rgba(239,68,68,0.08) 0%, rgba(239,68,68,0.15) 50%, rgba(239,68,68,0.08) 100%);
+  border-bottom: 1px solid rgba(239,68,68,0.2);
+  padding: 0.55rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.checker-promo-banner:hover { background: rgba(239,68,68,0.12); }
+.checker-promo-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.checker-promo-badge {
+  background: #ef4444;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+.checker-promo-text {
+  font-size: 0.82rem;
+  color: var(--text-muted, #b0b0b0);
+}
+.checker-promo-text strong { color: #ef4444; }
+.checker-promo-arrow {
+  color: #ef4444;
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.checker-promo-banner:hover .checker-promo-arrow { transform: translateX(4px); }
+
+/* ── HERO ── */
+.checker-hero {
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-5, 1.25rem) var(--space-8, 2rem);
+  max-width: 680px;
+  margin: 0 auto;
+}
+.checker-hero-badge {
+  display: inline-block;
+  background: rgba(239,68,68,0.12);
+  color: #ef4444;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+.checker-hero h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+}
+.checker-hero p {
+  color: var(--text-muted, #9ca3af);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-4, 1rem);
+}
+.checker-quiz-link {
+  color: #8b5cf6;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.checker-quiz-link:hover { color: #a78bfa; }
+
+@media (max-width: 600px) {
+  .checker-promo-text { font-size: 0.75rem; }
+}
