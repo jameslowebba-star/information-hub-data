@@ -62,6 +62,9 @@
     </div>
   </div>
 
+  <!-- STICKY HEADER (tools bar + nav stick together) -->
+  <div class="sticky-header">
+
   <!-- INTERACTIVE TOOLS BAR -->
   <div class="tools-bar">
     <div class="tools-bar-inner">
@@ -130,6 +133,8 @@
     </div>
   </nav>
 
+  </div><!-- /.sticky-header -->
+
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
     <ul role="list">
@@ -159,70 +164,32 @@
           <h1 class="hero-title">News &amp; Market<br><span class="accent">Intelligence</span></h1>
           <p class="hero-subtitle">Covering world news, politics, business, finance, crypto and African markets — fact-checked and delivered in real time.</p>
           <div class="hero-stats">
-            <div class="hero-stats-ticker">
-              <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-                {
-                  "symbols": [
-                    {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
-                    {"proName": "FOREXCOM:XAUUSD", "title": "Gold/oz"}
-                  ],
-                  "showSymbolLogo": true,
-                  "isTransparent": true,
-                  "displayMode": "regular",
-                  "colorTheme": "dark",
-                  "locale": "en"
-                }
-                </script>
-              </div>
-            </div>
+            <div class="stat"><span class="stat-num">6</span><span class="stat-label">Regions</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">5</span><span class="stat-label">Tools</span></div>
+            <div class="stat-divider"></div>
             <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Coverage</span></div>
           </div>
         </div>
       </section>
 
-      <!-- Intelligence Tools Showcase -->
-      <section class="tools-showcase">
-        <div class="tools-showcase-header">
-          <h2 class="tools-showcase-title">Intelligence Tools</h2>
-          <p class="tools-showcase-sub">Interactive tools powered by real research and live data</p>
-        </div>
-        <div class="tools-showcase-grid">
-          <div class="tool-card tool-card-featured" onclick="switchTab('tracker')" role="button" tabindex="0" aria-label="Open Geopolitical Risk Tracker">
-            <div class="tool-card-badge" style="background:#06b6d4;">NEW</div>
-            <div class="tool-card-icon" style="color:#06b6d4;">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.3"/></svg>
+      <!-- Intelligence Tools Banner (slim CTA) -->
+      <section class="tools-banner" onclick="switchTab('tools');" role="button" tabindex="0" aria-label="Explore Intelligence Tools">
+        <div class="tools-banner-inner">
+          <div class="tools-banner-left">
+            <div class="tools-banner-dots">
+              <span style="background:#06b6d4;"></span>
+              <span style="background:#10b981;"></span>
+              <span style="background:#d4a843;"></span>
+              <span style="background:#8b5cf6;"></span>
+              <span style="background:#ef4444;"></span>
             </div>
-            <h3 class="tool-card-name">Geopolitical Risk Tracker</h3>
-            <p class="tool-card-desc">10 active risks scored by BlackRock BGRI, asset impact maps, and an events calendar. Auto-updated intelligence.</p>
-            <span class="tool-card-cta" style="color:#06b6d4;">Explore Tracker &rarr;</span>
-          </div>
-          <div class="tool-card" onclick="switchTab('quiz')" role="button" tabindex="0" aria-label="Open K-Shaped Economy Quiz">
-            <div class="tool-card-badge" style="background:var(--color-finance);">LIVE</div>
-            <div class="tool-card-icon" style="color:var(--color-finance);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <div>
+              <h2 class="tools-banner-title">5 Intelligence Tools</h2>
+              <p class="tools-banner-sub">Tracker &middot; Simulator &middot; Quiz &middot; Strategy &middot; Portfolio</p>
             </div>
-            <h3 class="tool-card-name">K-Shaped Economy Quiz</h3>
-            <p class="tool-card-desc">Which side of the K are you on? Discover how macro shifts affect your financial position in 5 questions.</p>
-            <span class="tool-card-cta" style="color:var(--color-finance);">Take the Quiz &rarr;</span>
           </div>
-          <div class="tool-card" onclick="switchTab('strategy')" role="button" tabindex="0" aria-label="Open Strategy Advisor">
-            <div class="tool-card-icon" style="color:#8b5cf6;">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
-            <h3 class="tool-card-name">Strategy Advisor</h3>
-            <p class="tool-card-desc">Build a tailored investment strategy based on your risk profile, horizon, and current macro positioning.</p>
-            <span class="tool-card-cta" style="color:#8b5cf6;">Build Strategy &rarr;</span>
-          </div>
-          <div class="tool-card" onclick="switchTab('portfolio')" role="button" tabindex="0" aria-label="Open Portfolio Exposure Checker">
-            <div class="tool-card-icon" style="color:#ef4444;">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 class="tool-card-name">Portfolio Exposure Checker</h3>
-            <p class="tool-card-desc">Select your holdings and instantly see how geopolitical and macro risks affect your specific portfolio.</p>
-            <span class="tool-card-cta" style="color:#ef4444;">Check Exposure &rarr;</span>
-          </div>
+          <span class="tools-banner-cta">Explore All &rarr;</span>
         </div>
       </section>
 
@@ -246,6 +213,7 @@
             Breaking &amp; Latest
           </h2>
           <p class="home-feed-sub">Most recent breaking stories from our live feed</p>
+          <button class="view-all-link" onclick="switchTab('crypto');">View all coverage &rarr;</button>
         </div>
         <div class="news-grid" id="homeBreakingGrid">
           <article class="news-card">
@@ -277,6 +245,7 @@
             In Case You Missed It
           </h2>
           <p class="home-feed-sub">Key stories from the past 24 hours</p>
+          <button class="view-all-link" onclick="switchTab('africa');">Browse by region &rarr;</button>
         </div>
         <div class="news-grid" id="homeIcymiGrid">
           <article class="news-card">
@@ -807,6 +776,11 @@
 
     <div class="tab-content" id="tab-tracker" role="tabpanel">
       <div class="quiz-page">
+        <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+          <button onclick="switchTab('tools');">Intelligence Tools</button>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Geopolitical Tracker</span>
+        </nav>
         <div class="tracker-hero">
           <div class="tracker-hero-badge">LIVE DATA</div>
           <h1>Geopolitical Risk Tracker</h1>
@@ -820,7 +794,11 @@
     <!-- QUIZ TAB -->
     <div class="tab-content" id="tab-quiz" role="tabpanel">
       <div class="quiz-page">
-        <!-- Quiz content loaded by quiz.js -->
+        <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+          <button onclick="switchTab('tools');">Intelligence Tools</button>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">K-Shaped Economy Quiz</span>
+        </nav>
         <div id="quizApp"></div>
       </div>
     </div>
@@ -828,6 +806,11 @@
     <!-- STRATEGY ADVISOR TAB -->
     <div class="tab-content" id="tab-strategy" role="tabpanel">
       <div class="quiz-page">
+        <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+          <button onclick="switchTab('tools');">Intelligence Tools</button>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Strategy Advisor</span>
+        </nav>
         <div id="advisorApp"></div>
       </div>
     </div>
@@ -835,6 +818,11 @@
     <!-- PORTFOLIO EXPOSURE CHECKER TAB -->
     <div class="tab-content" id="tab-portfolio" role="tabpanel">
       <div class="quiz-page">
+        <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+          <button onclick="switchTab('tools');">Intelligence Tools</button>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Portfolio Checker</span>
+        </nav>
         <div id="checkerApp"></div>
       </div>
     </div>
@@ -842,6 +830,11 @@
     <!-- SCENARIO SIMULATOR TAB -->
     <div class="tab-content" id="tab-scenarios" role="tabpanel">
       <div class="quiz-page">
+        <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+          <button onclick="switchTab('tools');">Intelligence Tools</button>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Scenario Simulator</span>
+        </nav>
         <div id="simulatorApp"></div>
       </div>
     </div>
@@ -1030,16 +1023,23 @@
         <p class="footer-social-note">No sponsored content &middot; No trackers &middot; Independent editorial</p>
       </div>
       <div class="footer-col">
-        <p class="footer-col-title">Navigate</p>
+        <p class="footer-col-title">News</p>
         <ul class="footer-nav">
-          <li><a href="#" onclick="switchTab('home'); return false;">Home</a></li>
           <li><a href="#" onclick="switchTab('crypto'); return false;">Crypto</a></li>
           <li><a href="#" onclick="switchTab('africa'); return false;">Africa</a></li>
+          <li><a href="#" onclick="switchTab('usa'); return false;">USA</a></li>
+          <li><a href="#" onclick="switchTab('europe'); return false;">Europe</a></li>
           <li><a href="#" onclick="switchTab('finance'); return false;">Finance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Intelligence</p>
+        <ul class="footer-nav">
+          <li><a href="#" onclick="switchTab('tools'); return false;">All Tools</a></li>
           <li><a href="#" onclick="switchTab('tracker'); return false;">Geo Tracker</a></li>
-          <li><a href="#" onclick="switchTab('quiz'); return false;">Quiz</a></li>
-          <li><a href="#" onclick="switchTab('portfolio'); return false;">Portfolio</a></li>
-          <li><a href="#" onclick="switchTab('scenarios'); return false;">Scenarios</a></li>
+          <li><a href="#" onclick="switchTab('scenarios'); return false;">Scenario Simulator</a></li>
+          <li><a href="#" onclick="switchTab('quiz'); return false;">K-Shaped Quiz</a></li>
+          <li><a href="#" onclick="switchTab('portfolio'); return false;">Portfolio Checker</a></li>
         </ul>
       </div>
       <div class="footer-col">
