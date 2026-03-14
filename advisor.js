@@ -1,3 +1,5 @@
+/* Safe storage wrapper — fallback for sandboxed environments */
+var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.removeItem("__t");return safeStorage;}catch(e){var m={};return{getItem:function(k){return m[k]||null;},setItem:function(k,v){m[k]=String(v);},removeItem:function(k){delete m[k];}};}})();
 // advisor.js — Strategy Advisor Interactive Tool
 (function() {
   'use strict';
@@ -170,7 +172,7 @@
   // Check if quiz data was passed
   function checkQuizData() {
     try {
-      var stored = sessionStorage.getItem('ih_quiz_data');
+      var stored = safeStorage.getItem('ih_quiz_data');
       if (stored) {
         quizDataFromQuiz = JSON.parse(stored);
         return true;
@@ -452,7 +454,7 @@
   window.startAdvisor = function(quizData) {
     if (quizData) {
       quizDataFromQuiz = quizData;
-      sessionStorage.setItem('ih_quiz_data', JSON.stringify(quizData));
+      safeStorage.setItem('ih_quiz_data', JSON.stringify(quizData));
     }
     advisorCurrent = 0;
     advisorAnswers = [];

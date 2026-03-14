@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="./advisor.css">
   <link rel="stylesheet" href="./checker.css">
   <link rel="stylesheet" href="./tracker.css">
+  <link rel="stylesheet" href="./simulator.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -85,6 +86,11 @@
           <span class="tools-bar-dot" style="background:#ef4444;"></span>
           <span>Portfolio Checker</span>
         </button>
+        <span class="tools-bar-sep"></span>
+        <button class="tools-bar-item" onclick="switchTab('scenarios');">
+          <span class="tools-bar-dot" style="background:#10b981;"></span>
+          <span>Scenarios</span>
+        </button>
       </div>
     </div>
   </div>
@@ -122,6 +128,7 @@
           <li role="tab" class="nav-tab tab-quiz" data-tab="quiz" aria-selected="false" tabindex="0" style="color:var(--color-finance);">QUIZ</li>
           <li role="tab" class="nav-tab tab-strategy" data-tab="strategy" aria-selected="false" tabindex="0" style="color:#8b5cf6;">STRATEGY</li>
           <li role="tab" class="nav-tab tab-portfolio" data-tab="portfolio" aria-selected="false" tabindex="0" style="color:#ef4444;">PORTFOLIO</li>
+          <li role="tab" class="nav-tab tab-scenarios" data-tab="scenarios" aria-selected="false" tabindex="0" style="color:#10b981;">SCENARIOS</li>
         </ul>
       </div>
     </div>
@@ -141,6 +148,7 @@
       <li role="tab" class="mob-tab tab-quiz" data-tab="quiz" tabindex="0" style="color:var(--color-finance);">QUIZ</li>
       <li role="tab" class="mob-tab tab-strategy" data-tab="strategy" tabindex="0" style="color:#8b5cf6;">STRATEGY</li>
       <li role="tab" class="mob-tab tab-portfolio" data-tab="portfolio" tabindex="0" style="color:#ef4444;">PORTFOLIO</li>
+      <li role="tab" class="mob-tab tab-scenarios" data-tab="scenarios" tabindex="0" style="color:#10b981;">SCENARIOS</li>
     </ul>
   </div>
 
@@ -789,6 +797,13 @@
       </div>
     </div>
 
+    <!-- SCENARIO SIMULATOR TAB -->
+    <div class="tab-content" id="tab-scenarios" role="tabpanel">
+      <div class="quiz-page">
+        <div id="simulatorApp"></div>
+      </div>
+    </div>
+
     <!-- CONTACT TAB -->
     <div class="tab-content" id="tab-contact" role="tabpanel">
       <div class="container">
@@ -982,6 +997,7 @@
           <li><a href="#" onclick="switchTab('tracker'); return false;">Geo Tracker</a></li>
           <li><a href="#" onclick="switchTab('quiz'); return false;">Quiz</a></li>
           <li><a href="#" onclick="switchTab('portfolio'); return false;">Portfolio</a></li>
+          <li><a href="#" onclick="switchTab('scenarios'); return false;">Scenarios</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1015,5 +1031,6 @@
   <script src="./advisor.js"></script>
   <script src="./checker.js"></script>
   <script src="./tracker.js"></script>
+  <script src="./simulator.js"></script>
 </body>
 </html>

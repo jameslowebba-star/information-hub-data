@@ -1,3 +1,5 @@
+/* Safe storage wrapper — fallback for sandboxed environments */
+var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.removeItem("__t");return safeStorage;}catch(e){var m={};return{getItem:function(k){return m[k]||null;},setItem:function(k,v){m[k]=String(v);},removeItem:function(k){delete m[k];}};}})();
 // tracker.js — Geopolitical Risk Tracker v1
 // Sources: BlackRock BGRI March 2026, Stifel Geopolitical Dashboard, J.P. Morgan GPR
 (function() {
@@ -863,8 +865,8 @@
   });
   themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
-  // Store tracker data in sessionStorage for cross-tool reference
-  sessionStorage.setItem('ih_tracker_data', JSON.stringify({
+  // Store tracker data in safeStorage for cross-tool reference
+  safeStorage.setItem('ih_tracker_data', JSON.stringify({
     compositeScore: getCompositeScore(),
     level: getCompositeLevel().label,
     highRiskCount: risks.filter(r => r.likelihood === 'high').length,

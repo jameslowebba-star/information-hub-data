@@ -1,3 +1,5 @@
+/* Safe storage wrapper — fallback for sandboxed environments */
+var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.removeItem("__t");return safeStorage;}catch(e){var m={};return{getItem:function(k){return m[k]||null;},setItem:function(k,v){m[k]=String(v);},removeItem:function(k){delete m[k];}};}})();
 // quiz.js — K-Shaped Economy Interactive Quiz
 (function() {
   'use strict';
@@ -281,7 +283,7 @@
         if (typeof window.startAdvisor === 'function') {
           window.startAdvisor(quizPayload);
         } else {
-          sessionStorage.setItem('ih_quiz_data', JSON.stringify(quizPayload));
+          safeStorage.setItem('ih_quiz_data', JSON.stringify(quizPayload));
         }
         if (typeof window.switchTab === 'function') {
           window.switchTab('strategy');

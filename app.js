@@ -1,3 +1,5 @@
+/* Safe storage wrapper — fallback for sandboxed environments */
+var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.removeItem("__t");return safeStorage;}catch(e){var m={};return{getItem:function(k){return m[k]||null;},setItem:function(k,v){m[k]=String(v);},removeItem:function(k){delete m[k];}};}})();
 // app.js — Information Hub v2
 (function() {
   'use strict';
@@ -64,7 +66,7 @@
     if (hamburger && hamburger.classList.contains('open')) hamburger.click();
     // Hide the global Deep Dive Brief section on quiz tab (quiz has its own)
     var ddb = document.getElementById('deepDiveBrief');
-    if (ddb) ddb.style.display = (tabId === 'quiz' || tabId === 'strategy' || tabId === 'portfolio' || tabId === 'tracker') ? 'none' : '';
+    if (ddb) ddb.style.display = (tabId === 'quiz' || tabId === 'strategy' || tabId === 'portfolio' || tabId === 'tracker' || tabId === 'scenarios') ? 'none' : '';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -437,9 +439,9 @@
         var data = await res.json();
         risks = data.risks || [];
       } catch (fetchErr) {
-        // Fallback: try sessionStorage from tracker, or use embedded defaults
+        // Fallback: try safeStorage from tracker, or use embedded defaults
         try {
-          var stored = sessionStorage.getItem('ih_tracker_data');
+          var stored = safeStorage.getItem('ih_tracker_data');
           if (stored) {
             var parsed = JSON.parse(stored);
             // Only use if risks have the impacts field (full data)

@@ -1,3 +1,5 @@
+/* Safe storage wrapper — fallback for sandboxed environments */
+var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.removeItem("__t");return safeStorage;}catch(e){var m={};return{getItem:function(k){return m[k]||null;},setItem:function(k,v){m[k]=String(v);},removeItem:function(k){delete m[k];}};}})();
 // checker.js — Portfolio Exposure Checker Interactive Tool
 (function() {
   'use strict';
@@ -336,14 +338,14 @@
 
   function checkEmailCaptured() {
     try {
-      var quiz = sessionStorage.getItem('ih_quiz_data');
+      var quiz = safeStorage.getItem('ih_quiz_data');
       if (quiz) {
         var parsed = JSON.parse(quiz);
         if (parsed.emailCaptured) return true;
       }
     } catch(e) {}
     try {
-      var adv = sessionStorage.getItem('ih_advisor_data');
+      var adv = safeStorage.getItem('ih_advisor_data');
       if (adv) {
         var parsed2 = JSON.parse(adv);
         if (parsed2.emailCaptured) return true;
@@ -494,9 +496,9 @@
     var topRisks = getTopRisks(ids);
     var blindSpot = getBlindSpot(ids);
 
-    // Store in sessionStorage
+    // Store in safeStorage
     try {
-      sessionStorage.setItem('ih_checker_data', JSON.stringify({
+      safeStorage.setItem('ih_checker_data', JSON.stringify({
         assets: ids,
         score: portfolioScore,
         level: portfolioLevel,
