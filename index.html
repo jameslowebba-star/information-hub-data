@@ -124,11 +124,7 @@
           <li role="tab" class="nav-tab tab-europe" data-tab="europe" aria-selected="false" tabindex="0">EUROPE</li>
           <li role="tab" class="nav-tab tab-finance" data-tab="finance" aria-selected="false" tabindex="0">FINANCE</li>
           <li role="tab" class="nav-tab tab-suggestions" data-tab="suggestions" aria-selected="false" tabindex="0">SUGGESTIONS</li>
-          <li role="tab" class="nav-tab tab-tracker" data-tab="tracker" aria-selected="false" tabindex="0" style="color:#06b6d4;">GEO TRACKER</li>
-          <li role="tab" class="nav-tab tab-quiz" data-tab="quiz" aria-selected="false" tabindex="0" style="color:var(--color-finance);">QUIZ</li>
-          <li role="tab" class="nav-tab tab-strategy" data-tab="strategy" aria-selected="false" tabindex="0" style="color:#8b5cf6;">STRATEGY</li>
-          <li role="tab" class="nav-tab tab-portfolio" data-tab="portfolio" aria-selected="false" tabindex="0" style="color:#ef4444;">PORTFOLIO</li>
-          <li role="tab" class="nav-tab tab-scenarios" data-tab="scenarios" aria-selected="false" tabindex="0" style="color:#10b981;">SCENARIOS</li>
+          <li role="tab" class="nav-tab tab-tools" data-tab="tools" aria-selected="false" tabindex="0" style="color:#10b981;">INTELLIGENCE TOOLS</li>
         </ul>
       </div>
     </div>
@@ -144,11 +140,7 @@
       <li role="tab" class="mob-tab tab-europe" data-tab="europe" tabindex="0">EUROPE</li>
       <li role="tab" class="mob-tab tab-finance" data-tab="finance" tabindex="0">FINANCE</li>
       <li role="tab" class="mob-tab tab-suggestions" data-tab="suggestions" tabindex="0">SUGGESTIONS</li>
-      <li role="tab" class="mob-tab tab-tracker" data-tab="tracker" tabindex="0" style="color:#06b6d4;">GEO TRACKER</li>
-      <li role="tab" class="mob-tab tab-quiz" data-tab="quiz" tabindex="0" style="color:var(--color-finance);">QUIZ</li>
-      <li role="tab" class="mob-tab tab-strategy" data-tab="strategy" tabindex="0" style="color:#8b5cf6;">STRATEGY</li>
-      <li role="tab" class="mob-tab tab-portfolio" data-tab="portfolio" tabindex="0" style="color:#ef4444;">PORTFOLIO</li>
-      <li role="tab" class="mob-tab tab-scenarios" data-tab="scenarios" tabindex="0" style="color:#10b981;">SCENARIOS</li>
+      <li role="tab" class="mob-tab tab-tools" data-tab="tools" tabindex="0" style="color:#10b981;">INTELLIGENCE TOOLS</li>
     </ul>
   </div>
 
@@ -763,6 +755,56 @@
     </div>
 
     <!-- GEO TRACKER TAB -->
+    <!-- TOOLS LANDING PAGE -->
+    <div class="tab-content" id="tab-tools" role="tabpanel">
+      <div class="tools-landing">
+        <div class="tools-landing-header">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <h1 class="tools-landing-title">Intelligence Tools</h1>
+          <p class="tools-landing-sub">Interactive tools powered by research from Goldman Sachs, Bloomberg, BlackRock, and more. All free.</p>
+        </div>
+        <div class="tools-landing-grid">
+          <button class="tools-landing-card" onclick="switchTab('tracker');">
+            <div class="tools-card-accent" style="background:#06b6d4;"></div>
+            <div class="tools-card-icon" style="color:#06b6d4;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+            <div class="tools-card-badge" style="background:#06b6d4;">LIVE</div>
+            <h3>Geopolitical Tracker</h3>
+            <p>10 active risks scored in real time. See what's moving markets and how you're exposed.</p>
+            <span class="tools-card-cta" style="color:#06b6d4;">Open Tracker →</span>
+          </button>
+          <button class="tools-landing-card" onclick="switchTab('scenarios');">
+            <div class="tools-card-accent" style="background:#10b981;"></div>
+            <div class="tools-card-icon" style="color:#10b981;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
+            <div class="tools-card-badge" style="background:#10b981;">NEW</div>
+            <h3>Scenario Simulator</h3>
+            <p>6 geopolitical what-if scenarios. See projected impacts across your asset classes.</p>
+            <span class="tools-card-cta" style="color:#10b981;">Run Scenarios →</span>
+          </button>
+          <button class="tools-landing-card" onclick="switchTab('quiz');">
+            <div class="tools-card-accent" style="background:#d4a843;"></div>
+            <div class="tools-card-icon" style="color:#d4a843;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <h3>K-Shaped Economy Quiz</h3>
+            <p>6 questions. Find out which side of the K-shaped divide you're on.</p>
+            <span class="tools-card-cta" style="color:#d4a843;">Take the Quiz →</span>
+          </button>
+          <button class="tools-landing-card" onclick="switchTab('strategy');">
+            <div class="tools-card-accent" style="background:#8b5cf6;"></div>
+            <div class="tools-card-icon" style="color:#8b5cf6;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <h3>Strategy Advisor</h3>
+            <p>4 questions about your goals. Get a personalized strategy across Shield, Build, Earn, and Watch.</p>
+            <span class="tools-card-cta" style="color:#8b5cf6;">Get Your Strategy →</span>
+          </button>
+          <button class="tools-landing-card" onclick="switchTab('portfolio');">
+            <div class="tools-card-accent" style="background:#ef4444;"></div>
+            <div class="tools-card-icon" style="color:#ef4444;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+            <h3>Portfolio Checker</h3>
+            <p>Select your holdings. Get a risk exposure report with blind spot analysis.</p>
+            <span class="tools-card-cta" style="color:#ef4444;">Check Your Portfolio →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="tab-content" id="tab-tracker" role="tabpanel">
       <div class="quiz-page">
         <div class="tracker-hero">

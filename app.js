@@ -49,10 +49,22 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
   const allTabs = document.querySelectorAll('[data-tab]');
   const allContent = document.querySelectorAll('.tab-content');
 
+  // Tool tab IDs that live under the INTELLIGENCE TOOLS parent
+  var toolTabIds = ['tracker', 'quiz', 'strategy', 'portfolio', 'scenarios'];
+
   window.switchTab = function(tabId) {
+    var isToolChild = toolTabIds.indexOf(tabId) !== -1;
+
     allTabs.forEach(t => {
-      t.classList.toggle('active', t.dataset.tab === tabId);
-      t.setAttribute('aria-selected', t.dataset.tab === tabId ? 'true' : 'false');
+      var tabKey = t.dataset.tab;
+      // If switching to a child tool tab, highlight the 'tools' parent nav tab
+      if (isToolChild) {
+        t.classList.toggle('active', tabKey === 'tools');
+        t.setAttribute('aria-selected', tabKey === 'tools' ? 'true' : 'false');
+      } else {
+        t.classList.toggle('active', tabKey === tabId);
+        t.setAttribute('aria-selected', tabKey === tabId ? 'true' : 'false');
+      }
     });
     allContent.forEach(c => {
       if (c.id === 'tab-' + tabId) {
@@ -64,9 +76,9 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
       }
     });
     if (hamburger && hamburger.classList.contains('open')) hamburger.click();
-    // Hide the global Deep Dive Brief section on quiz tab (quiz has its own)
+    // Hide the global Deep Dive Brief section on tool tabs and tools landing
     var ddb = document.getElementById('deepDiveBrief');
-    if (ddb) ddb.style.display = (tabId === 'quiz' || tabId === 'strategy' || tabId === 'portfolio' || tabId === 'tracker' || tabId === 'scenarios') ? 'none' : '';
+    if (ddb) ddb.style.display = (isToolChild || tabId === 'tools') ? 'none' : '';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
