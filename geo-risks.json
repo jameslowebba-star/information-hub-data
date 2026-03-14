@@ -1,0 +1,388 @@
+{
+  "last_updated": "2026-03-14T01:52:33.099495+00:00",
+  "total_articles_analyzed": 121,
+  "risks": [
+    {
+      "id": "middle-east",
+      "name": "Middle East Regional War",
+      "likelihood": "high",
+      "score": 9.7,
+      "description": "Regional conflict has escalated following U.S.-Israel 'Epic Fury' operation targeting Iran's leadership and military infrastructure. Iran retaliating with strikes on Israel, U.S. assets, and regional targets.",
+      "impacts": [
+        "Oil & Gas",
+        "Gold",
+        "Brent Crude",
+        "S&P 500",
+        "Defense Stocks"
+      ],
+      "direction": "up",
+      "region": "Middle East",
+      "lastUpdated": "2026-03-14",
+      "source": "BlackRock BGRI",
+      "keyEvent": "U.S.-Iran direct military engagement ongoing since Feb 28, 2026",
+      "impactOnPortfolio": {
+        "positive": [
+          "Gold",
+          "Brent Crude",
+          "Defense Stocks"
+        ],
+        "negative": [
+          "S&P 500",
+          "Emerging Market Equities"
+        ]
+      },
+      "newsAttention": 116
+    },
+    {
+      "id": "us-china",
+      "name": "U.S.\u2013China Strategic Competition",
+      "likelihood": "high",
+      "score": 8.6,
+      "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
+      "impacts": [
+        "Tech Stocks",
+        "Semiconductors",
+        "Bitcoin",
+        "USD/CNY",
+        "Taiwan ETFs"
+      ],
+      "direction": "up",
+      "region": "Indo-Pacific",
+      "lastUpdated": "2026-03-14",
+      "source": "BlackRock BGRI",
+      "keyEvent": "New U.S. semiconductor restrictions on China, March 2026",
+      "impactOnPortfolio": {
+        "positive": [
+          "Gold",
+          "Bitcoin",
+          "Defense Stocks"
+        ],
+        "negative": [
+          "Tech Stocks",
+          "Semiconductors",
+          "Taiwan ETFs"
+        ]
+      },
+      "newsAttention": 8
+    },
+    {
+      "id": "trade-war",
+      "name": "Global Trade Fragmentation",
+      "likelihood": "high",
+      "score": 8.4,
+      "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
+      "impacts": [
+        "S&P 500",
+        "Manufacturing",
+        "USD/ZAR",
+        "Emerging Markets",
+        "Commodities"
+      ],
+      "direction": "up",
+      "region": "Global",
+      "lastUpdated": "2026-03-14",
+      "source": "BlackRock BGRI",
+      "keyEvent": "U.S. tariff threats against multiple nations over Greenland dispute",
+      "impactOnPortfolio": {
+        "positive": [
+          "Gold",
+          "USD"
+        ],
+        "negative": [
+          "Emerging Markets",
+          "Manufacturing",
+          "Global Trade ETFs"
+        ]
+      },
+      "newsAttention": 12
+    },
+    {
+      "id": "russia-nato",
+      "name": "Russia\u2013NATO Confrontation",
+      "likelihood": "medium",
+      "score": 7.6,
+      "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
+      "impacts": [
+        "European Equities",
+        "Natural Gas",
+        "Defense Stocks",
+        "EUR/USD",
+        "Gold"
+      ],
+      "direction": "up",
+      "region": "Europe",
+      "lastUpdated": "2026-03-14",
+      "source": "BlackRock BGRI",
+      "keyEvent": "Continued fighting in Ukraine, NATO Article 5 drills expanded",
+      "impactOnPortfolio": {
+        "positive": [
+          "Defense Stocks",
+          "Gold",
+          "Natural Gas"
+        ],
+        "negative": [
+          "European Equities",
+          "EUR/USD"
+        ]
+      },
+      "newsAttention": 20
+    },
+    {
+      "id": "cyber-warfare",
+      "name": "Major Cyber Attack",
+      "likelihood": "medium",
+      "score": 6.9,
+      "description": "State-sponsored cyber operations targeting critical infrastructure, financial systems, and energy grids.",
+      "impacts": [
+        "Cybersecurity Stocks",
+        "Tech Stocks",
+        "Banking",
+        "Crypto Exchanges",
+        "Insurance"
+      ],
+      "direction": "up",
+      "region": "Global",
+      "lastUpdated": "2026-03-14",
+      "source": "Stifel Dashboard",
+      "keyEvent": "Multiple state-sponsored attacks on European energy grids detected",
+      "impactOnPortfolio": {
+        "positive": [
+          "Cybersecurity Stocks"
+        ],
+        "negative": [
+          "Banking",
+          "Tech Stocks",
+          "Crypto Exchanges"
+        ]
+      },
+      "newsAttention": 0
+    },
+    {
+      "id": "energy-crisis",
+      "name": "Global Energy Disruption",
+      "likelihood": "medium",
+      "score": 7.9,
+      "description": "Strait of Hormuz chokepoint under active threat. Oil supply disruptions from Middle East conflict. OPEC+ production cuts maintaining price pressure.",
+      "impacts": [
+        "Brent Crude",
+        "Natural Gas",
+        "Energy Stocks",
+        "Airlines",
+        "Emerging Markets"
+      ],
+      "direction": "up",
+      "region": "Global",
+      "lastUpdated": "2026-03-14",
+      "source": "BlackRock BGRI",
+      "keyEvent": "Hormuz Strait shipping insurance premiums at record highs",
+      "impactOnPortfolio": {
+        "positive": [
+          "Brent Crude",
+          "Energy Stocks",
+          "Natural Gas"
+        ],
+        "negative": [
+          "Airlines",
+          "Manufacturing"
+        ]
+      },
+      "newsAttention": 8
+    },
+    {
+      "id": "western-alliance",
+      "name": "Western Alliance Fractures",
+      "likelihood": "medium",
+      "score": 6.8,
+      "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
+      "impacts": [
+        "EUR/USD",
+        "NATO Defense ETFs",
+        "European Equities",
+        "USD",
+        "Treasury Bonds"
+      ],
+      "direction": "up",
+      "region": "Transatlantic",
+      "lastUpdated": "2026-03-14",
+      "source": "BlackRock BGRI",
+      "keyEvent": "EU announces independent defense fund, reduced reliance on U.S.",
+      "impactOnPortfolio": {
+        "positive": [
+          "European Defense Stocks",
+          "Gold"
+        ],
+        "negative": [
+          "USD",
+          "U.S. Treasury Bonds"
+        ]
+      },
+      "newsAttention": 4
+    },
+    {
+      "id": "africa-instability",
+      "name": "African Political Instability",
+      "likelihood": "medium",
+      "score": 6.6,
+      "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
+      "impacts": [
+        "JSE All Share",
+        "USD/ZAR",
+        "Mining Stocks",
+        "Platinum",
+        "Rare Earth Minerals"
+      ],
+      "direction": "up",
+      "region": "Africa",
+      "lastUpdated": "2026-03-14",
+      "source": "ZeroFox Intel",
+      "keyEvent": "Multiple Sahel nations restricting Western mining operations",
+      "impactOnPortfolio": {
+        "positive": [
+          "Platinum",
+          "Rare Earth ETFs"
+        ],
+        "negative": [
+          "JSE All Share",
+          "USD/ZAR"
+        ]
+      },
+      "newsAttention": 4
+    },
+    {
+      "id": "crypto-regulation",
+      "name": "Crypto Regulatory Crackdown",
+      "likelihood": "medium",
+      "score": 6.2,
+      "description": "Global regulatory frameworks tightening. U.S. SEC enforcement actions. EU MiCA implementation creating compliance burdens.",
+      "impacts": [
+        "Bitcoin",
+        "Ethereum",
+        "Exchange Tokens",
+        "DeFi",
+        "Stablecoins"
+      ],
+      "direction": "down",
+      "region": "Global",
+      "lastUpdated": "2026-03-14",
+      "source": "J.P. Morgan GPR",
+      "keyEvent": "EU MiCA fully enforced, multiple exchanges exit smaller markets",
+      "impactOnPortfolio": {
+        "positive": [
+          "Regulated Crypto ETFs"
+        ],
+        "negative": [
+          "Bitcoin",
+          "Altcoins",
+          "Exchange Tokens"
+        ]
+      },
+      "newsAttention": 0
+    },
+    {
+      "id": "debt-crisis",
+      "name": "Emerging Market Debt Crisis",
+      "likelihood": "medium",
+      "score": 6.0,
+      "description": "High USD rates straining EM debt sustainability. Several frontier economies approaching default.",
+      "impacts": [
+        "EM Bonds",
+        "USD/ZAR",
+        "EM Equities",
+        "Commodities",
+        "Gold"
+      ],
+      "direction": "up",
+      "region": "Global",
+      "lastUpdated": "2026-03-14",
+      "source": "J.P. Morgan GPR",
+      "keyEvent": "Multiple frontier economies in IMF debt restructuring talks",
+      "impactOnPortfolio": {
+        "positive": [
+          "Gold",
+          "USD",
+          "U.S. Treasury Bonds"
+        ],
+        "negative": [
+          "EM Bonds",
+          "EM Equities",
+          "USD/ZAR"
+        ]
+      },
+      "newsAttention": 0
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-03-18",
+      "event": "Fed FOMC Interest Rate Decision",
+      "risk": "trade-war",
+      "category": "economic"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "EU Emergency Defense Summit",
+      "risk": "western-alliance",
+      "category": "political"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "OPEC+ Emergency Production Meeting",
+      "risk": "energy-crisis",
+      "category": "economic"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "U.S.-China Trade Review Deadline",
+      "risk": "us-china",
+      "category": "economic"
+    },
+    {
+      "date": "2026-04-10",
+      "event": "IMF Spring Meetings",
+      "risk": "debt-crisis",
+      "category": "economic"
+    },
+    {
+      "date": "2026-04-15",
+      "event": "UN Security Council \u2014 Iran Resolution Vote",
+      "risk": "middle-east",
+      "category": "political"
+    },
+    {
+      "date": "2026-04-22",
+      "event": "NATO Defense Ministers Meeting",
+      "risk": "russia-nato",
+      "category": "military"
+    },
+    {
+      "date": "2026-05-01",
+      "event": "South Africa Budget Supplementary",
+      "risk": "africa-instability",
+      "category": "economic"
+    },
+    {
+      "date": "2026-05-15",
+      "event": "EU Crypto Compliance Deadline (MiCA Phase 2)",
+      "risk": "crypto-regulation",
+      "category": "regulatory"
+    },
+    {
+      "date": "2026-06-01",
+      "event": "G7 Summit \u2014 Trade & Security Agenda",
+      "risk": "trade-war",
+      "category": "political"
+    },
+    {
+      "date": "2026-06-15",
+      "event": "PLA Anniversary \u2014 Taiwan Strait Watch",
+      "risk": "us-china",
+      "category": "military"
+    },
+    {
+      "date": "2026-07-01",
+      "event": "African Union Mid-Year Summit",
+      "risk": "africa-instability",
+      "category": "political"
+    }
+  ]
+}
