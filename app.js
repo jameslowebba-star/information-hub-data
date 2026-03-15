@@ -254,7 +254,8 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
   });
 
   // ===== LIVE NEWS FEED =====
-  const NEWS_API = 'https://raw.githubusercontent.com/jameslowebba-star/information-hub-data/main/latest-news.json';
+  // Use jsDelivr CDN (purges cache on every commit) with raw.githubusercontent fallback
+  const NEWS_API = 'https://cdn.jsdelivr.net/gh/jameslowebba-star/information-hub-data@main/latest-news.json';
 
   // Map category to badge class
   const BADGE_MAP = {
