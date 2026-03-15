@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-15T22:25:50.678869+00:00",
+  "last_updated": "2026-03-15T23:27:40.680231+00:00",
   "total_articles_analyzed": 111,
   "risks": [
     {
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "trade-war",
