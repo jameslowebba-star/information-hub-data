@@ -82,7 +82,6 @@ CATEGORY_KEYWORDS = {
         "starmer", "brussels", "ecb", "euro ", "eurozone", "eurostoxx",
         "london", "paris", "berlin", "nordstream", "türkiye", "turkey",
         "alps", "swiss", "austria", "hungary", "czech", "romania", "greece",
-        "premier league", "champions league", "la liga", "serie a", "bundesliga",
     ],
     "usa": [
         "us ", "u.s.", "united states", "american", "trump", "biden",
@@ -99,13 +98,84 @@ CATEGORY_KEYWORDS = {
         "bank", "imf", "world bank", "trade", "tariff", "bond",
         "yield", "recession", "bull", "bear", "rally", "plunge",
         "earnings", "revenue", "profit", "ipo", "merger", "acquisition",
-        "f1 ", "formula one", "formula 1",
     ],
 }
 
 # Keywords that should NEVER assign a category (too generic / cross-cutting)
 # "military", "war" etc. alone shouldn't auto-assign to USA
 GENERIC_KEYWORDS = {"military", "war", "conflict", "attack", "strike", "troops"}
+
+# ─── SPORTS FILTER ───────────────────────────────────────────────────
+# Pure sports/match results don't fit our mission (news, politics,
+# business, finance, crypto, geopolitics). But sports stories WITH
+# geopolitical angles (e.g. F1 cancelled due to war) should stay.
+
+SPORTS_KEYWORDS = {
+    # Football/Soccer
+    "premier league", "champions league", "la liga", "serie a",
+    "bundesliga", "europa league", "carabao cup", "fa cup",
+    "ligue 1", "eredivisie", "copa del rey", "coppa italia",
+    # Match result language
+    "man city", "manchester city", "manchester united", "man united",
+    "liverpool", "chelsea", "arsenal", "tottenham", "spurs",
+    "real madrid", "barcelona", "atletico madrid", "bayern munich",
+    "juventus", "ac milan", "inter milan", "psg",
+    "west ham", "everton", "aston villa", "newcastle united",
+    "leicester", "wolves", "crystal palace", "brighton",
+    "fulham", "bournemouth", "brentford", "nottingham forest",
+    # Match-specific terms
+    "hat-trick", "hat trick", "penalty kick", "red card",
+    "yellow card", "clean sheet", "golden boot", "ballon d'or",
+    "transfer window", "transfer deadline", "loan deal",
+    # Other pure sports
+    "tennis open", "grand slam", "wimbledon", "us open tennis",
+    "rugby world cup", "six nations",
+    "cricket world cup", "t20", "test match",
+    "nba", "nfl", "nhl", "mlb", "super bowl",
+    "olympics medal", "olympic games",
+}
+
+# These override the sports filter — if present alongside sports
+# keywords, the article has geopolitical relevance and should stay
+SPORTS_EXCEPTION_KEYWORDS = {
+    "war", "conflict", "cancel", "cancelled", "boycott", "ban",
+    "sanction", "protest", "political", "government", "security",
+    "terror", "bomb", "attack", "killed", "death", "threat",
+    "corruption", "arrest", "investigation", "fraud", "money laundering",
+    "human rights", "racism", "discrimination", "refugee",
+    "economic impact", "financial", "billion", "million",
+}
+
+
+# Noise content — always filter out regardless of context
+NOISE_KEYWORDS = {
+    "powerball", "lotto", "lottery results",
+    "weather forecast", "weather:", "heatwave hits",
+    "hockey festival", "rugby festival", "cricket festival",
+    "razzie award", "razzie", "golden raspberry",
+    "horoscope", "zodiac", "star sign",
+    "recipe of the day", "recipes:",
+}
+
+
+def is_pure_sports(title, description):
+    """Return True if article is pure sports content with no geopolitical angle."""
+    text = f"{title} {description}".lower()
+    # Check if it contains sports keywords
+    has_sports = any(kw in text for kw in SPORTS_KEYWORDS)
+    if not has_sports:
+        return False
+    # Check if it also has geopolitical/exception keywords
+    has_exception = any(kw in text for kw in SPORTS_EXCEPTION_KEYWORDS)
+    if has_exception:
+        return False  # Keep it — has a real-world angle
+    return True  # Pure sports, filter it out
+
+
+def is_noise(title, description):
+    """Return True if article is irrelevant filler (lottery, weather, entertainment)."""
+    text = f"{title} {description}".lower()
+    return any(kw in text for kw in NOISE_KEYWORDS)
 
 # Badge keywords — short labels for article chips
 BADGE_KEYWORDS = {
@@ -433,6 +503,14 @@ def main():
         for item in items[:10]:  # Max 10 per feed to keep balanced
             article = extract_item(item, default_cat, source_name, article_type)
             if article is None:
+                continue
+            # Filter out pure sports content (match reports, scores)
+            if is_pure_sports(article["headline"], article["excerpt"]):
+                print(f"       ✗ Filtered sports: {article['headline'][:50]}")
+                continue
+            # Filter out noise (lottery, weather, horoscopes, etc.)
+            if is_noise(article["headline"], article["excerpt"]):
+                print(f"       ✗ Filtered noise: {article['headline'][:50]}")
                 continue
             # Deduplicate by ID and by similar headline
             headline_lower = article["headline"].lower()
