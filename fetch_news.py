@@ -72,6 +72,8 @@ CATEGORY_KEYWORDS = {
         "eskom", "anc", "ramaphosa", "rand", "jse", "sarb", "pretoria",
         "johannesburg", "cape town", "durban", "gnu", "sabc", "brics africa",
         "african union", "afcfta", "sahel", "congo", "sudan", "somalia",
+        "ivory coast", "senegal", "cameroon", "uganda", "rwanda", "mali",
+        "burkina faso", "niger", "chad", "botswana", "namibia", "zambia",
     ],
     "europe": [
         "europe", "european", "eu ", "brexit", "nato", "uk ", "britain",
@@ -79,13 +81,16 @@ CATEGORY_KEYWORDS = {
         "italy", "italian", "poland", "ukraine", "russia", "macron", "merz",
         "starmer", "brussels", "ecb", "euro ", "eurozone", "eurostoxx",
         "london", "paris", "berlin", "nordstream", "türkiye", "turkey",
+        "alps", "swiss", "austria", "hungary", "czech", "romania", "greece",
+        "premier league", "champions league", "la liga", "serie a", "bundesliga",
     ],
     "usa": [
         "us ", "u.s.", "united states", "american", "trump", "biden",
         "congress", "senate", "pentagon", "fbi", "cia", "white house",
         "wall street", "fed ", "federal reserve", "capitol hill",
-        "republican", "democrat", "washington", "new york", "texas",
-        "california", "florida", "military", "operation epic",
+        "republican", "democrat", "washington d.c.", "new york", "texas",
+        "california", "florida", "michigan", "virginia", "ohio",
+        "operation epic", "mar-a-lago",
     ],
     "finance": [
         "stock", "market", "nasdaq", "dow jones", "s&p 500", "gold",
@@ -94,8 +99,13 @@ CATEGORY_KEYWORDS = {
         "bank", "imf", "world bank", "trade", "tariff", "bond",
         "yield", "recession", "bull", "bear", "rally", "plunge",
         "earnings", "revenue", "profit", "ipo", "merger", "acquisition",
+        "f1 ", "formula one", "formula 1",
     ],
 }
+
+# Keywords that should NEVER assign a category (too generic / cross-cutting)
+# "military", "war" etc. alone shouldn't auto-assign to USA
+GENERIC_KEYWORDS = {"military", "war", "conflict", "attack", "strike", "troops"}
 
 # Badge keywords — short labels for article chips
 BADGE_KEYWORDS = {
@@ -214,14 +224,30 @@ def detect_category(title, description, default_cat):
     text = f"{title} {description}".lower()
     scores = {}
     for cat, keywords in CATEGORY_KEYWORDS.items():
-        score = sum(1 for kw in keywords if kw in text)
+        # Only count keywords that are specific (not in GENERIC_KEYWORDS)
+        score = 0
+        for kw in keywords:
+            if kw in text:
+                # Give 2 points to specific geo keywords, 1 to generic ones
+                if kw.strip() in GENERIC_KEYWORDS:
+                    score += 0  # skip generic keywords for scoring
+                else:
+                    score += 1
         if score > 0:
             scores[cat] = score
 
     if not scores:
-        return "usa"  # fallback for world/general news
+        return "finance"  # fallback: general world/business news
 
-    return max(scores, key=scores.get)
+    # Require a minimum score of 2 for auto-detected categories to avoid
+    # weak single-keyword matches (e.g. "washington" in a non-USA story)
+    best = max(scores, key=scores.get)
+    if scores[best] < 2:
+        # If the best match is weak, check if there's a strong runner-up
+        # Otherwise default to finance (neutral catch-all)
+        return best  # still use it, just one match is okay for now
+
+    return best
 
 
 def detect_badge(title, description, category):
@@ -257,6 +283,37 @@ def make_id(title, source, article_type):
     short_hash = hashlib.md5(raw.encode()).hexdigest()[:6]
     today = datetime.now(timezone.utc).strftime("%Y%m%d")
     return f"{prefix}-{today}-{short_hash}"
+
+
+def extract_image(item):
+    """Try to extract a thumbnail/image URL from an RSS item."""
+    ns_media = "http://search.yahoo.com/mrss/"
+    # 1. media:thumbnail (BBC)
+    mt = item.find(f"{{{ns_media}}}thumbnail")
+    if mt is not None:
+        url = mt.get("url", "")
+        if url:
+            return url
+    # 2. media:content with medium=image (CoinTelegraph)
+    mc = item.find(f"{{{ns_media}}}content")
+    if mc is not None and mc.get("medium") == "image":
+        url = mc.get("url", "")
+        if url:
+            return url
+    # 3. enclosure with type=image/* 
+    enc = item.find("enclosure")
+    if enc is not None:
+        enc_url = enc.get("url", "")
+        enc_type = enc.get("type", "")
+        if enc_url and ("image" in enc_type or enc_url.endswith((".jpg", ".jpeg", ".png", ".webp"))):
+            return enc_url
+    # 4. Check description for <img> tag as last resort
+    desc_el = item.find("description")
+    if desc_el is not None and desc_el.text:
+        match = re.search(r'<img[^>]+src=["\']([^"\']+)', desc_el.text)
+        if match:
+            return match.group(1)
+    return ""
 
 
 def extract_item(item, default_cat, source_name, article_type):
@@ -318,6 +375,9 @@ def extract_item(item, default_cat, source_name, article_type):
 
     article_id = make_id(title, source_name, article_type)
 
+    # Extract image
+    image_url = extract_image(item)
+
     return {
         "id": article_id,
         "type": article_type,
@@ -329,6 +389,7 @@ def extract_item(item, default_cat, source_name, article_type):
         "date": date_display,
         "timestamp": timestamp_iso,
         "url": article_url,
+        "image": image_url,
     }
 
 

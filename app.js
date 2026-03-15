@@ -266,20 +266,36 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
     world: 'badge-politics'
   };
 
+  function isRecentlyPublished(timestamp, hoursThreshold) {
+    if (!timestamp) return false;
+    var pubTime = new Date(timestamp).getTime();
+    var now = Date.now();
+    var diffHours = (now - pubTime) / (1000 * 60 * 60);
+    return diffHours < hoursThreshold;
+  }
+
   function buildNewsCard(article) {
     const badgeClass = BADGE_MAP[article.category] || 'badge-politics';
-    const typeLabel = article.type === 'breaking'
-      ? '<span class="live-badge">LIVE</span>'
-      : '';
+    // Only show LIVE badge if the article was published within the last 3 hours
+    const isLive = isRecentlyPublished(article.timestamp, 3);
+    const typeLabel = isLive ? '<span class="live-badge">LIVE</span>' : '';
     var hasUrl = article.url && article.url.length > 0;
     var tag = hasUrl ? 'a' : 'article';
     var hrefAttr = hasUrl ? ' href="' + escHtml(article.url) + '" target="_blank" rel="noopener noreferrer"' : '';
-    return '<' + tag + ' class="news-card fade-in" data-badge="' + (article.badge || '') + '" tabindex="0"' + hrefAttr + '>'
+    // Thumbnail image if available
+    var imgHtml = '';
+    if (article.image) {
+      imgHtml = '<div class="news-card-img"><img src="' + escHtml(article.image) + '" alt="" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>';
+    }
+    return '<' + tag + ' class="news-card fade-in' + (article.image ? ' has-image' : '') + '" data-badge="' + (article.badge || '') + '" tabindex="0"' + hrefAttr + '>'
+      + imgHtml
+      + '<div class="news-card-body">'
       + typeLabel
       + '<span class="badge ' + badgeClass + '">' + escHtml(article.badge) + '</span>'
       + '<h3>' + escHtml(article.headline) + '</h3>'
       + '<p class="excerpt">' + escHtml(article.excerpt) + '</p>'
       + '<div class="meta"><span>' + escHtml(article.source) + '</span><span class="dot-sep"></span><span>' + escHtml(article.date) + '</span></div>'
+      + '</div>'
       + '</' + tag + '>';
   }
 
@@ -299,7 +315,12 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
     if (!grid) return;
     var filtered = articles.filter(function(a) { return a.category === tabId; });
     if (filtered.length === 0) {
-      grid.innerHTML = '<p class="feed-placeholder">No ' + tabId + ' news available right now.</p>';
+      var catLabel = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+      grid.innerHTML = '<div class="empty-feed">'
+        + '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
+        + '<p class="empty-feed-title">No ' + catLabel + ' stories right now</p>'
+        + '<p class="empty-feed-sub">New articles are pulled every hour. Check back soon.</p>'
+        + '</div>';
       return;
     }
     // Sort by timestamp descending (newest first)
