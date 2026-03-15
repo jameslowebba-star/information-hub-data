@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-15T14:28:26.374793+00:00",
+  "last_updated": "2026-03-15T15:27:13.916400+00:00",
   "total_articles_analyzed": 120,
   "risks": [
     {
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 8
     },
     {
       "id": "trade-war",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "russia-nato",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 8
     },
     {
       "id": "western-alliance",
