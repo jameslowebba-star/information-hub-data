@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-16T19:14:33.259575+00:00",
-  "total_articles_analyzed": 105,
+  "last_updated": "2026-03-16T20:36:40.736677+00:00",
+  "total_articles_analyzed": 107,
   "risks": [
     {
       "id": "middle-east",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "trade-war",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "western-alliance",
