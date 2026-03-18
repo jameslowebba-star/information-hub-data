@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-17T23:30:19.115732+00:00",
-  "total_articles_analyzed": 108,
+  "last_updated": "2026-03-18T02:01:36.385466+00:00",
+  "total_articles_analyzed": 111,
   "risks": [
     {
       "id": "middle-east",
@@ -17,7 +17,7 @@
       ],
       "direction": "up",
       "region": "Middle East",
-      "lastUpdated": "2026-03-17",
+      "lastUpdated": "2026-03-18",
       "source": "BlackRock BGRI",
       "keyEvent": "U.S.-Iran direct military engagement ongoing since Feb 28, 2026",
       "impactOnPortfolio": {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 108
+      "newsAttention": 112
     },
     {
       "id": "us-china",
@@ -48,7 +48,7 @@
       ],
       "direction": "up",
       "region": "Indo-Pacific",
-      "lastUpdated": "2026-03-17",
+      "lastUpdated": "2026-03-18",
       "source": "BlackRock BGRI",
       "keyEvent": "New U.S. semiconductor restrictions on China, March 2026",
       "impactOnPortfolio": {
@@ -80,7 +80,7 @@
       ],
       "direction": "up",
       "region": "Global",
-      "lastUpdated": "2026-03-17",
+      "lastUpdated": "2026-03-18",
       "source": "BlackRock BGRI",
       "keyEvent": "U.S. tariff threats against multiple nations over Greenland dispute",
       "impactOnPortfolio": {
@@ -111,7 +111,7 @@
       ],
       "direction": "up",
       "region": "Europe",
-      "lastUpdated": "2026-03-17",
+      "lastUpdated": "2026-03-18",
       "source": "BlackRock BGRI",
       "keyEvent": "Continued fighting in Ukraine, NATO Article 5 drills expanded",
       "impactOnPortfolio": {
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 16
     },
     {
       "id": "cyber-warfare",
@@ -142,7 +142,7 @@
       ],
       "direction": "up",
       "region": "Global",
-      "lastUpdated": "2026-03-17",
+      "lastUpdated": "2026-03-18",
       "source": "Stifel Dashboard",
       "keyEvent": "Multiple state-sponsored attacks on European energy grids detected",
       "impactOnPortfolio": {
@@ -172,7 +172,7 @@
       ],
       "direction": "up",
       "region": "Global",
-      "lastUpdated": "2026-03-17",
+      "lastUpdated": "2026-03-18",
       "source": "BlackRock BGRI",
       "keyEvent": "Hormuz Strait shipping insurance premiums at record highs",
       "impactOnPortfolio": {
@@ -203,7 +203,7 @@
       ],
       "direction": "up",
       "region": "Transatlantic",
-      "lastUpdated": "2026-03-17",
+      "lastUpdated": "2026-03-18",
       "source": "BlackRock BGRI",
       "keyEvent": "EU announces independent defense fund, reduced reliance on U.S.",
       "impactOnPortfolio": {
@@ -216,13 +216,13 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.5,
+      "score": 6.6,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -233,7 +233,7 @@
       ],
       "direction": "up",
       "region": "Africa",
-      "lastUpdated": "2026-03-17",
+      "lastUpdated": "2026-03-18",
       "source": "ZeroFox Intel",
       "keyEvent": "Multiple Sahel nations restricting Western mining operations",
       "impactOnPortfolio": {
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 4
     },
     {
       "id": "crypto-regulation",
@@ -263,7 +263,7 @@
       ],
       "direction": "down",
       "region": "Global",
-      "lastUpdated": "2026-03-17",
+      "lastUpdated": "2026-03-18",
       "source": "J.P. Morgan GPR",
       "keyEvent": "EU MiCA fully enforced, multiple exchanges exit smaller markets",
       "impactOnPortfolio": {
@@ -293,7 +293,7 @@
       ],
       "direction": "up",
       "region": "Global",
-      "lastUpdated": "2026-03-17",
+      "lastUpdated": "2026-03-18",
       "source": "J.P. Morgan GPR",
       "keyEvent": "Multiple frontier economies in IMF debt restructuring talks",
       "impactOnPortfolio": {
