@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-19T04:52:35.832784+00:00",
+  "last_updated": "2026-03-19T05:56:47.297928+00:00",
   "total_articles_analyzed": 113,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 124
+      "newsAttention": 122
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 8
     },
     {
       "id": "trade-war",
@@ -161,7 +161,7 @@
       "id": "energy-crisis",
       "name": "Global Energy Disruption",
       "likelihood": "high",
-      "score": 8.1,
+      "score": 8.0,
       "description": "Strait of Hormuz chokepoint under active threat. Oil supply disruptions from Middle East conflict. OPEC+ production cuts maintaining price pressure.",
       "impacts": [
         "Brent Crude",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 16
+      "newsAttention": 12
     },
     {
       "id": "western-alliance",
