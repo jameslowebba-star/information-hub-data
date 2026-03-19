@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-19T05:56:47.297928+00:00",
+  "last_updated": "2026-03-19T07:01:45.599157+00:00",
   "total_articles_analyzed": 113,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 122
+      "newsAttention": 118
     },
     {
       "id": "us-china",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 22
+      "newsAttention": 20
     },
     {
       "id": "cyber-warfare",
@@ -186,13 +186,13 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 14
     },
     {
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 6.8,
+      "score": 6.7,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 2
     },
     {
       "id": "africa-instability",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "crypto-regulation",
