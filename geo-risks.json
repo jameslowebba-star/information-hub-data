@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-19T19:46:30.378967+00:00",
-  "total_articles_analyzed": 104,
+  "last_updated": "2026-03-19T20:34:55.228535+00:00",
+  "total_articles_analyzed": 105,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 122
+      "newsAttention": 120
     },
     {
       "id": "us-china",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 18
+      "newsAttention": 16
     },
     {
       "id": "western-alliance",
