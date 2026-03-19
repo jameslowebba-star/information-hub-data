@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-19T16:56:15.508777+00:00",
+  "last_updated": "2026-03-19T17:53:04.592323+00:00",
   "total_articles_analyzed": 105,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 122
+      "newsAttention": 120
     },
     {
       "id": "us-china",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 20
+      "newsAttention": 18
     },
     {
       "id": "cyber-warfare",
@@ -161,7 +161,7 @@
       "id": "energy-crisis",
       "name": "Global Energy Disruption",
       "likelihood": "high",
-      "score": 8.1,
+      "score": 8.2,
       "description": "Strait of Hormuz chokepoint under active threat. Oil supply disruptions from Middle East conflict. OPEC+ production cuts maintaining price pressure.",
       "impacts": [
         "Brent Crude",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 18
+      "newsAttention": 20
     },
     {
       "id": "western-alliance",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "africa-instability",
