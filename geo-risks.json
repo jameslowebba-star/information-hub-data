@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-20T14:00:54.208950+00:00",
-  "total_articles_analyzed": 111,
+  "last_updated": "2026-03-20T15:40:27.126621+00:00",
+  "total_articles_analyzed": 112,
   "risks": [
     {
       "id": "middle-east",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 16
+      "newsAttention": 20
     },
     {
       "id": "cyber-warfare",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 10
     },
     {
       "id": "western-alliance",
