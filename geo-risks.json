@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-21T09:29:29.182458+00:00",
-  "total_articles_analyzed": 115,
+  "last_updated": "2026-03-21T10:24:19.374455+00:00",
+  "total_articles_analyzed": 114,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 124
+      "newsAttention": 118
     },
     {
       "id": "us-china",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 6
     },
     {
       "id": "western-alliance",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "debt-crisis",
