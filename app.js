@@ -82,7 +82,10 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
     window.scrollTo({ top: 0, behavior: 'smooth' });
     // Initialize conflict map when tab is opened
     if (tabId === 'conflict-map' && typeof initConflictMap === 'function') {
-      setTimeout(function() { initConflictMap(); renderConflictList(); }, 100);
+      setTimeout(async function() {
+        if (typeof loadConflictData === 'function') await loadConflictData();
+        initConflictMap();
+      }, 100);
     }
   };
 

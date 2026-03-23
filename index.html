@@ -99,7 +99,7 @@
         <span class="tools-bar-sep"></span>
         <button class="tools-bar-item" onclick="switchTab('conflict-map');">
           <span class="tools-bar-dot" style="background:#ef4444;"></span>
-          <span>Conflict Map</span>
+          <span>Global Crisis Map</span>
         </button>
       </div>
     </div>
@@ -194,7 +194,7 @@
             </div>
             <div>
               <h2 class="tools-banner-title">6 Intelligence Tools</h2>
-              <p class="tools-banner-sub">Tracker &middot; Simulator &middot; Conflict Map &middot; Quiz &middot; Strategy &middot; Portfolio</p>
+              <p class="tools-banner-sub">Tracker &middot; Simulator &middot; Crisis Map &middot; Quiz &middot; Strategy &middot; Portfolio</p>
             </div>
           </div>
           <span class="tools-banner-cta">Explore All &rarr;</span>
@@ -771,8 +771,8 @@
             <div class="tools-card-icon" style="background:rgba(239,68,68,0.12);color:#ef4444;">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
-            <h4>Conflict & Resource Map</h4>
-            <p>12 global hotspots. See which resources are at stake and who benefits from each conflict.</p>
+            <h4>Global Crisis Map</h4>
+            <p>20 global crises tracked. Auto-updating intelligence with full detail pages, severity rankings, and resource impact analysis.</p>
             <span class="tools-card-cta" style="color:#ef4444;">Explore Map →</span>
           </button>
           <button class="tools-landing-card" onclick="switchTab('quiz');">
@@ -1018,8 +1018,8 @@
         <div class="section-head" style="--bar-color: #ef4444;">
           <div class="section-head-bar"></div>
           <div>
-            <h2 class="section-head-title">Conflict & Resource Map</h2>
-            <p class="section-head-sub">Where wars happen, resources explain why</p>
+            <h2 class="section-head-title">Global Crisis Map</h2>
+            <p class="section-head-sub">Real-time intelligence on every major crisis shaping the world</p>
           </div>
         </div>
 
@@ -1027,7 +1027,7 @@
           <!-- Stats Bar -->
           <div class="conflict-stats-bar">
             <div class="cstat">
-              <span class="cstat-value" id="stat-conflicts">12</span>
+              <span class="cstat-value" id="stat-conflicts">20</span>
               <span class="cstat-label">Hotspots</span>
             </div>
             <div class="cstat">
@@ -1071,13 +1071,20 @@
           </div>
         </div>
 
-        <!-- List View -->
+        <!-- Featured Crises (Hottest) -->
+        <div class="featured-conflicts-section">
+          <h3>Highest Impact Zones</h3>
+          <p class="featured-subtitle">The crises with the most significant current global impact, ranked by severity</p>
+          <div id="featured-conflicts"></div>
+        </div>
+
+        <!-- Full List View (All) -->
         <div class="conflict-list-wrapper">
           <h3>All Hotspots</h3>
           <div id="conflict-list"></div>
         </div>
 
-        <p class="about-note" style="margin-top:24px;">Data compiled from open-source intelligence, UN reports, and verified news sources. Conflict statuses reflect conditions as of March 2026. This is not an exhaustive list of all global conflicts.</p>
+        <p class="about-note" style="margin-top:24px;">Data compiled from open-source intelligence, UN reports, Al Jazeera, Reuters, Crisis Group, and verified news sources. Crisis statuses reflect conditions as of March 2026. Data auto-updates hourly via pipeline. Click any marker or card for full intel breakdown.</p>
       </div>
     </div>
 
@@ -1136,7 +1143,7 @@
           <li><a href="#" onclick="switchTab('tools'); return false;">All Tools</a></li>
           <li><a href="#" onclick="switchTab('tracker'); return false;">Geo Tracker</a></li>
           <li><a href="#" onclick="switchTab('scenarios'); return false;">Scenario Simulator</a></li>
-          <li><a href="#" onclick="switchTab('conflict-map'); return false;">Conflict Map</a></li>
+          <li><a href="#" onclick="switchTab('conflict-map'); return false;">Global Crisis Map</a></li>
           <li><a href="#" onclick="switchTab('quiz'); return false;">K-Shaped Quiz</a></li>
           <li><a href="#" onclick="switchTab('portfolio'); return false;">Portfolio Checker</a></li>
         </ul>
