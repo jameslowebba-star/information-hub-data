@@ -554,94 +554,6 @@
 }
 .featured-card:hover .fc-cta { color: #ef4444; }
 
-/* --- Conflict List (All Hotspots) --- */
-.conflict-list-wrapper {
-  padding: 20px;
-}
-.conflict-list-wrapper h3 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.7);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin: 0 0 16px;
-}
-#conflict-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
-}
-.conflict-list-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 10px;
-  padding: 16px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.conflict-list-card:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.12);
-  transform: translateY(-2px);
-}
-.clc-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-.clc-status {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-.clc-metric {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
-  color: #ef4444;
-}
-.clc-name {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 4px;
-  text-transform: uppercase;
-}
-.clc-region {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.4);
-  margin: 0 0 10px;
-}
-.clc-resources {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.clc-res-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.65rem;
-  color: rgba(255,255,255,0.55);
-  padding: 3px 8px;
-  background: rgba(255,255,255,0.03);
-  border-radius: 4px;
-  border: 1px solid rgba(255,255,255,0.05);
-}
-.clc-res-chip .resource-dot {
-  width: 6px;
-  height: 6px;
-  margin-top: 0;
-}
 
 /* --- Legend --- */
 .conflict-legend {
@@ -702,7 +614,6 @@
   .cstat { min-width: 75px; padding: 6px 8px; }
   .cstat-value { font-size: 1.1rem; }
 
-  #conflict-list { grid-template-columns: 1fr; }
   #featured-conflicts { grid-template-columns: 1fr; }
 }
 

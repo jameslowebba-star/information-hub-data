@@ -818,7 +818,6 @@ function initConflictMap() {
     refreshMarkers();
     updateMapStats();
     renderFeaturedConflicts();
-    renderConflictList();
     return;
   }
 
@@ -846,7 +845,6 @@ function initConflictMap() {
   addMarkers();
   updateMapStats();
   renderFeaturedConflicts();
-  renderConflictList();
 }
 
 function addMarkers() {
@@ -1031,7 +1029,7 @@ function filterConflicts(status) {
   });
 }
 
-/* ---- Featured Conflicts (hottest, scroll section) ---- */
+/* ---- Active Flashpoints (featured crises, scroll section) ---- */
 function renderFeaturedConflicts() {
   const container = document.getElementById("featured-conflicts");
   if (!container) return;
@@ -1062,27 +1060,4 @@ function renderFeaturedConflicts() {
   }).join("");
 }
 
-/* ---- Full List view (all conflicts) ---- */
-function renderConflictList() {
-  const list = document.getElementById("conflict-list");
-  if (!list) return;
 
-  const sorted = [...CONFLICT_DATA].sort((a, b) => (b.severity || 0) - (a.severity || 0));
-
-  list.innerHTML = sorted.map(c => {
-    const sc = STATUS_COLORS[c.status] || STATUS_COLORS.active;
-    return `
-      <div class="conflict-list-card" onclick="openDetailView(CONFLICT_DATA.find(d=>d.id==='${c.id}'))">
-        <div class="clc-header">
-          <span class="clc-status" style="background:${sc.bg};color:${sc.text};">${c.statusLabel}</span>
-          <span class="clc-metric">${c.keyMetric}</span>
-        </div>
-        <h4 class="clc-name">${c.name}</h4>
-        <p class="clc-region">${c.region} &middot; ${c.type}</p>
-        <div class="clc-resources">
-          ${c.resources.map(r => `<span class="clc-res-chip"><span class="resource-dot" style="background:${r.color};"></span>${r.name}</span>`).join("")}
-        </div>
-      </div>
-    `;
-  }).join("");
-}
