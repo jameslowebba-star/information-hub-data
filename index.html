@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="./tracker.css">
   <link rel="stylesheet" href="./simulator.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="./conflict-map.css">
 </head>
 <body>
   <a href="#main-content" class="sr-only" style="position:absolute;top:0;left:0;padding:8px 16px;background:var(--color-primary);color:#fff;z-index:999;text-decoration:none;" onfocus="this.style.position='relative'" onblur="this.style.position='absolute'">Skip to content</a>
@@ -93,6 +95,11 @@
         <button class="tools-bar-item" onclick="switchTab('scenarios');">
           <span class="tools-bar-dot" style="background:#10b981;"></span>
           <span>Scenarios</span>
+        </button>
+        <span class="tools-bar-sep"></span>
+        <button class="tools-bar-item" onclick="switchTab('conflict-map');">
+          <span class="tools-bar-dot" style="background:#ef4444;"></span>
+          <span>Conflict Map</span>
         </button>
       </div>
     </div>
@@ -758,6 +765,15 @@
             <p>6 geopolitical what-if scenarios. See projected impacts across your asset classes.</p>
             <span class="tools-card-cta" style="color:#10b981;">Run Scenarios →</span>
           </button>
+
+          <button class="tools-landing-card" onclick="switchTab('conflict-map');">
+            <div class="tools-card-icon" style="background:rgba(239,68,68,0.12);color:#ef4444;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h4>Conflict & Resource Map</h4>
+            <p>12 global hotspots. See which resources are at stake and who benefits from each conflict.</p>
+            <span class="tools-card-cta" style="color:#ef4444;">Explore Map →</span>
+          </button>
           <button class="tools-landing-card" onclick="switchTab('quiz');">
             <div class="tools-card-accent" style="background:#d4a843;"></div>
             <div class="tools-card-icon" style="color:#d4a843;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
@@ -994,6 +1010,76 @@
       </div>
     </div>
 
+
+    <!-- CONFLICT & RESOURCE MAP TAB -->
+    <div class="tab-content" id="tab-conflict-map" role="tabpanel">
+      <div class="container">
+        <div class="section-head" style="--bar-color: #ef4444;">
+          <div class="section-head-bar"></div>
+          <div>
+            <h2 class="section-head-title">Conflict & Resource Map</h2>
+            <p class="section-head-sub">Where wars happen, resources explain why</p>
+          </div>
+        </div>
+
+        <div class="conflict-map-wrapper">
+          <!-- Stats Bar -->
+          <div class="conflict-stats-bar">
+            <div class="cstat">
+              <span class="cstat-value" id="stat-conflicts">12</span>
+              <span class="cstat-label">Hotspots</span>
+            </div>
+            <div class="cstat">
+              <span class="cstat-value" id="stat-active">8</span>
+              <span class="cstat-label">Active</span>
+            </div>
+            <div class="cstat">
+              <span class="cstat-value warn" id="stat-escalating">3</span>
+              <span class="cstat-label">Escalating</span>
+            </div>
+            <div class="cstat">
+              <span class="cstat-value info" id="stat-resources">16</span>
+              <span class="cstat-label">Resources</span>
+            </div>
+            <div class="cstat">
+              <span class="cstat-value hot" id="stat-hottest">Hormuz</span>
+              <span class="cstat-label">Hottest Zone</span>
+            </div>
+          </div>
+
+          <!-- Filters -->
+          <div class="conflict-filters">
+            <button class="filter-btn active" data-filter="all" onclick="filterConflicts('all')">All</button>
+            <button class="filter-btn" data-filter="active" onclick="filterConflicts('active')">Active</button>
+            <button class="filter-btn" data-filter="escalating" onclick="filterConflicts('escalating')">Escalating</button>
+            <button class="filter-btn" data-filter="de-escalating" onclick="filterConflicts('de-escalating')">De-escalating</button>
+          </div>
+
+          <!-- Map -->
+          <div id="conflict-map-container"></div>
+
+          <!-- Intel Panel (slides in on marker click) -->
+          <div id="intel-panel"></div>
+
+          <!-- Legend -->
+          <div class="conflict-legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#ef4444;"></span> Active Conflict</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#f59e0b;"></span> Escalating</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#22c55e;"></span> De-escalating</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#3b82f6;"></span> Ceasefire</div>
+          </div>
+        </div>
+
+        <!-- List View -->
+        <div class="conflict-list-wrapper">
+          <h3>All Hotspots</h3>
+          <div id="conflict-list"></div>
+        </div>
+
+        <p class="about-note" style="margin-top:24px;">Data compiled from open-source intelligence, UN reports, and verified news sources. Conflict statuses reflect conditions as of March 2026. This is not an exhaustive list of all global conflicts.</p>
+      </div>
+    </div>
+
     <!-- LEGAL / PRIVACY TAB -->
     <div class="tab-content" id="tab-legal" role="tabpanel">
       <div class="container">
@@ -1049,6 +1135,7 @@
           <li><a href="#" onclick="switchTab('tools'); return false;">All Tools</a></li>
           <li><a href="#" onclick="switchTab('tracker'); return false;">Geo Tracker</a></li>
           <li><a href="#" onclick="switchTab('scenarios'); return false;">Scenario Simulator</a></li>
+          <li><a href="#" onclick="switchTab('conflict-map'); return false;">Conflict Map</a></li>
           <li><a href="#" onclick="switchTab('quiz'); return false;">K-Shaped Quiz</a></li>
           <li><a href="#" onclick="switchTab('portfolio'); return false;">Portfolio Checker</a></li>
         </ul>
@@ -1085,5 +1172,7 @@
   <script src="./checker.js"></script>
   <script src="./tracker.js"></script>
   <script src="./simulator.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./conflict-map.js"></script>
 </body>
 </html>

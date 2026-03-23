@@ -50,7 +50,7 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
   const allContent = document.querySelectorAll('.tab-content');
 
   // Tool tab IDs that live under the INTELLIGENCE TOOLS parent
-  var toolTabIds = ['tracker', 'quiz', 'strategy', 'portfolio', 'scenarios'];
+  var toolTabIds = ['tracker', 'quiz', 'strategy', 'portfolio', 'scenarios', 'conflict-map'];
 
   window.switchTab = function(tabId) {
     var isToolChild = toolTabIds.indexOf(tabId) !== -1;
@@ -80,6 +80,10 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
     var ddb = document.getElementById('deepDiveBrief');
     if (ddb) ddb.style.display = (isToolChild || tabId === 'tools') ? 'none' : '';
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Initialize conflict map when tab is opened
+    if (tabId === 'conflict-map' && typeof initConflictMap === 'function') {
+      setTimeout(function() { initConflictMap(); renderConflictList(); }, 100);
+    }
   };
 
   allTabs.forEach(tab => {
