@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-23T02:03:34.504879+00:00",
-  "total_articles_analyzed": 117,
+  "last_updated": "2026-03-23T05:01:22.768500+00:00",
+  "total_articles_analyzed": 109,
   "risks": [
     {
       "id": "middle-east",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 32
+      "newsAttention": 28
     },
     {
       "id": "cyber-warfare",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "africa-instability",
