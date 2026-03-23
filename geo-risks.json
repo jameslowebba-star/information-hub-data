@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-23T13:03:03.448860+00:00",
-  "total_articles_analyzed": 115,
+  "last_updated": "2026-03-23T14:52:59.914224+00:00",
+  "total_articles_analyzed": 113,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 104
+      "newsAttention": 102
     },
     {
       "id": "us-china",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 28
+      "newsAttention": 24
     },
     {
       "id": "cyber-warfare",
