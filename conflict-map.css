@@ -621,3 +621,247 @@
 .leaflet-control-zoom { border: 1px solid rgba(255,255,255,0.1) !important; border-radius: 8px !important; overflow: hidden; }
 .leaflet-control-zoom a { background: rgba(13,17,23,0.9) !important; color: rgba(255,255,255,0.6) !important; border-color: rgba(255,255,255,0.08) !important; width: 32px !important; height: 32px !important; line-height: 32px !important; font-size: 16px !important; }
 .leaflet-control-zoom a:hover { background: rgba(255,255,255,0.08) !important; color: #fff !important; }
+
+/* ===== LIGHT MODE OVERRIDES ===== */
+:root:not([data-theme="dark"]) .conflict-map-wrapper,
+[data-theme="light"] .conflict-map-wrapper {
+  background: var(--color-surface, #ffffff);
+  border-color: var(--color-border, #d6d9e0);
+}
+
+/* Stats Bar */
+:root:not([data-theme="dark"]) .conflict-stats-bar,
+[data-theme="light"] .conflict-stats-bar {
+  background: linear-gradient(135deg, rgba(239,68,68,0.06), rgba(245,158,11,0.04));
+  border-bottom-color: var(--color-divider, #e2e4e9);
+}
+:root:not([data-theme="dark"]) .cstat,
+[data-theme="light"] .cstat {
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.08);
+}
+:root:not([data-theme="dark"]) .cstat-label,
+[data-theme="light"] .cstat-label {
+  color: var(--color-text-muted, #5c6070);
+}
+
+/* Filter Buttons */
+:root:not([data-theme="dark"]) .conflict-filters,
+[data-theme="light"] .conflict-filters {
+  border-bottom-color: var(--color-divider, #e2e4e9);
+}
+:root:not([data-theme="dark"]) .filter-btn,
+[data-theme="light"] .filter-btn {
+  border-color: rgba(0,0,0,0.15);
+  color: var(--color-text-muted, #5c6070);
+}
+:root:not([data-theme="dark"]) .filter-btn:hover,
+[data-theme="light"] .filter-btn:hover {
+  background: rgba(0,0,0,0.05);
+  color: var(--color-text, #14161a);
+}
+
+/* Legend */
+:root:not([data-theme="dark"]) .conflict-legend,
+[data-theme="light"] .conflict-legend {
+  border-top-color: var(--color-divider, #e2e4e9);
+}
+:root:not([data-theme="dark"]) .legend-item,
+[data-theme="light"] .legend-item {
+  color: var(--color-text-muted, #5c6070);
+}
+
+/* Featured Section */
+:root:not([data-theme="dark"]) .featured-conflicts-section,
+[data-theme="light"] .featured-conflicts-section {
+  border-top-color: var(--color-divider, #e2e4e9);
+}
+:root:not([data-theme="dark"]) .featured-conflicts-section h3,
+[data-theme="light"] .featured-conflicts-section h3 {
+  color: var(--color-text, #14161a);
+}
+:root:not([data-theme="dark"]) .featured-subtitle,
+[data-theme="light"] .featured-subtitle {
+  color: var(--color-text-muted, #5c6070);
+}
+
+/* Featured Cards */
+:root:not([data-theme="dark"]) .featured-card,
+[data-theme="light"] .featured-card {
+  background: linear-gradient(135deg, rgba(239,68,68,0.04), rgba(245,158,11,0.02));
+  border-color: var(--color-border, #d6d9e0);
+}
+:root:not([data-theme="dark"]) .featured-card:hover,
+[data-theme="light"] .featured-card:hover {
+  background: linear-gradient(135deg, rgba(239,68,68,0.08), rgba(245,158,11,0.04));
+  border-color: rgba(239,68,68,0.3);
+}
+:root:not([data-theme="dark"]) .fc-name,
+[data-theme="light"] .fc-name {
+  color: var(--color-text, #14161a);
+}
+:root:not([data-theme="dark"]) .fc-severity,
+[data-theme="light"] .fc-severity {
+  color: var(--color-text-muted, #5c6070);
+}
+:root:not([data-theme="dark"]) .fc-meta,
+[data-theme="light"] .fc-meta {
+  color: var(--color-text-muted, #5c6070);
+}
+:root:not([data-theme="dark"]) .fc-res,
+[data-theme="light"] .fc-res {
+  color: var(--color-text-muted, #5c6070);
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.08);
+}
+:root:not([data-theme="dark"]) .fc-bottom,
+[data-theme="light"] .fc-bottom {
+  border-top-color: var(--color-divider, #e2e4e9);
+}
+:root:not([data-theme="dark"]) .fc-cta,
+[data-theme="light"] .fc-cta {
+  color: var(--color-text-muted, #5c6070);
+}
+
+/* Detail View (Intel Panel) */
+:root:not([data-theme="dark"]) #intel-panel,
+[data-theme="light"] #intel-panel {
+  background: linear-gradient(180deg, #f4f5f7 0%, #ffffff 40%, #f9fafb 100%);
+  border-color: var(--color-border, #d6d9e0);
+}
+:root:not([data-theme="dark"]) .detail-back,
+[data-theme="light"] .detail-back {
+  color: var(--color-text-muted, #5c6070);
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.1);
+}
+:root:not([data-theme="dark"]) .detail-back:hover,
+[data-theme="light"] .detail-back:hover {
+  background: rgba(0,0,0,0.08);
+  color: var(--color-text, #14161a);
+}
+:root:not([data-theme="dark"]) .detail-title,
+[data-theme="light"] .detail-title {
+  color: var(--color-text, #14161a);
+}
+:root:not([data-theme="dark"]) .detail-meta,
+[data-theme="light"] .detail-meta {
+  color: var(--color-text-muted, #5c6070);
+}
+:root:not([data-theme="dark"]) .detail-hero,
+[data-theme="light"] .detail-hero {
+  border-bottom-color: var(--color-divider, #e2e4e9);
+}
+:root:not([data-theme="dark"]) .dkm-label,
+[data-theme="light"] .dkm-label {
+  color: var(--color-text-muted, #5c6070);
+}
+
+/* Detail Cards */
+:root:not([data-theme="dark"]) .detail-card,
+[data-theme="light"] .detail-card {
+  background: var(--color-surface, #ffffff);
+  border-color: var(--color-border, #d6d9e0);
+}
+:root:not([data-theme="dark"]) .detail-card h3,
+[data-theme="light"] .detail-card h3 {
+  color: var(--color-text, #14161a);
+}
+:root:not([data-theme="dark"]) .detail-card p,
+[data-theme="light"] .detail-card p {
+  color: var(--color-text-muted, #5c6070);
+}
+
+/* Detail Actors */
+:root:not([data-theme="dark"]) .detail-actor,
+[data-theme="light"] .detail-actor {
+  background: rgba(0,0,0,0.02);
+  border-color: rgba(0,0,0,0.06);
+}
+:root:not([data-theme="dark"]) .da-name,
+[data-theme="light"] .da-name {
+  color: var(--color-text, #14161a);
+}
+:root:not([data-theme="dark"]) .da-role,
+[data-theme="light"] .da-role {
+  color: var(--color-text-muted, #5c6070);
+}
+
+/* Detail Resources */
+:root:not([data-theme="dark"]) .detail-resource,
+[data-theme="light"] .detail-resource {
+  background: rgba(0,0,0,0.02);
+  border-color: rgba(0,0,0,0.06);
+}
+:root:not([data-theme="dark"]) .dr-name,
+[data-theme="light"] .dr-name {
+  color: var(--color-text, #14161a);
+}
+:root:not([data-theme="dark"]) .dr-pct,
+[data-theme="light"] .dr-pct {
+  color: var(--color-text-muted, #5c6070);
+}
+
+/* Detail Timeline */
+:root:not([data-theme="dark"]) .detail-timeline::before,
+[data-theme="light"] .detail-timeline::before {
+  background: rgba(0,0,0,0.1);
+}
+:root:not([data-theme="dark"]) .tl-dot,
+[data-theme="light"] .tl-dot {
+  background: rgba(0,0,0,0.15);
+  border-color: rgba(0,0,0,0.08);
+}
+:root:not([data-theme="dark"]) .tl-date,
+[data-theme="light"] .tl-date {
+  color: var(--color-text-muted, #5c6070);
+}
+:root:not([data-theme="dark"]) .tl-event,
+[data-theme="light"] .tl-event {
+  color: var(--color-text, #14161a);
+}
+:root:not([data-theme="dark"]) .tl-latest .tl-event,
+[data-theme="light"] .tl-latest .tl-event {
+  color: var(--color-text, #14161a);
+}
+
+/* About note */
+:root:not([data-theme="dark"]) .about-note,
+[data-theme="light"] .about-note {
+  color: var(--color-text-muted, #5c6070);
+}
+
+/* Mobile intel panel light mode */
+@media (max-width: 768px) {
+  :root:not([data-theme="dark"]) #intel-panel,
+  [data-theme="light"] #intel-panel {
+    border-top-color: var(--color-border, #d6d9e0);
+  }
+}
+
+/* Leaflet controls light mode */
+:root:not([data-theme="dark"]) .leaflet-control-zoom a,
+[data-theme="light"] .leaflet-control-zoom a {
+  background: rgba(255,255,255,0.95) !important;
+  color: #333 !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+:root:not([data-theme="dark"]) .leaflet-control-zoom a:hover,
+[data-theme="light"] .leaflet-control-zoom a:hover {
+  background: rgba(0,0,0,0.05) !important;
+  color: #000 !important;
+}
+:root:not([data-theme="dark"]) .leaflet-control-zoom,
+[data-theme="light"] .leaflet-control-zoom {
+  border-color: rgba(0,0,0,0.15) !important;
+}
+
+/* Scrollbar light mode */
+:root:not([data-theme="dark"]) #intel-panel,
+[data-theme="light"] #intel-panel {
+  scrollbar-color: rgba(0,0,0,0.15) transparent;
+}
+:root:not([data-theme="dark"]) #intel-panel::-webkit-scrollbar-thumb,
+[data-theme="light"] #intel-panel::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+}
