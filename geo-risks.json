@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-23T05:01:22.768500+00:00",
-  "total_articles_analyzed": 109,
+  "last_updated": "2026-03-23T07:07:00.615892+00:00",
+  "total_articles_analyzed": 111,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 110
+      "newsAttention": 102
     },
     {
       "id": "us-china",
