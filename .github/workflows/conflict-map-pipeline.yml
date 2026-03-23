@@ -1,0 +1,22 @@
+name: Conflict Map Pipeline
+
+on:
+  schedule:
+    - cron: '30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update-conflicts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run conflict map pipeline
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python fetch_conflict_data.py
