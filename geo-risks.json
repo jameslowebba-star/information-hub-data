@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-25T02:01:29.127708+00:00",
+  "last_updated": "2026-03-25T04:51:55.379655+00:00",
   "total_articles_analyzed": 123,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 112
+      "newsAttention": 110
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "trade-war",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 22
+      "newsAttention": 20
     },
     {
       "id": "cyber-warfare",
@@ -160,8 +160,8 @@
     {
       "id": "energy-crisis",
       "name": "Global Energy Disruption",
-      "likelihood": "high",
-      "score": 8.0,
+      "likelihood": "medium",
+      "score": 7.9,
       "description": "Strait of Hormuz chokepoint under active threat. Oil supply disruptions from Middle East conflict. OPEC+ production cuts maintaining price pressure.",
       "impacts": [
         "Brent Crude",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 8
     },
     {
       "id": "western-alliance",
@@ -222,7 +222,7 @@
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.6,
+      "score": 6.7,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 10
     },
     {
       "id": "crypto-regulation",
