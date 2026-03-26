@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-25T23:32:53.247018+00:00",
-  "total_articles_analyzed": 130,
+  "last_updated": "2026-03-26T02:07:18.314722+00:00",
+  "total_articles_analyzed": 131,
   "risks": [
     {
       "id": "middle-east",
@@ -17,7 +17,7 @@
       ],
       "direction": "up",
       "region": "Middle East",
-      "lastUpdated": "2026-03-25",
+      "lastUpdated": "2026-03-26",
       "source": "BlackRock BGRI",
       "keyEvent": "U.S.-Iran direct military engagement ongoing since Feb 28, 2026",
       "impactOnPortfolio": {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 112
+      "newsAttention": 120
     },
     {
       "id": "us-china",
@@ -48,7 +48,7 @@
       ],
       "direction": "up",
       "region": "Indo-Pacific",
-      "lastUpdated": "2026-03-25",
+      "lastUpdated": "2026-03-26",
       "source": "BlackRock BGRI",
       "keyEvent": "New U.S. semiconductor restrictions on China, March 2026",
       "impactOnPortfolio": {
@@ -80,7 +80,7 @@
       ],
       "direction": "up",
       "region": "Global",
-      "lastUpdated": "2026-03-25",
+      "lastUpdated": "2026-03-26",
       "source": "BlackRock BGRI",
       "keyEvent": "U.S. tariff threats against multiple nations over Greenland dispute",
       "impactOnPortfolio": {
@@ -94,13 +94,13 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
       "likelihood": "medium",
-      "score": 7.6,
+      "score": 7.5,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -111,7 +111,7 @@
       ],
       "direction": "up",
       "region": "Europe",
-      "lastUpdated": "2026-03-25",
+      "lastUpdated": "2026-03-26",
       "source": "BlackRock BGRI",
       "keyEvent": "Continued fighting in Ukraine, NATO Article 5 drills expanded",
       "impactOnPortfolio": {
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 12
     },
     {
       "id": "cyber-warfare",
@@ -142,7 +142,7 @@
       ],
       "direction": "up",
       "region": "Global",
-      "lastUpdated": "2026-03-25",
+      "lastUpdated": "2026-03-26",
       "source": "Stifel Dashboard",
       "keyEvent": "Multiple state-sponsored attacks on European energy grids detected",
       "impactOnPortfolio": {
@@ -172,7 +172,7 @@
       ],
       "direction": "up",
       "region": "Global",
-      "lastUpdated": "2026-03-25",
+      "lastUpdated": "2026-03-26",
       "source": "BlackRock BGRI",
       "keyEvent": "Hormuz Strait shipping insurance premiums at record highs",
       "impactOnPortfolio": {
@@ -203,7 +203,7 @@
       ],
       "direction": "up",
       "region": "Transatlantic",
-      "lastUpdated": "2026-03-25",
+      "lastUpdated": "2026-03-26",
       "source": "BlackRock BGRI",
       "keyEvent": "EU announces independent defense fund, reduced reliance on U.S.",
       "impactOnPortfolio": {
@@ -222,7 +222,7 @@
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.7,
+      "score": 6.6,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -233,7 +233,7 @@
       ],
       "direction": "up",
       "region": "Africa",
-      "lastUpdated": "2026-03-25",
+      "lastUpdated": "2026-03-26",
       "source": "ZeroFox Intel",
       "keyEvent": "Multiple Sahel nations restricting Western mining operations",
       "impactOnPortfolio": {
@@ -263,7 +263,7 @@
       ],
       "direction": "down",
       "region": "Global",
-      "lastUpdated": "2026-03-25",
+      "lastUpdated": "2026-03-26",
       "source": "J.P. Morgan GPR",
       "keyEvent": "EU MiCA fully enforced, multiple exchanges exit smaller markets",
       "impactOnPortfolio": {
@@ -293,7 +293,7 @@
       ],
       "direction": "up",
       "region": "Global",
-      "lastUpdated": "2026-03-25",
+      "lastUpdated": "2026-03-26",
       "source": "J.P. Morgan GPR",
       "keyEvent": "Multiple frontier economies in IMF debt restructuring talks",
       "impactOnPortfolio": {
@@ -312,12 +312,6 @@
     }
   ],
   "events": [
-    {
-      "date": "2026-03-25",
-      "event": "OPEC+ Emergency Production Meeting",
-      "risk": "energy-crisis",
-      "category": "economic"
-    },
     {
       "date": "2026-04-01",
       "event": "U.S.-China Trade Review Deadline",
