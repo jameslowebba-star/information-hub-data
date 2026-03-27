@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-27T18:53:22.967161+00:00",
+  "last_updated": "2026-03-27T19:39:39.608224+00:00",
   "total_articles_analyzed": 113,
   "risks": [
     {
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 6
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 30
+      "newsAttention": 28
     },
     {
       "id": "cyber-warfare",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 10
     },
     {
       "id": "western-alliance",
