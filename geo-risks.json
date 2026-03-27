@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-27T17:48:12.968267+00:00",
-  "total_articles_analyzed": 112,
+  "last_updated": "2026-03-27T18:53:22.967161+00:00",
+  "total_articles_analyzed": 113,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 104
+      "newsAttention": 106
     },
     {
       "id": "us-china",
@@ -186,13 +186,13 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 12
     },
     {
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 6.9,
+      "score": 6.8,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 8
     },
     {
       "id": "africa-instability",
