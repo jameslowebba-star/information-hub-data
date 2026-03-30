@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-30T16:04:11.584236+00:00",
+  "last_updated": "2026-03-30T17:53:19.632481+00:00",
   "total_articles_analyzed": 115,
   "risks": [
     {
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 20
+      "newsAttention": 18
     },
     {
       "id": "cyber-warfare",
@@ -192,7 +192,7 @@
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 6.7,
+      "score": 6.8,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 4
     },
     {
       "id": "africa-instability",
