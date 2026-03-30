@@ -474,9 +474,8 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
         body: JSON.stringify({
           email: email,
           _subject: 'Portfolio Exposure Checker \u2014 New Lead',
-          assets_selected: ids.join(', '),
-          portfolio_score: calcPortfolioScore(ids),
-          asset_count: ids.length
+          tool: 'Portfolio Checker',
+          portfolio_score: calcPortfolioScore(ids)
         })
       }).then(function() {
         checkerStep = 2;

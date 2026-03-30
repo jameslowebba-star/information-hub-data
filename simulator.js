@@ -414,9 +414,8 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           email: email,
-          _subject: 'Scenario Simulator \u2014 ' + (selectedScenario ? selectedScenario.shortName : 'New Lead'),
-          scenario: selectedScenario ? selectedScenario.shortName : 'N/A',
-          scenarios_viewed: scenariosViewed
+          _subject: 'Scenario Simulator \u2014 New Lead',
+          tool: 'Scenario Simulator'
         })
       }).then(function() {
         try {

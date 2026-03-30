@@ -300,12 +300,8 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
         body: JSON.stringify({
           email: email,
           _subject: 'Strategy Advisor — New Lead',
-          k_position: quizInfo.resultKey,
-          quiz_score: quizInfo.score,
-          goal: answerValues[0],
-          budget: answerValues[1],
-          risk: answerValues[2],
-          horizon: answerValues[3]
+          tool: 'Strategy Advisor',
+          k_position: quizInfo.resultKey
         })
       }).then(function() {
         advisorCurrent = ADVISOR_QUESTIONS.length + 1;
