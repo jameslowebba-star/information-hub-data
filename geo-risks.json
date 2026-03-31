@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-31T22:32:20.930299+00:00",
+  "last_updated": "2026-03-31T23:32:14.959724+00:00",
   "total_articles_analyzed": 122,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 106
+      "newsAttention": 118
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 8
     },
     {
       "id": "trade-war",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 22
+      "newsAttention": 20
     },
     {
       "id": "cyber-warfare",
@@ -222,7 +222,7 @@
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.5,
+      "score": 6.6,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 4
     },
     {
       "id": "crypto-regulation",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "debt-crisis",
