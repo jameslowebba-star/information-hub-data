@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-31T18:59:59.874701+00:00",
+  "last_updated": "2026-03-31T19:57:35.052963+00:00",
   "total_articles_analyzed": 119,
   "risks": [
     {
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 24
+      "newsAttention": 22
     },
     {
       "id": "cyber-warfare",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 6
     },
     {
       "id": "africa-instability",
