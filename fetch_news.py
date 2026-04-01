@@ -23,7 +23,7 @@ from html import unescape
 GITHUB_TOKEN = os.environ.get("GH_TOKEN", "")
 API_URL = "https://api.github.com/repos/jameslowebba-star/information-hub-data/contents/latest-news.json"
 SAST = timezone(timedelta(hours=2))
-MAX_ARTICLES = 60  # keep in JSON
+MAX_ARTICLES = 80  # keep in JSON — increased for more SA/Africa sources
 MAX_AGE_HOURS = 48  # discard articles older than this
 MAX_HEADLINE_LEN = 75
 MAX_EXCERPT_LEN = 220
@@ -53,6 +53,15 @@ FEEDS = [
 
     # ── SOUTH AFRICA / AFRICA ──
     ("https://feeds.news24.com/articles/News24/TopStories/rss", "africa", "News24", "icymi"),
+    ("https://feeds.news24.com/articles/news24/SouthAfrica/rss", "africa", "News24 SA", "breaking"),
+    ("https://feeds.news24.com/articles/news24/Politics/rss", "africa", "News24 Politics", "breaking"),
+    ("https://feeds.news24.com/articles/news24/Business/rss", "africa", "News24 Business", "icymi"),
+    ("https://feeds.news24.com/articles/fin24/Economy/rss", "africa", "Fin24", "icymi"),
+    ("https://www.moneyweb.co.za/feed/", "africa", "MoneyWeb", "icymi"),
+    ("https://www.sabcnews.com/sabcnews/feed/", "africa", "SABC News", "breaking"),
+    ("https://www.citizen.co.za/feed/", "africa", "The Citizen", "icymi"),
+    ("https://www.africanews.com/feed/", "africa", "AfricaNews", "icymi"),
+    ("https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf", "africa", "AllAfrica", "icymi"),
     # Daily Maverick blocks bot requests — removed
     # ("https://www.dailymaverick.co.za/feed/", "africa", "Daily Maverick", "icymi"),
 ]
@@ -67,11 +76,31 @@ CATEGORY_KEYWORDS = {
         "cbdc", "digital asset", "digital currency", "ledger", "dogecoin",
     ],
     "africa": [
-        "south africa", "africa", "nigeria", "kenya", "ethiopia", "ghana",
-        "tanzania", "egypt", "morocco", "angola", "mozambique", "zimbabwe",
-        "eskom", "anc", "ramaphosa", "rand", "jse", "sarb", "pretoria",
-        "johannesburg", "cape town", "durban", "gnu", "sabc", "brics africa",
-        "african union", "afcfta", "sahel", "congo", "sudan", "somalia",
+        # South Africa — politics & governance
+        "south africa", "ramaphosa", "anc", "da ", "eff ", "mk party",
+        "action sa", "gnu", "national assembly", "ncop", "parliament",
+        "madlanga", "zondo", "state capture", "npa", "hawks",
+        "public protector", "constitutional court", "concourt",
+        # South Africa — economy & cost of living
+        "eskom", "load shedding", "loadshedding", "stage ",
+        "fuel price", "fuel hike", "petrol price", "diesel price",
+        "petrol hike", "fuel increase", "fuel levy",
+        "rand", "jse", "sarb", "reserve bank", "repo rate",
+        "sars ", "treasury", "budget speech", "vat increase",
+        "cpi", "inflation", "cost of living",
+        # South Africa — geography
+        "pretoria", "johannesburg", "joburg", "cape town",
+        "durban", "gauteng", "western cape", "kwazulu-natal",
+        "eastern cape", "free state", "limpopo", "mpumalanga",
+        "north west", "northern cape",
+        # South Africa — services & society
+        "sabc", "transnet", "prasa", "sanral", "e-toll",
+        "water crisis", "service delivery",
+        # Africa — continental
+        "africa", "african union", "afcfta", "brics africa",
+        "nigeria", "kenya", "ethiopia", "ghana", "tanzania",
+        "egypt", "morocco", "angola", "mozambique", "zimbabwe",
+        "sahel", "congo", "sudan", "somalia",
         "ivory coast", "senegal", "cameroon", "uganda", "rwanda", "mali",
         "burkina faso", "niger", "chad", "botswana", "namibia", "zambia",
     ],
@@ -104,6 +133,22 @@ CATEGORY_KEYWORDS = {
 # Keywords that should NEVER assign a category (too generic / cross-cutting)
 # "military", "war" etc. alone shouldn't auto-assign to USA
 GENERIC_KEYWORDS = {"military", "war", "conflict", "attack", "strike", "troops"}
+
+# ─── MIDDLE EAST NEGATIVE FILTER ────────────────────────────────────
+# If a story has strong Middle East signals, do NOT classify as "africa"
+# even if it mentions African country names (egypt, sudan, sahel).
+# These stories belong in their actual geo category, not Africa.
+
+MIDDLE_EAST_KEYWORDS = {
+    "iran", "iranian", "tehran", "khamenei", "rouhani", "raisi",
+    "israel", "israeli", "netanyahu", "tel aviv", "jerusalem",
+    "gaza", "hamas", "hezbollah", "idf", "west bank", "palestinian",
+    "palestine", "zionist", "intifada", "iron dome", "mossad",
+    "beirut", "lebanon", "lebanese", "syria", "syrian", "assad",
+    "yemen", "houthi", "saudi", "riyadh", "iraq", "iraqi", "baghdad",
+    "strait of hormuz", "persian gulf", "gulf state",
+    "ayatollah", "revolutionary guard", "irgc", "quds force",
+}
 
 # ─── SPORTS FILTER ───────────────────────────────────────────────────
 # Pure sports/match results don't fit our mission (news, politics,
@@ -150,11 +195,13 @@ SPORTS_EXCEPTION_KEYWORDS = {
 # Noise content — always filter out regardless of context
 NOISE_KEYWORDS = {
     "powerball", "lotto", "lottery results",
-    "weather forecast", "weather:", "heatwave hits",
+    "weather forecast", "weather:", "weather alert", "heatwave hits",
     "hockey festival", "rugby festival", "cricket festival",
     "razzie award", "razzie", "golden raspberry",
     "horoscope", "zodiac", "star sign",
     "recipe of the day", "recipes:",
+    "no more waiting: ford", "car review", "road test",
+    "entertainment:", "celebrity gossip",
 }
 
 
@@ -187,11 +234,26 @@ BADGE_KEYWORDS = {
         "cbdc": "CBDC", "exchange": "Exchange",
     },
     "africa": {
-        "south africa": "South Africa", "nigeria": "Nigeria",
-        "kenya": "Kenya", "ethiopia": "Ethiopia", "eskom": "Energy",
-        "ramaphosa": "Politics", "jse": "Markets", "rand": "Forex",
-        "african union": "Continental", "sahel": "Sahel",
-        "egypt": "Egypt", "morocco": "Morocco",
+        # South Africa specific
+        "south africa": "South Africa", "ramaphosa": "Politics",
+        "anc": "Politics", "da ": "Politics", "eff ": "Politics",
+        "mk party": "Politics", "madlanga": "Courts",
+        "zondo": "Courts", "state capture": "Courts",
+        "fuel price": "Fuel Crisis", "fuel hike": "Fuel Crisis",
+        "petrol price": "Fuel Crisis", "petrol hike": "Fuel Crisis",
+        "diesel price": "Fuel Crisis", "fuel increase": "Fuel Crisis",
+        "eskom": "Energy", "load shedding": "Energy",
+        "loadshedding": "Energy",
+        "jse": "Markets", "rand": "Forex", "sarb": "Economy",
+        "reserve bank": "Economy", "repo rate": "Economy",
+        "budget speech": "Economy", "vat": "Economy",
+        "cpi": "Economy", "inflation": "Economy",
+        "transnet": "Infrastructure", "prasa": "Infrastructure",
+        # Continental
+        "nigeria": "Nigeria", "kenya": "Kenya",
+        "ethiopia": "Ethiopia", "african union": "Continental",
+        "sahel": "Sahel", "egypt": "Egypt", "morocco": "Morocco",
+        "ghana": "Ghana", "tanzania": "Tanzania",
     },
     "europe": {
         "germany": "Germany", "france": "France", "uk": "UK",
@@ -292,13 +354,15 @@ def detect_category(title, description, default_cat):
         return default_cat
 
     text = f"{title} {description}".lower()
+
+    # Check for Middle East content — used to prevent africa misclassification
+    has_middle_east = sum(1 for kw in MIDDLE_EAST_KEYWORDS if kw in text)
+
     scores = {}
     for cat, keywords in CATEGORY_KEYWORDS.items():
-        # Only count keywords that are specific (not in GENERIC_KEYWORDS)
         score = 0
         for kw in keywords:
             if kw in text:
-                # Give 2 points to specific geo keywords, 1 to generic ones
                 if kw.strip() in GENERIC_KEYWORDS:
                     score += 0  # skip generic keywords for scoring
                 else:
@@ -309,14 +373,22 @@ def detect_category(title, description, default_cat):
     if not scores:
         return "finance"  # fallback: general world/business news
 
-    # Require a minimum score of 2 for auto-detected categories to avoid
-    # weak single-keyword matches (e.g. "washington" in a non-USA story)
-    best = max(scores, key=scores.get)
-    if scores[best] < 2:
-        # If the best match is weak, check if there's a strong runner-up
-        # Otherwise default to finance (neutral catch-all)
-        return best  # still use it, just one match is okay for now
+    # ── Middle East guardrail ──
+    # If a story has 2+ Middle East keywords, do NOT let it land in "africa"
+    # unless the Africa score massively outweighs it (3x+ Middle East hits).
+    # This prevents Iran/Israel/Gaza stories from contaminating the Africa tab
+    # just because they mention Egypt, Sudan, or Sahel in passing.
+    if has_middle_east >= 2 and "africa" in scores:
+        africa_score = scores["africa"]
+        # Only keep africa if it has strong standalone African signal
+        # (e.g. 6+ Africa keywords vs 2 Middle East mentions)
+        if africa_score < has_middle_east * 3:
+            del scores["africa"]
 
+    if not scores:
+        return "finance"  # all categories eliminated
+
+    best = max(scores, key=scores.get)
     return best
 
 
