@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-02T14:54:06.433307+00:00",
+  "last_updated": "2026-04-02T15:58:54.491543+00:00",
   "total_articles_analyzed": 111,
   "risks": [
     {
@@ -63,13 +63,13 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 6
     },
     {
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.4,
+      "score": 8.3,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 8
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 22
+      "newsAttention": 24
     },
     {
       "id": "cyber-warfare",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "western-alliance",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 14
     },
     {
       "id": "africa-instability",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "debt-crisis",
