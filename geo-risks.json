@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-02T15:58:54.491543+00:00",
+  "last_updated": "2026-04-02T17:03:47.765483+00:00",
   "total_articles_analyzed": 111,
   "risks": [
     {
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 6
     },
     {
       "id": "russia-nato",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 10
     },
     {
       "id": "crypto-regulation",
