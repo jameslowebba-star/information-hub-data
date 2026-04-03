@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-03T15:37:25.254696+00:00",
-  "total_articles_analyzed": 111,
+  "last_updated": "2026-04-03T16:37:53.502347+00:00",
+  "total_articles_analyzed": 113,
   "risks": [
     {
       "id": "middle-east",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 14
     },
     {
       "id": "cyber-warfare",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "crypto-regulation",
