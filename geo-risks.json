@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-03T22:30:58.419548+00:00",
-  "total_articles_analyzed": 111,
+  "last_updated": "2026-04-03T23:31:27.153487+00:00",
+  "total_articles_analyzed": 113,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 96
+      "newsAttention": 94
     },
     {
       "id": "us-china",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 14
     },
     {
       "id": "cyber-warfare",
