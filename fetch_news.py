@@ -23,7 +23,7 @@ from html import unescape
 GITHUB_TOKEN = os.environ.get("GH_TOKEN", "")
 API_URL = "https://api.github.com/repos/jameslowebba-star/information-hub-data/contents/latest-news.json"
 SAST = timezone(timedelta(hours=2))
-MAX_ARTICLES = 80  # keep in JSON — increased for more SA/Africa sources
+MAX_ARTICLES = 100  # keep in JSON — increased for more sources across all tabs
 MAX_AGE_HOURS = 48  # discard articles older than this
 MAX_HEADLINE_LEN = 75
 MAX_EXCERPT_LEN = 220
@@ -40,6 +40,17 @@ FEEDS = [
     ("https://feeds.bbci.co.uk/news/world/europe/rss.xml", "europe", "BBC Europe", "icymi"),
     ("https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml", "usa", "BBC News", "icymi"),
     ("https://feeds.bbci.co.uk/news/business/rss.xml", "finance", "BBC Business", "icymi"),
+
+    # ── EUROPE ──
+    ("https://www.theguardian.com/world/europe-news/rss", "europe", "The Guardian", "icymi"),
+    ("https://www.france24.com/en/europe/rss", "europe", "France24", "icymi"),
+    ("https://www.euronews.com/rss?level=theme&name=news", "auto", "Euronews", "icymi"),
+
+    # ── USA ──
+    ("https://feeds.npr.org/1001/rss.xml", "usa", "NPR", "icymi"),
+    ("https://rss.politico.com/politics-news.xml", "usa", "Politico", "breaking"),
+    ("https://thehill.com/feed/", "usa", "The Hill", "icymi"),
+    ("https://www.pbs.org/newshour/feeds/rss/headlines", "auto", "PBS", "icymi"),
 
     # ── CRYPTO ──
     ("https://cointelegraph.com/rss/tag/bitcoin", "crypto", "CoinTelegraph", "breaking"),
@@ -146,8 +157,10 @@ MIDDLE_EAST_KEYWORDS = {
     "palestine", "zionist", "intifada", "iron dome", "mossad",
     "beirut", "lebanon", "lebanese", "syria", "syrian", "assad",
     "yemen", "houthi", "saudi", "riyadh", "iraq", "iraqi", "baghdad",
-    "strait of hormuz", "persian gulf", "gulf state",
+    "strait of hormuz", "hormuz", "persian gulf", "gulf state",
     "ayatollah", "revolutionary guard", "irgc", "quds force",
+    "missile strike", "missile attack", "aerial intercept",
+    "fighter jet", "air strike", "airstrike", "bombing raid",
 }
 
 # ─── SPORTS FILTER ───────────────────────────────────────────────────
@@ -234,11 +247,15 @@ BADGE_KEYWORDS = {
         "cbdc": "CBDC", "exchange": "Exchange",
     },
     "africa": {
-        # South Africa specific
+        # South Africa — politics & governance
         "south africa": "South Africa", "ramaphosa": "Politics",
         "anc": "Politics", "da ": "Politics", "eff ": "Politics",
-        "mk party": "Politics", "madlanga": "Courts",
-        "zondo": "Courts", "state capture": "Courts",
+        "mk party": "Politics", "action sa": "Politics",
+        "parliament": "Politics", "national assembly": "Politics",
+        "election": "Elections", "ballot": "Elections", "vote": "Elections",
+        "madlanga": "Courts", "zondo": "Courts", "state capture": "Courts",
+        "npa": "Courts", "hawks": "Courts", "corruption": "Courts",
+        # South Africa — economy & cost of living
         "fuel price": "Fuel Crisis", "fuel hike": "Fuel Crisis",
         "petrol price": "Fuel Crisis", "petrol hike": "Fuel Crisis",
         "diesel price": "Fuel Crisis", "fuel increase": "Fuel Crisis",
@@ -247,13 +264,22 @@ BADGE_KEYWORDS = {
         "jse": "Markets", "rand": "Forex", "sarb": "Economy",
         "reserve bank": "Economy", "repo rate": "Economy",
         "budget speech": "Economy", "vat": "Economy",
-        "cpi": "Economy", "inflation": "Economy",
+        "cpi": "Economy", "inflation": "Economy", "sars": "Economy",
         "transnet": "Infrastructure", "prasa": "Infrastructure",
+        "sandf": "Military", "deployed": "Military",
+        # South Africa — society
+        "crime": "Crime", "killed": "Crime", "murder": "Crime",
+        "police": "Crime", "arrested": "Crime",
+        "gauteng": "Gauteng", "cape town": "Western Cape",
+        "durban": "KZN", "kwazulu": "KZN",
         # Continental
         "nigeria": "Nigeria", "kenya": "Kenya",
         "ethiopia": "Ethiopia", "african union": "Continental",
         "sahel": "Sahel", "egypt": "Egypt", "morocco": "Morocco",
         "ghana": "Ghana", "tanzania": "Tanzania",
+        "uganda": "Uganda", "somalia": "Somalia", "congo": "Congo",
+        "mozambique": "Mozambique", "zimbabwe": "Zimbabwe",
+        "rwanda": "Rwanda", "angola": "Angola",
     },
     "europe": {
         "germany": "Germany", "france": "France", "uk": "UK",
@@ -371,6 +397,10 @@ def detect_category(title, description, default_cat):
             scores[cat] = score
 
     if not scores:
+        # If no category matched but it's a Middle East story, route to "usa"
+        # (most ME coverage is US foreign policy related) instead of "finance"
+        if has_middle_east >= 2:
+            return "usa"
         return "finance"  # fallback: general world/business news
 
     # ── Middle East guardrail ──
@@ -380,15 +410,24 @@ def detect_category(title, description, default_cat):
     # just because they mention Egypt, Sudan, or Sahel in passing.
     if has_middle_east >= 2 and "africa" in scores:
         africa_score = scores["africa"]
-        # Only keep africa if it has strong standalone African signal
-        # (e.g. 6+ Africa keywords vs 2 Middle East mentions)
         if africa_score < has_middle_east * 3:
             del scores["africa"]
 
     if not scores:
-        return "finance"  # all categories eliminated
+        # ME story with no other category match — route to "usa"
+        if has_middle_east >= 2:
+            return "usa"
+        return "finance"
 
     best = max(scores, key=scores.get)
+
+    # If the winner is "finance" but the story is primarily Middle East,
+    # route to "usa" instead (ME conflicts are US foreign policy stories)
+    if best == "finance" and has_middle_east >= 3:
+        # Only override if finance score is weak (generic oil/market keywords)
+        if scores.get("finance", 0) <= has_middle_east:
+            return "usa"
+
     return best
 
 
@@ -504,6 +543,11 @@ def extract_item(item, default_cat, source_name, article_type):
     else:
         # If no date, use now (better than skipping)
         pub_date = datetime.now(timezone.utc)
+
+    # Clean source prefixes from headlines (News24 |, UPDATE |, etc.)
+    title = re.sub(r'^News24\s*\|\s*(UPDATE\s*\|\s*)?', '', title).strip()
+    title = re.sub(r'^PODCAST\s*\|\s*', '', title).strip()
+    title = re.sub(r'^BREAKING\s*\|\s*', '', title).strip()
 
     # Categorise
     category = detect_category(title, description, default_cat)
