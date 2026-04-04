@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-04T19:29:21.809278+00:00",
-  "total_articles_analyzed": 122,
+  "last_updated": "2026-04-04T20:28:59.990916+00:00",
+  "total_articles_analyzed": 123,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 116
+      "newsAttention": 118
     },
     {
       "id": "us-china",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "debt-crisis",
