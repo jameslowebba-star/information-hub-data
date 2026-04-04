@@ -23,7 +23,7 @@ from html import unescape
 GITHUB_TOKEN = os.environ.get("GH_TOKEN", "")
 API_URL = "https://api.github.com/repos/jameslowebba-star/information-hub-data/contents/latest-news.json"
 SAST = timezone(timedelta(hours=2))
-MAX_ARTICLES = 100  # keep in JSON — increased for more sources across all tabs
+MAX_ARTICLES = 200  # keep in JSON — generous cap for 7 feeds x ~10 articles each
 MAX_AGE_HOURS = 48  # discard articles older than this
 MAX_HEADLINE_LEN = 75
 MAX_EXCERPT_LEN = 220
@@ -376,13 +376,25 @@ def parse_date(date_str):
 
 def detect_category(title, description, default_cat):
     """Auto-detect category from text content."""
-    if default_cat != "auto":
-        return default_cat
-
     text = f"{title} {description}".lower()
 
     # Check for Middle East content — used to prevent africa misclassification
     has_middle_east = sum(1 for kw in MIDDLE_EAST_KEYWORDS if kw in text)
+
+    # Even for feeds that default to "africa", reroute if story is
+    # primarily about the Middle East (iran/israel/hormuz etc.)
+    if default_cat == "africa" and has_middle_east >= 2:
+        # Check if it has genuine SA/Africa signal
+        sa_keywords = ["south africa", "johannesburg", "cape town", "pretoria",
+                       "durban", "gauteng", "ramaphosa", "anc", "eskom",
+                       "rand ", "jse", "sandf", "sabc", "parliament"]
+        sa_count = sum(1 for w in sa_keywords if w in text)
+        if sa_count < 2:
+            # Not a genuine SA story — let auto-detect route it
+            default_cat = "auto"
+
+    if default_cat != "auto":
+        return default_cat
 
     scores = {}
     for cat, keywords in CATEGORY_KEYWORDS.items():
