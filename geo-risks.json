@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-05T16:34:10.677665+00:00",
-  "total_articles_analyzed": 111,
+  "last_updated": "2026-04-05T17:28:14.029660+00:00",
+  "total_articles_analyzed": 112,
   "risks": [
     {
       "id": "middle-east",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "western-alliance",
