@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-05T09:36:44.316223+00:00",
+  "last_updated": "2026-04-05T10:31:35.147190+00:00",
   "total_articles_analyzed": 107,
   "risks": [
     {
@@ -252,7 +252,7 @@
       "id": "crypto-regulation",
       "name": "Crypto Regulatory Crackdown",
       "likelihood": "medium",
-      "score": 6.4,
+      "score": 6.3,
       "description": "Global regulatory frameworks tightening. U.S. SEC enforcement actions. EU MiCA implementation creating compliance burdens.",
       "impacts": [
         "Bitcoin",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 6
     },
     {
       "id": "debt-crisis",
