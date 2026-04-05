@@ -47,9 +47,9 @@ FEEDS = [
     ("https://www.euronews.com/rss?level=theme&name=news", "auto", "Euronews", "icymi"),
 
     # ── USA ──
-    ("https://feeds.npr.org/1001/rss.xml", "usa", "NPR", "icymi"),
+    ("https://feeds.npr.org/1001/rss.xml", "auto", "NPR", "icymi"),
     ("https://rss.politico.com/politics-news.xml", "usa", "Politico", "breaking"),
-    ("https://thehill.com/feed/", "usa", "The Hill", "icymi"),
+    ("https://thehill.com/feed/", "auto", "The Hill", "icymi"),
     ("https://www.pbs.org/newshour/feeds/rss/headlines", "auto", "PBS", "icymi"),
 
     # ── CRYPTO ──
@@ -81,10 +81,10 @@ FEEDS = [
 
 CATEGORY_KEYWORDS = {
     "crypto": [
-        "bitcoin", "btc", "ethereum", "eth", "crypto", "blockchain", "defi",
-        "nft", "stablecoin", "solana", "cardano", "xrp", "binance", "coinbase",
-        "altcoin", "web3", "token", "mining", "wallet", "dex", "cefi",
-        "cbdc", "digital asset", "digital currency", "ledger", "dogecoin",
+        "bitcoin", "btc", "ethereum", "\beth\b", "crypto", "blockchain", "\bdefi\b",
+        "\bnft\b", "stablecoin", "solana", "cardano", "\bxrp\b", "binance", "coinbase",
+        "altcoin", "web3", "\btoken\b", "\bmining\b", "\bwallet\b", "\bdex\b", "cefi",
+        "cbdc", "digital asset", "digital currency", "\bledger\b", "dogecoin",
     ],
     "africa": [
         # South Africa — politics & governance
@@ -132,12 +132,12 @@ CATEGORY_KEYWORDS = {
         "operation epic", "mar-a-lago",
     ],
     "finance": [
-        "stock", "market", "nasdaq", "dow jones", "s&p 500", "gold",
-        "silver", "oil", "crude", "brent", "commodity", "forex",
-        "interest rate", "inflation", "gdp", "economy", "economic",
-        "bank", "imf", "world bank", "trade", "tariff", "bond",
-        "yield", "recession", "bull", "bear", "rally", "plunge",
-        "earnings", "revenue", "profit", "ipo", "merger", "acquisition",
+        "stock market", "\bstock\b", "nasdaq", "dow jones", "s&p 500", "gold price",
+        "silver price", "\boil price", "crude oil", "\bbrent\b", "commodity", "forex",
+        "interest rate", "\bgdp\b", "economy", "economic",
+        "\bbank\b", "\bimf\b", "world bank", "trade war", "tariff", "\bbond\b",
+        "\byield\b", "recession", "market rally", "market plunge",
+        "earnings", "revenue", "profit", "\bipo\b", "merger", "acquisition",
     ],
 }
 
@@ -169,37 +169,58 @@ MIDDLE_EAST_KEYWORDS = {
 # geopolitical angles (e.g. F1 cancelled due to war) should stay.
 
 SPORTS_KEYWORDS = {
-    # Football/Soccer
+    # Football/Soccer — leagues
     "premier league", "champions league", "la liga", "serie a",
     "bundesliga", "europa league", "carabao cup", "fa cup",
     "ligue 1", "eredivisie", "copa del rey", "coppa italia",
-    # Match result language
+    # Football — clubs
     "man city", "manchester city", "manchester united", "man united",
-    "liverpool", "chelsea", "arsenal", "tottenham", "spurs",
-    "real madrid", "barcelona", "atletico madrid", "bayern munich",
+    "liverpool fc", "chelsea fc", "arsenal fc", "tottenham", "spurs",
+    "real madrid", "barcelona fc", "atletico madrid", "bayern munich",
     "juventus", "ac milan", "inter milan", "psg",
     "west ham", "everton", "aston villa", "newcastle united",
-    "leicester", "wolves", "crystal palace", "brighton",
+    "leicester", "wolves fc", "crystal palace", "brighton fc",
     "fulham", "bournemouth", "brentford", "nottingham forest",
-    # Match-specific terms
+    # Football — SA clubs
+    "kaizer chiefs", "orlando pirates", "mamelodi sundowns",
+    "dstv premiership",
+    # Football — match terms
     "hat-trick", "hat trick", "penalty kick", "red card",
     "yellow card", "clean sheet", "golden boot", "ballon d'or",
     "transfer window", "transfer deadline", "loan deal",
-    # Other pure sports
+    "player ban", "unfair ban", "match ban", "agent criticis",
+    "head coach", "mutually terminate", "sacked as manager",
+    "gattuso", "mourinho",
+    # Rugby
+    "challenge cup", "united rugby", "currie cup", "european campaign",
+    "sharks v ", "v sharks", "stormers v ", "v stormers", "stormers to ",
+    "bulls v ", "v bulls", "bulls' effort",
+    "toulon", "connacht", "leinster", "munster", "clermont", "la rochelle",
+    "springbok", "springboks", "all blacks", "wallabies",
+    "bok prop", "contract extension with stormers",
+    "six nations", "rugby world cup",
+    # Cricket
+    "proteas women", "proteas men", "white ferns", "black caps",
+    "cricket world cup", "t20 world", "test match",
+    "series defeat", "series victory",
+    # Tennis
     "tennis open", "grand slam", "wimbledon", "us open tennis",
-    "rugby world cup", "six nations",
-    "cricket world cup", "t20", "test match",
-    "nba", "nfl", "nhl", "mlb", "super bowl",
+    # US leagues
+    "\bnba\b", "\bnfl\b", "\bnhl\b", "\bmlb\b", "super bowl",
+    # Olympics
     "olympics medal", "olympic games",
+    # F1 (unless geopolitical)
+    "formula 1", "\bf1 race\b", "grand prix",
 }
 
 # These override the sports filter — if present alongside sports
 # keywords, the article has geopolitical relevance and should stay
 SPORTS_EXCEPTION_KEYWORDS = {
-    "war", "conflict", "cancel", "cancelled", "boycott", "ban",
-    "sanction", "protest", "political", "government", "security",
-    "terror", "bomb", "attack", "killed", "death", "threat",
-    "corruption", "arrest", "investigation", "fraud", "money laundering",
+    "war", "conflict", "cancel", "cancelled", "boycott",
+    "country ban", "travel ban", "sanction", "protest", "political",
+    "government", "security", "terror", "bomb", "attack",
+    "killed", "death", "threat", "corruption", "arrest",
+    "investigation", "fraud", "money laundering",
     "human rights", "racism", "discrimination", "refugee",
     "economic impact", "financial", "billion", "million",
 }
@@ -207,22 +228,58 @@ SPORTS_EXCEPTION_KEYWORDS = {
 
 # Noise content — always filter out regardless of context
 NOISE_KEYWORDS = {
+    # Gambling / lottery
     "powerball", "lotto", "lottery results",
-    "weather forecast", "weather:", "weather alert", "heatwave hits",
-    "hockey festival", "rugby festival", "cricket festival",
-    "razzie award", "razzie", "golden raspberry",
+    # Weather
+    "weather forecast", "weather:", "weather alert",
+    # Astrology
     "horoscope", "zodiac", "star sign",
-    "recipe of the day", "recipes:",
-    "no more waiting: ford", "car review", "road test",
-    "entertainment:", "celebrity gossip",
+    # Food / cooking
+    "recipe of the day", "recipes:", "easter lamb cake", "jelly bean eyes",
+    "buttercream", "rustic meal",
+    # Cars / vehicle recalls
+    "car review", "road test", "bakkies recalled", "vehicle recall",
+    "fastest of the bunch", "volkswagen golf gti", "vw golf gti",
+    "no more waiting: ford", "ford ranger bakki",
+    # Lifestyle / relationships / fashion / wellness
+    "soft-life aesthetic", "aesthetic is hot",
+    "rethinking sex", "financially naked", "dating tips",
+    "skincare routine", "beauty tips",
+    "weight loss", "fitness routine",
+    "home decor", "interior design",
+    "gen z is rethinking",
+    # Entertainment / celebrity
+    "entertainment:", "celebrity gossip", "reality tv", "big brother",
+    "turned heartbreak into music", "heartbreak into",
+    "kanye west uk festival", "kanye west festival",
+    # Animals / pets / shelters (not geopolitical)
+    "cat heaven", "cat rescue", "dog rescue", "animal shelter",
+    "home to 22 rescues",
+    # Science curiosities / nature fluff
+    "rock-climbing fish", "shimmy up a",
+    # Consumer product recalls
+    "pans sold at walmart", "burn hazard",
+    # Urban planning fluff
+    "swapped cars for bikes",
+    # Miscellaneous
+    "world marbles championship", "spelling bee",
+    "razzie award", "razzie", "golden raspberry",
+    "hockey festival", "rugby festival", "cricket festival",
 }
+
+
+def _kw_in_text(kw, text):
+    """Check if keyword matches text, using regex for \\b patterns."""
+    if '\b' in kw:
+        return bool(re.search(kw, text))
+    return kw in text
 
 
 def is_pure_sports(title, description):
     """Return True if article is pure sports content with no geopolitical angle."""
     text = f"{title} {description}".lower()
     # Check if it contains sports keywords
-    has_sports = any(kw in text for kw in SPORTS_KEYWORDS)
+    has_sports = any(_kw_in_text(kw, text) for kw in SPORTS_KEYWORDS)
     if not has_sports:
         return False
     # Check if it also has geopolitical/exception keywords
@@ -381,17 +438,38 @@ def detect_category(title, description, default_cat):
     # Check for Middle East content — used to prevent africa misclassification
     has_middle_east = sum(1 for kw in MIDDLE_EAST_KEYWORDS if kw in text)
 
-    # Even for feeds that default to "africa", reroute if story is
+    # Even for feeds that default to "africa" or "finance", reroute if story is
     # primarily about the Middle East (iran/israel/hormuz etc.)
-    if default_cat == "africa" and has_middle_east >= 2:
-        # Check if it has genuine SA/Africa signal
-        sa_keywords = ["south africa", "johannesburg", "cape town", "pretoria",
-                       "durban", "gauteng", "ramaphosa", "anc", "eskom",
-                       "rand ", "jse", "sandf", "sabc", "parliament"]
-        sa_count = sum(1 for w in sa_keywords if w in text)
-        if sa_count < 2:
-            # Not a genuine SA story — let auto-detect route it
+    if default_cat in ("africa", "finance") and has_middle_east >= 2:
+        if default_cat == "africa":
+            sa_keywords = ["south africa", "johannesburg", "cape town", "pretoria",
+                           "durban", "gauteng", "ramaphosa", "anc", "eskom",
+                           "rand ", "jse", "sandf", "sabc", "parliament"]
+            sa_count = sum(1 for w in sa_keywords if w in text)
+            if sa_count < 2:
+                default_cat = "auto"
+        else:
+            # Finance feed but ME-heavy story — let auto-detect route it
             default_cat = "auto"
+
+    # For finance-default feeds, verify the story actually has finance content.
+    # Otherwise generic BBC Business / CNBC stories pollute the Finance tab.
+    if default_cat == "finance":
+        finance_signals = [
+            "stock", "market", "nasdaq", "dow", "s&p", "gold price",
+            "silver", "oil price", "crude", "brent", "forex",
+            "interest rate", "inflation", "gdp", "economy", "economic",
+            "bank", "imf", "tariff", "bond", "yield", "recession",
+            "earnings", "revenue", "profit", "ipo", "merger",
+            "share price", "investor", "pension", "tax", "fiscal",
+            "budget", "subsid", "fund", "dividend", "quarterly",
+            "financial", "price", "retail", "consumer", "spending",
+            "cost", "billion", "million", "rand", "dollar",
+            "startup", "venture", "valuation", "acquisition",
+        ]
+        has_finance = sum(1 for w in finance_signals if w in text)
+        if has_finance < 1:
+            default_cat = "auto"  # not a real finance story
 
     if default_cat != "auto":
         return default_cat
@@ -400,7 +478,8 @@ def detect_category(title, description, default_cat):
     for cat, keywords in CATEGORY_KEYWORDS.items():
         score = 0
         for kw in keywords:
-            if kw in text:
+            # Keywords with \b use regex word-boundary matching
+            if _kw_in_text(kw, text):
                 if kw.strip() in GENERIC_KEYWORDS:
                     score += 0  # skip generic keywords for scoring
                 else:
@@ -413,7 +492,7 @@ def detect_category(title, description, default_cat):
         # (most ME coverage is US foreign policy related) instead of "finance"
         if has_middle_east >= 2:
             return "usa"
-        return "finance"  # fallback: general world/business news
+        return "world"  # fallback: general/uncategorised — shows on Home only
 
     # ── Middle East guardrail ──
     # If a story has 2+ Middle East keywords, do NOT let it land in "africa"
@@ -429,7 +508,7 @@ def detect_category(title, description, default_cat):
         # ME story with no other category match — route to "usa"
         if has_middle_east >= 2:
             return "usa"
-        return "finance"
+        return "world"
 
     best = max(scores, key=scores.get)
 
@@ -457,6 +536,7 @@ def detect_badge(title, description, category):
         "europe": "Europe",
         "usa": "USA",
         "finance": "Finance",
+        "world": "World",
     }
     return fallbacks.get(category, "News")
 
