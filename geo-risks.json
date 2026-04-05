@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-05T12:53:38.963070+00:00",
+  "last_updated": "2026-04-05T13:53:24.549511+00:00",
   "total_articles_analyzed": 107,
   "risks": [
     {
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 10
     },
     {
       "id": "cyber-warfare",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "debt-crisis",
