@@ -227,6 +227,77 @@ def check_freshness(articles):
     return None
 
 
+def check_duplicates(articles):
+    """Return list of duplicate or near-duplicate headlines."""
+    dupes = []
+    seen = {}
+    seen_prefixes = {}
+    for a in articles:
+        hl = a.get("headline", "").strip().lower()
+        if not hl:
+            continue
+        # Exact duplicate
+        if hl in seen:
+            dupes.append((a, seen[hl], "exact"))
+            continue
+        seen[hl] = a
+        # Near-duplicate: first 45 chars match
+        prefix = hl[:45]
+        if prefix in seen_prefixes:
+            dupes.append((a, seen_prefixes[prefix], "near"))
+        else:
+            seen_prefixes[prefix] = a
+    return dupes
+
+
+def check_missing_fields(articles):
+    """Return articles with critical missing data."""
+    issues = []
+    for a in articles:
+        hl = a.get("headline", "").strip()
+        url = (a.get("url") or a.get("link") or "").strip()
+        excerpt = a.get("excerpt", "").strip()
+        if not hl:
+            issues.append((a, "missing headline"))
+        if not url:
+            issues.append((a, "missing URL"))
+        if not excerpt:
+            issues.append((a, "missing excerpt"))
+    return issues
+
+
+def check_category_balance(cats, total):
+    """Check for empty tabs or extreme imbalance."""
+    issues = []
+    expected_tabs = ["crypto", "africa", "usa", "europe", "finance"]
+    for tab in expected_tabs:
+        count = cats.get(tab, 0)
+        if count == 0:
+            issues.append(f"⚠️ {tab.upper()} tab is EMPTY — 0 articles")
+        elif tab == "finance" and count < 3:
+            issues.append(f"⚠️ FINANCE tab critically low — only {count} article(s)")
+        elif tab != "world" and (count / total) > 0.60:
+            issues.append(f"⚠️ {tab.upper()} dominates feed at {count}/{total} ({int(count/total*100)}%)")
+    return issues
+
+
+def check_headline_prefixes(articles):
+    """Check for News24 prefixes that should have been stripped."""
+    BAD_PREFIXES = [
+        "News24 |", "News24 Business |", "News24 Sport |",
+        "News24 Opinion |", "News24 Analysis |",
+        "PODCAST |", "BREAKING |", "WATCH |", "IN FULL |",
+    ]
+    issues = []
+    for a in articles:
+        hl = a.get("headline", "")
+        for prefix in BAD_PREFIXES:
+            if hl.startswith(prefix):
+                issues.append((a, prefix))
+                break
+    return issues
+
+
 def send_telegram(message):
     """Send alert via Telegram bot."""
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
@@ -333,7 +404,39 @@ def main():
             issues.append(f"  • {a.get('headline', '')[:55]} (flag: {flag})")
         print(f"[QA] Found {len(finance_issues)} finance contamination issues")
 
-    # 5. Report
+    # 5. Duplicates
+    dupes = check_duplicates(articles)
+    if dupes:
+        issues.append(f"\n🔁 <b>Duplicate headlines ({len(dupes)}):</b>")
+        for a, original, dtype in dupes:
+            issues.append(f"  • [{dtype}] {a.get('headline', '')[:55]}")
+        print(f"[QA] Found {len(dupes)} duplicates")
+
+    # 6. Missing fields
+    missing = check_missing_fields(articles)
+    if missing:
+        issues.append(f"\n🕳️ <b>Missing data ({len(missing)}):</b>")
+        for a, field in missing:
+            issues.append(f"  • {a.get('headline', a.get('source', 'Unknown'))[:45]} — {field}")
+        print(f"[QA] Found {len(missing)} missing fields")
+
+    # 7. Category balance
+    balance_issues = check_category_balance(cats, len(articles))
+    if balance_issues:
+        issues.append(f"\n⚖️ <b>Category balance:</b>")
+        for bi in balance_issues:
+            issues.append(f"  • {bi}")
+        print(f"[QA] Found {len(balance_issues)} balance issues")
+
+    # 8. Headline prefixes
+    prefix_issues = check_headline_prefixes(articles)
+    if prefix_issues:
+        issues.append(f"\n🏷️ <b>Unstripped prefixes ({len(prefix_issues)}):</b>")
+        for a, prefix in prefix_issues:
+            issues.append(f"  • \"{prefix}\" in: {a.get('headline', '')[:50]}")
+        print(f"[QA] Found {len(prefix_issues)} prefix issues")
+
+    # 9. Report
     if issues:
         header = (
             f"⚠️ <b>Information Hub — QA Alert</b>\n"

@@ -642,10 +642,12 @@ def extract_item(item, default_cat, source_name, article_type):
         # If no date, use now (better than skipping)
         pub_date = datetime.now(timezone.utc)
 
-    # Clean source prefixes from headlines (News24 |, UPDATE |, etc.)
-    title = re.sub(r'^News24\s*\|\s*(UPDATE\s*\|\s*)?', '', title).strip()
+    # Clean source prefixes from headlines (News24 |, News24 Business |, etc.)
+    title = re.sub(r'^News24\s*(Business|Sport|Opinion|Analysis)?\s*\|\s*(UPDATE\s*\|\s*)?', '', title).strip()
     title = re.sub(r'^PODCAST\s*\|\s*', '', title).strip()
     title = re.sub(r'^BREAKING\s*\|\s*', '', title).strip()
+    title = re.sub(r'^WATCH\s*\|\s*', '', title).strip()
+    title = re.sub(r'^IN FULL\s*\|\s*', '', title).strip()
 
     # Categorise
     category = detect_category(title, description, default_cat)
