@@ -133,11 +133,13 @@ CATEGORY_KEYWORDS = {
     ],
     "finance": [
         "stock market", "\bstock\b", "nasdaq", "dow jones", "s&p 500", "gold price",
-        "silver price", "\boil price", "crude oil", "\bbrent\b", "commodity", "forex",
+        "silver price", "\boil price", "oil output", "oil production", "crude oil",
+        "\bbrent\b", "commodity", "forex", "\bopec\b",
         "interest rate", "\bgdp\b", "economy", "economic",
         "\bbank\b", "\bimf\b", "world bank", "trade war", "tariff", "\bbond\b",
         "\byield\b", "recession", "market rally", "market plunge",
         "earnings", "revenue", "profit", "\bipo\b", "merger", "acquisition",
+        "inflation", "central bank", "federal reserve", "\bfed\b",
     ],
 }
 
@@ -181,9 +183,13 @@ SPORTS_KEYWORDS = {
     "west ham", "everton", "aston villa", "newcastle united",
     "leicester", "wolves fc", "crystal palace", "brighton fc",
     "fulham", "bournemouth", "brentford", "nottingham forest",
-    # Football — SA clubs
+    # Football — SA clubs & cups
     "kaizer chiefs", "orlando pirates", "mamelodi sundowns",
-    "dstv premiership",
+    "dstv premiership", "nedbank cup", "ts galaxy", "stellenbosch fc",
+    "sekhukhune", "amazulu", "supersport united", "chippa united",
+    "cape town city fc", "golden arrows", "moroka swallows",
+    "polokwane city", "richards bay fc", "gallants",
+    "millford fc", "royal am",
     # Football — match terms
     "hat-trick", "hat trick", "penalty kick", "red card",
     "yellow card", "clean sheet", "golden boot", "ballon d'or",
