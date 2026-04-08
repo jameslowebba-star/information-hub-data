@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-08T08:58:43.297424+00:00",
-  "total_articles_analyzed": 116,
+  "last_updated": "2026-04-08T10:14:02.141776+00:00",
+  "total_articles_analyzed": 118,
   "risks": [
     {
       "id": "middle-east",
@@ -31,13 +31,13 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 146
+      "newsAttention": 148
     },
     {
       "id": "us-china",
       "name": "U.S.\u2013China Strategic Competition",
       "likelihood": "high",
-      "score": 8.7,
+      "score": 8.8,
       "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
       "impacts": [
         "Tech Stocks",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 16
     },
     {
       "id": "trade-war",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "crypto-regulation",
