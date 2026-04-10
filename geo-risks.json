@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-10T07:24:47.380791+00:00",
-  "total_articles_analyzed": 120,
+  "last_updated": "2026-04-10T09:06:19.794647+00:00",
+  "total_articles_analyzed": 119,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 124
+      "newsAttention": 116
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 8
     },
     {
       "id": "trade-war",
