@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-11T14:34:49.024857+00:00",
-  "total_articles_analyzed": 112,
+  "last_updated": "2026-04-11T15:31:19.609264+00:00",
+  "total_articles_analyzed": 113,
   "risks": [
     {
       "id": "middle-east",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 14
     },
     {
       "id": "cyber-warfare",
