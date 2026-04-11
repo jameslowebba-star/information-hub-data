@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-11T17:29:30.261836+00:00",
+  "last_updated": "2026-04-11T18:40:54.728061+00:00",
   "total_articles_analyzed": 115,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 98
+      "newsAttention": 104
     },
     {
       "id": "us-china",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 12
     },
     {
       "id": "crypto-regulation",
