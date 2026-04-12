@@ -1,23 +1,7 @@
 {
-  "last_updated": "2026-04-12T11:32:44.288473+00:00",
+  "last_updated": "2026-04-12T12:57:21.127978+00:00",
   "total_snapshots": 720,
   "snapshots": [
-    {
-      "timestamp": "2026-03-05T14:00:00+00:00",
-      "composite": 7.7,
-      "scores": {
-        "middle-east": 9.2,
-        "us-china": 8.8,
-        "trade-war": 8.7,
-        "energy-crisis": 8.3,
-        "russia-nato": 7.8,
-        "cyber-warfare": 7.2,
-        "western-alliance": 7.1,
-        "africa-instability": 6.7,
-        "crypto-regulation": 6.7,
-        "debt-crisis": 6.4
-      }
-    },
     {
       "timestamp": "2026-03-05T15:00:00+00:00",
       "composite": 7.7,
@@ -11512,6 +11496,22 @@
       "scores": {
         "middle-east": 9.7,
         "us-china": 8.7,
+        "trade-war": 8.3,
+        "russia-nato": 7.6,
+        "cyber-warfare": 6.9,
+        "energy-crisis": 7.8,
+        "western-alliance": 6.7,
+        "africa-instability": 6.6,
+        "crypto-regulation": 6.2,
+        "debt-crisis": 6.0
+      }
+    },
+    {
+      "timestamp": "2026-04-12T12:57:21.127978+00:00",
+      "composite": 7.4,
+      "scores": {
+        "middle-east": 9.7,
+        "us-china": 8.6,
         "trade-war": 8.3,
         "russia-nato": 7.6,
         "cyber-warfare": 6.9,
