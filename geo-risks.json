@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-12T19:37:26.836955+00:00",
+  "last_updated": "2026-04-12T20:33:38.944736+00:00",
   "total_articles_analyzed": 116,
   "risks": [
     {
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 12
     },
     {
       "id": "cyber-warfare",
