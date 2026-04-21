@@ -81,10 +81,10 @@ FEEDS = [
 
 CATEGORY_KEYWORDS = {
     "crypto": [
-        "bitcoin", "btc", "ethereum", "\beth\b", "crypto", "blockchain", "\bdefi\b",
-        "\bnft\b", "stablecoin", "solana", "cardano", "\bxrp\b", "binance", "coinbase",
-        "altcoin", "web3", "\btoken\b", "\bmining\b", "\bwallet\b", "\bdex\b", "cefi",
-        "cbdc", "digital asset", "digital currency", "\bledger\b", "dogecoin",
+        "bitcoin", "btc", "ethereum", r"\beth\b", "crypto", "blockchain", r"\bdefi\b",
+        r"\bnft\b", "stablecoin", "solana", "cardano", r"\bxrp\b", "binance", "coinbase",
+        "altcoin", "web3", r"\btoken\b", r"\bmining\b", r"\bwallet\b", r"\bdex\b", "cefi",
+        "cbdc", "digital asset", "digital currency", r"\bledger\b", "dogecoin",
     ],
     "africa": [
         # South Africa — politics & governance
@@ -212,19 +212,24 @@ SPORTS_KEYWORDS = {
     # Tennis
     "tennis open", "grand slam", "wimbledon", "us open tennis",
     # US leagues
-    "\bnba\b", "\bnfl\b", "\bnhl\b", "\bmlb\b", "super bowl",
+    r"\bnba\b", r"\bnfl\b", r"\bnhl\b", r"\bmlb\b", "super bowl",
+    # NBA specifics (players, awards)
+    "wembanyama", "lebron", "curry", "nba award", "nba mvp", "nba finals",
+    "nba draft", "nba playoffs",
     # Olympics
     "olympics medal", "olympic games",
     # F1 (unless geopolitical)
-    "formula 1", "\bf1 race\b", "grand prix",
+    "formula 1", r"\bf1 race\b", "grand prix",
 }
 
 # These override the sports filter — if present alongside sports
 # keywords, the article has geopolitical relevance and should stay
+# Use word-boundary regex for short words to avoid false matches
+# (e.g. "war" inside "award" or "Wembanyama")
 SPORTS_EXCEPTION_KEYWORDS = {
-    "war", "conflict", "cancel", "cancelled", "boycott",
+    r"\bwar\b", r"\bwars\b", "conflict", "cancel", "cancelled", "boycott",
     "country ban", "travel ban", "sanction", "protest", "political",
-    "government", "security", "terror", "bomb", "attack",
+    "government", "security", "terror", r"\bbomb\b", "attack",
     "killed", "death", "threat", "corruption", "arrest",
     "investigation", "fraud", "money laundering",
     "human rights", "racism", "discrimination", "refugee",
@@ -275,8 +280,8 @@ NOISE_KEYWORDS = {
 
 
 def _kw_in_text(kw, text):
-    """Check if keyword matches text, using regex for \\b patterns."""
-    if '\b' in kw:
+    """Check if keyword matches text, using regex for \\b word-boundary patterns."""
+    if r'\b' in kw:
         return bool(re.search(kw, text))
     return kw in text
 
@@ -288,8 +293,8 @@ def is_pure_sports(title, description):
     has_sports = any(_kw_in_text(kw, text) for kw in SPORTS_KEYWORDS)
     if not has_sports:
         return False
-    # Check if it also has geopolitical/exception keywords
-    has_exception = any(kw in text for kw in SPORTS_EXCEPTION_KEYWORDS)
+    # Check if it also has geopolitical/exception keywords (word-boundary aware)
+    has_exception = any(_kw_in_text(kw, text) for kw in SPORTS_EXCEPTION_KEYWORDS)
     if has_exception:
         return False  # Keep it — has a real-world angle
     return True  # Pure sports, filter it out
@@ -608,7 +613,7 @@ def extract_item(item, default_cat, source_name, article_type):
     if not title:
         return None
 
-    # Link / URL
+    # Link / URL — try <link>, then atom:link, then <guid isPermaLink="true">
     link_el = item.find("link")
     if link_el is None:
         link_el = item.find("atom:link", ns)
@@ -616,6 +621,16 @@ def extract_item(item, default_cat, source_name, article_type):
         article_url = (link_el.text or link_el.get("href", "")).strip()
     else:
         article_url = ""
+    # GUID fallback — many feeds (e.g. News24) put canonical URL in guid
+    if not article_url:
+        guid_el = item.find("guid")
+        if guid_el is not None and guid_el.text:
+            guid_text = guid_el.text.strip()
+            if guid_text.startswith("http"):
+                article_url = guid_text
+    # Drop articles without a clickable URL — unclickable cards are worse than missing cards
+    if not article_url:
+        return None
 
     # Description / excerpt
     desc_el = item.find("description")
