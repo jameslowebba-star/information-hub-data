@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-23T22:41:31.532706+00:00",
+  "last_updated": "2026-04-23T23:42:26.022996+00:00",
   "total_articles_analyzed": 121,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 88
+      "newsAttention": 86
     },
     {
       "id": "us-china",
