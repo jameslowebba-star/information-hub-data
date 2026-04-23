@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-23T09:25:48.980284+00:00",
-  "total_articles_analyzed": 123,
+  "last_updated": "2026-04-23T11:06:08.263155+00:00",
+  "total_articles_analyzed": 124,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 92
+      "newsAttention": 102
     },
     {
       "id": "us-china",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 20
+      "newsAttention": 18
     },
     {
       "id": "cyber-warfare",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "africa-instability",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 12
     },
     {
       "id": "crypto-regulation",
