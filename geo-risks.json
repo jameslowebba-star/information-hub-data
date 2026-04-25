@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-25T05:09:40.653060+00:00",
+  "last_updated": "2026-04-25T07:12:10.802732+00:00",
   "total_articles_analyzed": 115,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 88
+      "newsAttention": 86
     },
     {
       "id": "us-china",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "russia-nato",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 10
     },
     {
       "id": "crypto-regulation",
