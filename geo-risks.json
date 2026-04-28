@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-28T08:28:57.750394+00:00",
-  "total_articles_analyzed": 114,
+  "last_updated": "2026-04-28T11:02:51.209210+00:00",
+  "total_articles_analyzed": 115,
   "risks": [
     {
       "id": "middle-east",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 34
+      "newsAttention": 32
     },
     {
       "id": "cyber-warfare",
