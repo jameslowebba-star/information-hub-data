@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-29T12:16:00.350313+00:00",
-  "total_articles_analyzed": 127,
+  "last_updated": "2026-04-29T15:10:45.019046+00:00",
+  "total_articles_analyzed": 129,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 68
+      "newsAttention": 66
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 8
     },
     {
       "id": "trade-war",
@@ -100,7 +100,7 @@
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
       "likelihood": "high",
-      "score": 8.0,
+      "score": 8.1,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -161,7 +161,7 @@
       "id": "energy-crisis",
       "name": "Global Energy Disruption",
       "likelihood": "high",
-      "score": 8.3,
+      "score": 8.2,
       "description": "Strait of Hormuz chokepoint under active threat. Oil supply disruptions from Middle East conflict. OPEC+ production cuts maintaining price pressure.",
       "impacts": [
         "Brent Crude",
@@ -186,13 +186,13 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 22
+      "newsAttention": 20
     },
     {
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 6.8,
+      "score": 6.7,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -216,13 +216,13 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 2
     },
     {
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.5,
+      "score": 6.6,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 4
     },
     {
       "id": "crypto-regulation",
