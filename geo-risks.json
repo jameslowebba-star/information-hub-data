@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-29T15:10:45.019046+00:00",
-  "total_articles_analyzed": 129,
+  "last_updated": "2026-04-29T17:25:52.184177+00:00",
+  "total_articles_analyzed": 126,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 66
+      "newsAttention": 62
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 10
     },
     {
       "id": "trade-war",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 36
+      "newsAttention": 38
     },
     {
       "id": "cyber-warfare",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 20
+      "newsAttention": 18
     },
     {
       "id": "western-alliance",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "africa-instability",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "crypto-regulation",
