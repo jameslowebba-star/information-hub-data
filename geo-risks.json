@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-29T10:53:53.430820+00:00",
-  "total_articles_analyzed": 125,
+  "last_updated": "2026-04-29T12:16:00.350313+00:00",
+  "total_articles_analyzed": 127,
   "risks": [
     {
       "id": "middle-east",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 10
     },
     {
       "id": "trade-war",
@@ -94,13 +94,13 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
       "likelihood": "high",
-      "score": 8.1,
+      "score": 8.0,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 38
+      "newsAttention": 36
     },
     {
       "id": "cyber-warfare",
@@ -161,7 +161,7 @@
       "id": "energy-crisis",
       "name": "Global Energy Disruption",
       "likelihood": "high",
-      "score": 8.2,
+      "score": 8.3,
       "description": "Strait of Hormuz chokepoint under active threat. Oil supply disruptions from Middle East conflict. OPEC+ production cuts maintaining price pressure.",
       "impacts": [
         "Brent Crude",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 20
+      "newsAttention": 22
     },
     {
       "id": "western-alliance",
