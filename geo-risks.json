@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-02T19:54:07.317730+00:00",
+  "last_updated": "2026-05-02T20:38:55.156443+00:00",
   "total_articles_analyzed": 123,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 88
+      "newsAttention": 84
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 8
     },
     {
       "id": "trade-war",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 10
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 16
+      "newsAttention": 18
     },
     {
       "id": "cyber-warfare",
