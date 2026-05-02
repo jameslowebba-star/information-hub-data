@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-02T11:42:38.798928+00:00",
-  "total_articles_analyzed": 122,
+  "last_updated": "2026-05-02T13:05:46.838909+00:00",
+  "total_articles_analyzed": 123,
   "risks": [
     {
       "id": "middle-east",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 16
+      "newsAttention": 18
     },
     {
       "id": "cyber-warfare",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "africa-instability",
