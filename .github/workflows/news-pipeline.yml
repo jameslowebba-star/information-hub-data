@@ -2,7 +2,10 @@ name: News Pipeline
 
 on:
   schedule:
-    - cron: '15 * * * *'
+    # Run twice per hour — GitHub Actions cron is unreliable on shared
+    # infrastructure and often skips runs, so we double up to keep the
+    # feed under the 150-min staleness threshold.
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:

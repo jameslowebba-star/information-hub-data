@@ -352,16 +352,48 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
   }
 
   function populateHomeFeed(articles) {
-    // Breaking / Latest News — show up to 6 breaking articles (or newest if none breaking)
+    // Helper: balanced selection across categories so Home isn't dominated
+    // by whichever feed published most recently. Round-robins through
+    // categories taking the newest unused article from each, until we hit `limit`.
+    function pickBalanced(pool, limit) {
+      var sorted = pool.slice().sort(function(a, b) {
+        return (b.timestamp || '').localeCompare(a.timestamp || '');
+      });
+      // Group by category, preserving newest-first order within each
+      var buckets = {};
+      var order = [];
+      sorted.forEach(function(a) {
+        var c = a.category || 'world';
+        if (!buckets[c]) { buckets[c] = []; order.push(c); }
+        buckets[c].push(a);
+      });
+      // Round-robin pick
+      var picked = [];
+      var i = 0;
+      while (picked.length < limit) {
+        var anyLeft = false;
+        for (var k = 0; k < order.length; k++) {
+          var cat = order[k];
+          if (buckets[cat].length > 0) {
+            picked.push(buckets[cat].shift());
+            anyLeft = true;
+            if (picked.length >= limit) break;
+          }
+        }
+        if (!anyLeft) break;
+        i++;
+        if (i > 50) break; // safety
+      }
+      return picked;
+    }
+
+    // Breaking / Latest News — 6 cards, balanced across categories
     var breakingGrid = document.getElementById('homeBreakingGrid');
     if (breakingGrid) {
-      var breaking = articles.filter(function(a) { return a.type === 'breaking'; });
-      // If no breaking articles, show the newest 6 regardless of type
-      if (breaking.length === 0) {
-        breaking = articles.slice(0, 6);
-      }
-      breaking.sort(function(a, b) { return (b.timestamp || '').localeCompare(a.timestamp || ''); });
-      breaking = breaking.slice(0, 6);
+      var breakingPool = articles.filter(function(a) { return a.type === 'breaking'; });
+      // If we don't have enough breaking, fall back to all articles
+      if (breakingPool.length < 6) breakingPool = articles;
+      var breaking = pickBalanced(breakingPool, 6);
       if (breaking.length > 0) {
         var html = '';
         breaking.forEach(function(a) { html += buildNewsCard(a); });
@@ -369,12 +401,12 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
       }
     }
 
-    // ICYMI — show up to 8 icymi articles
+    // ICYMI — 8 cards, also balanced across categories
     var icymiGrid = document.getElementById('homeIcymiGrid');
     if (icymiGrid) {
-      var icymi = articles.filter(function(a) { return a.type === 'icymi'; });
-      icymi.sort(function(a, b) { return (b.timestamp || '').localeCompare(a.timestamp || ''); });
-      icymi = icymi.slice(0, 8);
+      var icymiPool = articles.filter(function(a) { return a.type === 'icymi'; });
+      if (icymiPool.length < 8) icymiPool = articles;
+      var icymi = pickBalanced(icymiPool, 8);
       if (icymi.length > 0) {
         var html = '';
         icymi.forEach(function(a) { html += buildNewsCard(a); });

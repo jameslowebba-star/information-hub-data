@@ -30,7 +30,7 @@ PURGE_URL = (
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 
-MAX_STALE_MINUTES = 120  # flag if newest article is older than this
+MAX_STALE_MINUTES = 150  # flag if newest article is older than this (matches actual GitHub Actions cron cadence)
 
 # ─── SPORTS KEYWORDS ─────────────────────────────────────────────────
 
