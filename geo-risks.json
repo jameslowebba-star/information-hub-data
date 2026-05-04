@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-04T02:39:32.225036+00:00",
+  "last_updated": "2026-05-04T06:10:39.822389+00:00",
   "total_articles_analyzed": 120,
   "risks": [
     {
@@ -69,7 +69,7 @@
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.3,
+      "score": 8.2,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 16
     },
     {
       "id": "cyber-warfare",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "western-alliance",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 16
     },
     {
       "id": "crypto-regulation",
