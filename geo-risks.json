@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-05T10:00:06.172681+00:00",
-  "total_articles_analyzed": 107,
+  "last_updated": "2026-05-05T11:22:43.544143+00:00",
+  "total_articles_analyzed": 108,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 38
+      "newsAttention": 34
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 28
+      "newsAttention": 30
     },
     {
       "id": "trade-war",
@@ -99,8 +99,8 @@
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
-      "likelihood": "medium",
-      "score": 7.9,
+      "likelihood": "high",
+      "score": 8.0,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 20
+      "newsAttention": 22
     },
     {
       "id": "cyber-warfare",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 2
     },
     {
       "id": "western-alliance",
@@ -222,7 +222,7 @@
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.7,
+      "score": 6.8,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 10
     },
     {
       "id": "crypto-regulation",
