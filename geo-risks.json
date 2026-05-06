@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-06T08:24:36.130340+00:00",
-  "total_articles_analyzed": 117,
+  "last_updated": "2026-05-06T11:04:40.256647+00:00",
+  "total_articles_analyzed": 118,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 72
+      "newsAttention": 70
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 24
+      "newsAttention": 22
     },
     {
       "id": "trade-war",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "africa-instability",
