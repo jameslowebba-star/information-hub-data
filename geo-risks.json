@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-10T02:44:31.946430+00:00",
-  "total_articles_analyzed": 119,
+  "last_updated": "2026-05-10T06:09:32.284115+00:00",
+  "total_articles_analyzed": 111,
   "risks": [
     {
       "id": "middle-east",
@@ -31,13 +31,13 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 56
+      "newsAttention": 44
     },
     {
       "id": "us-china",
       "name": "U.S.\u2013China Strategic Competition",
       "likelihood": "high",
-      "score": 9.0,
+      "score": 9.1,
       "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
       "impacts": [
         "Tech Stocks",
@@ -100,7 +100,7 @@
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
       "likelihood": "medium",
-      "score": 7.8,
+      "score": 7.9,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -161,7 +161,7 @@
       "id": "energy-crisis",
       "name": "Global Energy Disruption",
       "likelihood": "medium",
-      "score": 7.9,
+      "score": 7.8,
       "description": "Strait of Hormuz chokepoint under active threat. Oil supply disruptions from Middle East conflict. OPEC+ production cuts maintaining price pressure.",
       "impacts": [
         "Brent Crude",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "western-alliance",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 2
     },
     {
       "id": "crypto-regulation",
