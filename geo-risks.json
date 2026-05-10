@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-10T08:51:51.518007+00:00",
-  "total_articles_analyzed": 113,
+  "last_updated": "2026-05-10T10:12:25.933450+00:00",
+  "total_articles_analyzed": 111,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 48
+      "newsAttention": 46
     },
     {
       "id": "us-china",
@@ -99,8 +99,8 @@
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
-      "likelihood": "medium",
-      "score": 7.9,
+      "likelihood": "high",
+      "score": 8.0,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 18
+      "newsAttention": 20
     },
     {
       "id": "cyber-warfare",
@@ -252,7 +252,7 @@
       "id": "crypto-regulation",
       "name": "Crypto Regulatory Crackdown",
       "likelihood": "medium",
-      "score": 6.2,
+      "score": 6.3,
       "description": "Global regulatory frameworks tightening. U.S. SEC enforcement actions. EU MiCA implementation creating compliance burdens.",
       "impacts": [
         "Bitcoin",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "debt-crisis",
