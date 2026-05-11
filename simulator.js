@@ -544,7 +544,7 @@ var safeStorage=(function(){try{safeStorage.setItem("__t","1");safeStorage.remov
       '</div>';
 
     // Actions row
-    var shareText = encodeURIComponent('I just simulated the ' + s.shortName + ' scenario. See the projected market impacts: informationhubnews.netlify.app');
+    var shareText = encodeURIComponent('I just simulated the ' + s.shortName + ' scenario. See the projected market impacts: informationhubnews.com');
     html += '<div class="sim-actions">' +
       '<button class="sim-btn sim-btn-primary" id="simTryAnother">Try Another Scenario</button>' +
       '<div class="sim-share">' +
