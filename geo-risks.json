@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-24T09:21:57.083782+00:00",
-  "total_articles_analyzed": 128,
+  "last_updated": "2026-05-24T11:14:16.953645+00:00",
+  "total_articles_analyzed": 129,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 54
+      "newsAttention": 62
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 14
     },
     {
       "id": "trade-war",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 22
+      "newsAttention": 24
     },
     {
       "id": "cyber-warfare",
@@ -192,7 +192,7 @@
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 6.9,
+      "score": 6.8,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -222,7 +222,7 @@
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.6,
+      "score": 6.7,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 10
     },
     {
       "id": "crypto-regulation",
@@ -282,7 +282,7 @@
       "id": "debt-crisis",
       "name": "Emerging Market Debt Crisis",
       "likelihood": "medium",
-      "score": 6.1,
+      "score": 6.0,
       "description": "High USD rates straining EM debt sustainability. Several frontier economies approaching default.",
       "impacts": [
         "EM Bonds",
