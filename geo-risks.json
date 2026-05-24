@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-24T03:23:21.165985+00:00",
-  "total_articles_analyzed": 125,
+  "last_updated": "2026-05-24T06:56:49.162336+00:00",
+  "total_articles_analyzed": 127,
   "risks": [
     {
       "id": "middle-east",
@@ -100,7 +100,7 @@
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
       "likelihood": "medium",
-      "score": 7.7,
+      "score": 7.8,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 18
     },
     {
       "id": "cyber-warfare",
@@ -246,13 +246,13 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 6
     },
     {
       "id": "crypto-regulation",
       "name": "Crypto Regulatory Crackdown",
       "likelihood": "medium",
-      "score": 6.3,
+      "score": 6.2,
       "description": "Global regulatory frameworks tightening. U.S. SEC enforcement actions. EU MiCA implementation creating compliance burdens.",
       "impacts": [
         "Bitcoin",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "debt-crisis",
