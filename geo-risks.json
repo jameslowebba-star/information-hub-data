@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-27T19:22:21.964686+00:00",
-  "total_articles_analyzed": 104,
+  "last_updated": "2026-05-27T21:51:46.957292+00:00",
+  "total_articles_analyzed": 105,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 60
+      "newsAttention": 62
     },
     {
       "id": "us-china",
@@ -63,13 +63,13 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 12
     },
     {
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.3,
+      "score": 8.4,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 16
+      "newsAttention": 18
     },
     {
       "id": "cyber-warfare",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 4
     },
     {
       "id": "western-alliance",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 8
     },
     {
       "id": "crypto-regulation",
@@ -282,7 +282,7 @@
       "id": "debt-crisis",
       "name": "Emerging Market Debt Crisis",
       "likelihood": "medium",
-      "score": 6.1,
+      "score": 6.0,
       "description": "High USD rates straining EM debt sustainability. Several frontier economies approaching default.",
       "impacts": [
         "EM Bonds",
@@ -308,7 +308,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     }
   ],
   "events": [
