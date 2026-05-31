@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-31T17:59:26.655854+00:00",
-  "total_articles_analyzed": 112,
+  "last_updated": "2026-05-31T19:36:40.465941+00:00",
+  "total_articles_analyzed": 113,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 42
+      "newsAttention": 46
     },
     {
       "id": "us-china",
@@ -99,8 +99,8 @@
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
-      "likelihood": "high",
-      "score": 8.0,
+      "likelihood": "medium",
+      "score": 7.9,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 26
+      "newsAttention": 24
     },
     {
       "id": "cyber-warfare",
