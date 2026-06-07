@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-07T03:39:14.265346+00:00",
-  "total_articles_analyzed": 107,
+  "last_updated": "2026-06-07T07:52:14.878376+00:00",
+  "total_articles_analyzed": 112,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 54
+      "newsAttention": 52
     },
     {
       "id": "us-china",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 8
     },
     {
       "id": "trade-war",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 16
+      "newsAttention": 14
     },
     {
       "id": "crypto-regulation",
