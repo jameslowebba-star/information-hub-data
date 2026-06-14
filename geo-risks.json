@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-14T21:09:33.383996+00:00",
-  "total_articles_analyzed": 105,
+  "last_updated": "2026-06-14T23:06:38.360688+00:00",
+  "total_articles_analyzed": 106,
   "risks": [
     {
       "id": "middle-east",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 6
     },
     {
       "id": "trade-war",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 12
     },
     {
       "id": "africa-instability",
