@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-16T03:52:25.575607+00:00",
-  "total_articles_analyzed": 109,
+  "last_updated": "2026-06-16T09:24:08.361693+00:00",
+  "total_articles_analyzed": 112,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 84
+      "newsAttention": 96
     },
     {
       "id": "us-china",
@@ -63,13 +63,13 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.2,
+      "score": 8.3,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -94,13 +94,13 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 4
     },
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
-      "likelihood": "high",
-      "score": 8.0,
+      "likelihood": "medium",
+      "score": 7.9,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 34
+      "newsAttention": 32
     },
     {
       "id": "cyber-warfare",
@@ -155,7 +155,7 @@
           "Crypto Exchanges"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "energy-crisis",
@@ -192,7 +192,7 @@
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 6.9,
+      "score": 6.8,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 6
     },
     {
       "id": "africa-instability",
