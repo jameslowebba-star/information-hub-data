@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-20T00:07:16.187642+00:00",
-  "total_articles_analyzed": 121,
+  "last_updated": "2026-06-20T05:10:46.862942+00:00",
+  "total_articles_analyzed": 122,
   "risks": [
     {
       "id": "middle-east",
@@ -37,7 +37,7 @@
       "id": "us-china",
       "name": "U.S.\u2013China Strategic Competition",
       "likelihood": "high",
-      "score": 8.6,
+      "score": 8.5,
       "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
       "impacts": [
         "Tech Stocks",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 2
     },
     {
       "id": "trade-war",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 36
+      "newsAttention": 34
     },
     {
       "id": "cyber-warfare",
@@ -192,7 +192,7 @@
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 6.9,
+      "score": 7.0,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -222,7 +222,7 @@
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.7,
+      "score": 6.8,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
