@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-21T11:43:43.583732+00:00",
+  "last_updated": "2026-06-21T14:04:49.129707+00:00",
   "total_articles_analyzed": 124,
   "risks": [
     {
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 26
+      "newsAttention": 28
     },
     {
       "id": "cyber-warfare",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 8
     },
     {
       "id": "crypto-regulation",
