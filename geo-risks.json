@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-26T03:28:16.565026+00:00",
-  "total_articles_analyzed": 107,
+  "last_updated": "2026-06-26T07:49:28.305627+00:00",
+  "total_articles_analyzed": 109,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 34
+      "newsAttention": 32
     },
     {
       "id": "us-china",
@@ -99,8 +99,8 @@
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
-      "likelihood": "medium",
-      "score": 7.8,
+      "likelihood": "high",
+      "score": 8.0,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,13 +125,13 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 14
     },
     {
       "id": "cyber-warfare",
       "name": "Major Cyber Attack",
       "likelihood": "medium",
-      "score": 6.9,
+      "score": 7.0,
       "description": "State-sponsored cyber operations targeting critical infrastructure, financial systems, and energy grids.",
       "impacts": [
         "Cybersecurity Stocks",
@@ -155,7 +155,7 @@
           "Crypto Exchanges"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "energy-crisis",
