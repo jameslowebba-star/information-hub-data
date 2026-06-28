@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-28T20:58:30.368251+00:00",
-  "total_articles_analyzed": 108,
+  "last_updated": "2026-06-28T22:06:52.411301+00:00",
+  "total_articles_analyzed": 107,
   "risks": [
     {
       "id": "middle-east",
@@ -222,7 +222,7 @@
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 7.1,
+      "score": 7.2,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 14
     },
     {
       "id": "crypto-regulation",
