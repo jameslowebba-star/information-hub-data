@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-07-03T12:07:29.184286+00:00",
+  "last_updated": "2026-07-03T15:08:21.600284+00:00",
   "total_articles_analyzed": 124,
   "risks": [
     {
       "id": "middle-east",
       "name": "Middle East Regional War",
       "likelihood": "high",
-      "score": 9.7,
+      "score": 9.6,
       "description": "Regional conflict has escalated following U.S.-Israel 'Epic Fury' operation targeting Iran's leadership and military infrastructure. Iran retaliating with strikes on Israel, U.S. assets, and regional targets.",
       "impacts": [
         "Oil & Gas",
@@ -31,13 +31,13 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 28
+      "newsAttention": 24
     },
     {
       "id": "us-china",
       "name": "U.S.\u2013China Strategic Competition",
       "likelihood": "high",
-      "score": 9.0,
+      "score": 8.9,
       "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
       "impacts": [
         "Tech Stocks",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 16
+      "newsAttention": 14
     },
     {
       "id": "trade-war",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 44
+      "newsAttention": 42
     },
     {
       "id": "cyber-warfare",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 8
     },
     {
       "id": "crypto-regulation",
