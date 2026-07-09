@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-09T10:22:03.706287+00:00",
+  "last_updated": "2026-07-09T13:47:19.860927+00:00",
   "total_articles_analyzed": 116,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 50
+      "newsAttention": 52
     },
     {
       "id": "us-china",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 8
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 40
+      "newsAttention": 44
     },
     {
       "id": "cyber-warfare",
@@ -192,7 +192,7 @@
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 7.4,
+      "score": 7.3,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -216,13 +216,13 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 34
+      "newsAttention": 32
     },
     {
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.5,
+      "score": 6.6,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 4
     },
     {
       "id": "crypto-regulation",
