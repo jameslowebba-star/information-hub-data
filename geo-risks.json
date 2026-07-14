@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-14T16:11:50.535184+00:00",
-  "total_articles_analyzed": 119,
+  "last_updated": "2026-07-14T17:59:45.097712+00:00",
+  "total_articles_analyzed": 121,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 60
+      "newsAttention": 68
     },
     {
       "id": "us-china",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 30
+      "newsAttention": 28
     },
     {
       "id": "cyber-warfare",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "western-alliance",
