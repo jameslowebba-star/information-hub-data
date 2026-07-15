@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-15T18:03:52.318200+00:00",
+  "last_updated": "2026-07-15T20:05:59.748717+00:00",
   "total_articles_analyzed": 119,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 74
+      "newsAttention": 78
     },
     {
       "id": "us-china",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "russia-nato",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "debt-crisis",
