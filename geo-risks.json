@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-18T16:54:41.248178+00:00",
+  "last_updated": "2026-07-18T17:54:24.392096+00:00",
   "total_articles_analyzed": 112,
   "risks": [
     {
@@ -131,7 +131,7 @@
       "id": "cyber-warfare",
       "name": "Major Cyber Attack",
       "likelihood": "medium",
-      "score": 7.0,
+      "score": 6.9,
       "description": "State-sponsored cyber operations targeting critical infrastructure, financial systems, and energy grids.",
       "impacts": [
         "Cybersecurity Stocks",
@@ -155,7 +155,7 @@
           "Crypto Exchanges"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "energy-crisis",
