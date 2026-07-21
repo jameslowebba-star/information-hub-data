@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-21T19:17:04.947420+00:00",
+  "last_updated": "2026-07-21T21:05:28.324518+00:00",
   "total_articles_analyzed": 111,
   "risks": [
     {
@@ -69,7 +69,7 @@
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.5,
+      "score": 8.4,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 20
+      "newsAttention": 24
     },
     {
       "id": "cyber-warfare",
