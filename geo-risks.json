@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-22T05:46:45.349497+00:00",
-  "total_articles_analyzed": 115,
+  "last_updated": "2026-07-22T08:23:45.458058+00:00",
+  "total_articles_analyzed": 104,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 60
+      "newsAttention": 56
     },
     {
       "id": "us-china",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 30
+      "newsAttention": 24
     },
     {
       "id": "cyber-warfare",
@@ -246,13 +246,13 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 12
     },
     {
       "id": "crypto-regulation",
       "name": "Crypto Regulatory Crackdown",
       "likelihood": "medium",
-      "score": 6.2,
+      "score": 6.3,
       "description": "Global regulatory frameworks tightening. U.S. SEC enforcement actions. EU MiCA implementation creating compliance burdens.",
       "impacts": [
         "Bitcoin",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "debt-crisis",
