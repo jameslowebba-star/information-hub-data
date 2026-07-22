@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-22T02:25:00.400301+00:00",
-  "total_articles_analyzed": 110,
+  "last_updated": "2026-07-22T05:46:45.349497+00:00",
+  "total_articles_analyzed": 115,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 48
+      "newsAttention": 60
     },
     {
       "id": "us-china",
@@ -69,7 +69,7 @@
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.4,
+      "score": 8.3,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -94,13 +94,13 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
       "likelihood": "high",
-      "score": 8.1,
+      "score": 8.0,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 32
+      "newsAttention": 30
     },
     {
       "id": "cyber-warfare",
@@ -192,7 +192,7 @@
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 6.7,
+      "score": 6.8,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 4
     },
     {
       "id": "africa-instability",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 14
     },
     {
       "id": "crypto-regulation",
