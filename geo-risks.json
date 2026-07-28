@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-28T00:05:31.613326+00:00",
+  "last_updated": "2026-07-28T03:58:18.559404+00:00",
   "total_articles_analyzed": 109,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 46
+      "newsAttention": 44
     },
     {
       "id": "us-china",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 4
     },
     {
       "id": "russia-nato",
@@ -192,7 +192,7 @@
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 6.9,
+      "score": 7.0,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 8
     },
     {
       "id": "africa-instability",
