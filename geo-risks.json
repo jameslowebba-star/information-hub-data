@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-28T03:58:18.559404+00:00",
-  "total_articles_analyzed": 109,
+  "last_updated": "2026-07-28T06:31:32.383700+00:00",
+  "total_articles_analyzed": 111,
   "risks": [
     {
       "id": "middle-east",
@@ -31,13 +31,13 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 44
+      "newsAttention": 46
     },
     {
       "id": "us-china",
       "name": "U.S.\u2013China Strategic Competition",
       "likelihood": "high",
-      "score": 8.8,
+      "score": 8.7,
       "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
       "impacts": [
         "Tech Stocks",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 6
     },
     {
       "id": "trade-war",
@@ -252,7 +252,7 @@
       "id": "crypto-regulation",
       "name": "Crypto Regulatory Crackdown",
       "likelihood": "medium",
-      "score": 6.2,
+      "score": 6.3,
       "description": "Global regulatory frameworks tightening. U.S. SEC enforcement actions. EU MiCA implementation creating compliance burdens.",
       "impacts": [
         "Bitcoin",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "debt-crisis",
