@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-29T02:35:30.778658+00:00",
+  "last_updated": "2026-07-29T05:49:09.125767+00:00",
   "total_articles_analyzed": 112,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 48
+      "newsAttention": 50
     },
     {
       "id": "us-china",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 10
     },
     {
       "id": "africa-instability",
