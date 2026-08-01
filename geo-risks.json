@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-08-01T03:40:36.653027+00:00",
-  "total_articles_analyzed": 120,
+  "last_updated": "2026-08-01T06:25:58.335905+00:00",
+  "total_articles_analyzed": 111,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 42
+      "newsAttention": 36
     },
     {
       "id": "us-china",
@@ -63,13 +63,13 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 8
     },
     {
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.4,
+      "score": 8.3,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 2
     },
     {
       "id": "russia-nato",
@@ -125,13 +125,13 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 20
+      "newsAttention": 18
     },
     {
       "id": "cyber-warfare",
       "name": "Major Cyber Attack",
       "likelihood": "medium",
-      "score": 7.0,
+      "score": 6.9,
       "description": "State-sponsored cyber operations targeting critical infrastructure, financial systems, and energy grids.",
       "impacts": [
         "Cybersecurity Stocks",
@@ -155,7 +155,7 @@
           "Crypto Exchanges"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "energy-crisis",
@@ -222,7 +222,7 @@
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.7,
+      "score": 6.8,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
