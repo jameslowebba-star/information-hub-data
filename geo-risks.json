@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-03T06:19:33.677715+00:00",
+  "last_updated": "2026-08-03T10:39:42.885722+00:00",
   "total_articles_analyzed": 108,
   "risks": [
     {
@@ -31,13 +31,13 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 46
+      "newsAttention": 44
     },
     {
       "id": "us-china",
       "name": "U.S.\u2013China Strategic Competition",
       "likelihood": "high",
-      "score": 8.6,
+      "score": 8.7,
       "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
       "impacts": [
         "Tech Stocks",
@@ -216,13 +216,13 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 4
     },
     {
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.8,
+      "score": 6.7,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 6
     },
     {
       "id": "crypto-regulation",
