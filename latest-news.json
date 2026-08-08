@@ -1,6 +1,71 @@
 {
-  "last_updated": "2026-08-08T23:52:35.658471+02:00",
+  "last_updated": "2026-08-09T00:16:02.606171+02:00",
   "articles": [
+    {
+      "id": "brk-20260808-aade25",
+      "type": "breaking",
+      "category": "usa",
+      "badge": "USA",
+      "headline": "Will Pakistan-Saudi-Turkiye defence pact change US strategy?",
+      "excerpt": "Some experts say the deal precipitates a larger strategic shift in Middle East while others say it reinforces US goals.",
+      "source": "Al Jazeera",
+      "date": "08 Aug 2026",
+      "timestamp": "2026-08-08T21:28:12Z",
+      "url": "https://www.aljazeera.com/news/2026/8/8/will-pakistan-saudi-turkiye-defence-pact-change-us-strategy?traffic_source=rss",
+      "image": ""
+    },
+    {
+      "id": "icymi-20260808-6d08a3",
+      "type": "icymi",
+      "category": "europe",
+      "badge": "Europe",
+      "headline": "Antwerp's 'human zoo': Belgium confronts shame of colonial past",
+      "excerpt": "In 1894, when the Belgian city of Antwerp was hosting a World's Fair, 144 Congolese people were forcibly brought to the city to be exhibited in the Congo Pavilion. In this \"human zoo\", seven Congolese men ultimately\u2026",
+      "source": "France24",
+      "date": "07 Aug 2026",
+      "timestamp": "2026-08-07T08:57:01Z",
+      "url": "https://www.france24.com/en/tv-shows/focus/20260807-antwerp-human-zoo-belgium-confronts-shame-colonial-past",
+      "image": "https://s.france24.com/media/display/1b6b9754-9235-11f1-a4a5-005056a97e36/w:1024/p:16x9/capture-5505115186a758f05030ea8-78640699.jpg"
+    },
+    {
+      "id": "icymi-20260808-0a7004",
+      "type": "icymi",
+      "category": "europe",
+      "badge": "EU",
+      "headline": "Opinion: Europe's summer of heat",
+      "excerpt": "Europe is in another brutal heat wave. The summer's earlier record-breaking weather already damaged crops, sparked wildfires and led to increased deaths.",
+      "source": "NPR",
+      "date": "08 Aug 2026",
+      "timestamp": "2026-08-08T08:00:00Z",
+      "url": "https://www.npr.org/2026/08/08/nx-s1-5916351/opinion-europes-summer-of-heat",
+      "image": ""
+    },
+    {
+      "id": "brk-20260808-941148",
+      "type": "breaking",
+      "category": "crypto",
+      "badge": "Bitcoin",
+      "headline": "US spot Bitcoin ETFs post best week since April with $1B inflows",
+      "excerpt": "The spot Bitcoin exchange-traded funds registered their third-strongest showing since October as institutional demand showed signs of renewed momentum.",
+      "source": "CoinTelegraph",
+      "date": "08 Aug 2026",
+      "timestamp": "2026-08-08T16:20:17Z",
+      "url": "https://cointelegraph.com/news/us-bitcoin-etfs-best-weekly-inflows-april-coldcard-hack?utm_source=rss_feed&utm_medium=rss_tag_bitcoin&utm_campaign=rss_partner_inbound",
+      "image": "https://s3-images.ctmedia.io/media/article-covers/hi-part-2-where-oh-where-has-btc-volatility-gone-etf.jpg"
+    },
+    {
+      "id": "brk-20260808-bc2d2d",
+      "type": "breaking",
+      "category": "crypto",
+      "badge": "ETF",
+      "headline": "Why trillion-dollar asset manager T. Rowe Price put memecoins in its\u2026",
+      "excerpt": "The $1.9 trillion asset manager says excluding established memecoins on principle would undermine its active approach to crypto investing.",
+      "source": "CoinDesk",
+      "date": "08 Aug 2026",
+      "timestamp": "2026-08-08T13:00:00Z",
+      "url": "https://www.coindesk.com/markets/2026/08/06/why-trillion-dollar-asset-manager-t-rowe-price-put-memecoins-in-its-crypto-etf",
+      "image": "https://cdn.sanity.io/images/s3y3vcno/production/20ab5a9646b9489023b2430751cd56fc03709f8d-2048x1152.jpg?fm=jpg&w=1920&h=1080&crop=focalpoint&fit=clip"
+    },
     {
       "id": "brk-20260808-551633",
       "type": "breaking",
@@ -2535,71 +2600,6 @@
       "timestamp": "2026-08-08T15:44:08Z",
       "url": "https://www.bbc.co.uk/news/articles/cewr8wel4z8o?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4f06/live/529a9080-933f-11f1-a35f-039358cea467.jpg"
-    },
-    {
-      "id": "brk-20260808-dde0c4",
-      "type": "breaking",
-      "category": "africa",
-      "badge": "Politics",
-      "headline": "Watch: Moment opposition MP throws eggs at Kosovo's acting PM",
-      "excerpt": "Lawmakers and police officers had to intervene after Alliance party MP Time Kadrijaj hurled at least four eggs towards Kosovo's acting prime minister Albin Kurti.",
-      "source": "BBC News",
-      "date": "08 Aug 2026",
-      "timestamp": "2026-08-08T15:59:37Z",
-      "url": "https://www.bbc.co.uk/news/videos/cvg8je12xxeo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9e8a/live/f4567c00-933e-11f1-870d-5d08c49babb2.jpg"
-    },
-    {
-      "id": "icymi-20260808-09d650",
-      "type": "icymi",
-      "category": "finance",
-      "badge": "Finance",
-      "headline": "Trump imposes 15% tariff on key chip material to counter China",
-      "excerpt": "The move aims to protect US firms as they face increasing competition from China's chip industry.",
-      "source": "BBC Business",
-      "date": "07 Aug 2026",
-      "timestamp": "2026-08-07T01:03:35Z",
-      "url": "https://www.bbc.co.uk/news/articles/cdrvn686dljo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/60dd/live/9a103bd0-91fb-11f1-952a-e58ebd1358f8.jpg"
-    },
-    {
-      "id": "icymi-20260808-92e348",
-      "type": "icymi",
-      "category": "europe",
-      "badge": "France",
-      "headline": "Le Corbusier\u2019s social housing was meant to be the dream. In a summer of\u2026",
-      "excerpt": "When temperatures get to 40C inside, and French building regulations won\u2019t even allow shutters, these tenants\u2019 listed homes are simply unlivableThe population of Firminy, south-east France, has been dwindling for\u2026",
-      "source": "The Guardian",
-      "date": "07 Aug 2026",
-      "timestamp": "2026-08-07T04:00:07Z",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/07/le-corbusier-social-housing-france-dream-summer-extreme-heat-nightmare",
-      "image": ""
-    },
-    {
-      "id": "icymi-20260808-d7ead2",
-      "type": "icymi",
-      "category": "europe",
-      "badge": "France",
-      "headline": "Russian attacks kill several in Ukraine",
-      "excerpt": "At least four people, including a child, were killed in Russian drone and missile strikes on Kyiv and surrounding regions early Saturday. Moscow has been carrying out near-daily attacks, exploiting Ukraine\u2019s strained\u2026",
-      "source": "France24",
-      "date": "08 Aug 2026",
-      "timestamp": "2026-08-08T13:12:48Z",
-      "url": "https://www.france24.com/en/russian-attacks-kill-several-in-ukraine",
-      "image": "https://s.france24.com/media/display/6609f260-932a-11f1-a372-005056bf30b7/w:1024/p:16x9/EN-20260808-150131-150501-CS.jpg"
-    },
-    {
-      "id": "icymi-20260808-8caadb",
-      "type": "icymi",
-      "category": "europe",
-      "badge": "France",
-      "headline": "Winemakers across Europe face the challenges of climate change",
-      "excerpt": "Winegrowers in France are harvesting their grapes unusually early this season because of the effects of climate change. While the rising global temperatures offer a new chance for winemakers in northern and Scandinavian\u2026",
-      "source": "France24",
-      "date": "07 Aug 2026",
-      "timestamp": "2026-08-07T18:52:50Z",
-      "url": "https://www.france24.com/en/europe/20260807-winemakers-across-europe-face-the-challenges-of-climate-change",
-      "image": "https://s.france24.com/media/display/19e560ce-927e-11f1-bbfa-005056bfb2b6/w:1024/p:16x9/000-C3JQ79P.jpg"
     }
   ]
 }
