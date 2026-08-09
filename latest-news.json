@@ -1,6 +1,45 @@
 {
-  "last_updated": "2026-08-09T23:29:59.757594+02:00",
+  "last_updated": "2026-08-09T23:58:28.502786+02:00",
   "articles": [
+    {
+      "id": "icymi-20260809-908699",
+      "type": "icymi",
+      "category": "usa",
+      "badge": "USA",
+      "headline": "Hunter Biden tells BBC his pardon was 'not good' for US or his father's\u2026",
+      "excerpt": "In a wide-ranging BBC interview, the former president's son denies any interest in running for office and says his father's cancer has spread.",
+      "source": "BBC News",
+      "date": "07 Aug 2026",
+      "timestamp": "2026-08-07T22:07:00Z",
+      "url": "https://www.bbc.co.uk/news/articles/cy8ey458pv5o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/def7/live/2d2fe210-92fd-11f1-b2ab-0dd01740f9f6.jpg"
+    },
+    {
+      "id": "icymi-20260809-d530c7",
+      "type": "icymi",
+      "category": "europe",
+      "badge": "UK",
+      "headline": "Chinese EV sales surge to new high in Europe putting tariffs under scrutiny",
+      "excerpt": "Imports this year now account for 14% of the market amid claims vehicles are being dumped in the EU and UKChinese electric car sales have risen across Europe to a record high driven by strong demand and low tariffs in\u2026",
+      "source": "The Guardian",
+      "date": "09 Aug 2026",
+      "timestamp": "2026-08-09T14:30:58Z",
+      "url": "https://www.theguardian.com/business/2026/aug/09/chinese-electric-car-sales-surge-to-a-record-high-in-europe",
+      "image": ""
+    },
+    {
+      "id": "icymi-20260809-5b9b39",
+      "type": "icymi",
+      "category": "finance",
+      "badge": "Finance",
+      "headline": "Watchdog for $46 billion tribal gambling industry can't enforce the law\u2026",
+      "excerpt": "Tribal gambling brought in a record $46 billion in 2025, nearly triple the annual casino revenue of gambling powerhouse Nevada.",
+      "source": "PBS",
+      "date": "09 Aug 2026",
+      "timestamp": "2026-08-09T17:32:55Z",
+      "url": "https://www.pbs.org/newshour/nation/watchdog-for-46-billion-tribal-gambling-industry-cant-enforce-the-law-without-a-chairperson",
+      "image": "https://d3i6fh83elv35t.cloudfront.net/static/2026/08/AP26218649013669-1024x683.jpg"
+    },
     {
       "id": "icymi-20260809-659fb3",
       "type": "icymi",
@@ -2561,45 +2600,6 @@
       "timestamp": "2026-08-09T08:57:29Z",
       "url": "http://www.africanews.com/2026/08/09/spain-imposes-temporary-retaliatory-border-checks-for-italians/",
       "image": "http://images.euronews.com/articles/stories/09/86/76/22/640x360_cmsv2_0d7b9bbd-b3e8-5cd1-9fcb-3f2680471329-9867622.jpg?1786261548"
-    },
-    {
-      "id": "brk-20260809-42535e",
-      "type": "breaking",
-      "category": "africa",
-      "badge": "Politics",
-      "headline": "The Mecca pact is not just another regional alliance",
-      "excerpt": "It could set the stage for a profound transformation of regional security in the Gulf.",
-      "source": "Al Jazeera",
-      "date": "09 Aug 2026",
-      "timestamp": "2026-08-09T14:23:13Z",
-      "url": "https://www.aljazeera.com/opinions/2026/8/9/the-mecca-pact-is-not-just-another-regional-alliance?traffic_source=rss",
-      "image": ""
-    },
-    {
-      "id": "brk-20260809-e8fbb5",
-      "type": "breaking",
-      "category": "europe",
-      "badge": "Russia",
-      "headline": "Syria says it reached deal with Moscow on future of Russian bases",
-      "excerpt": "Hmeimim airbase and Tartus naval base will become joint training and capacity-building centres under the agreement.",
-      "source": "Al Jazeera",
-      "date": "09 Aug 2026",
-      "timestamp": "2026-08-09T14:20:51Z",
-      "url": "https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases?traffic_source=rss",
-      "image": ""
-    },
-    {
-      "id": "brk-20260809-8eeba6",
-      "type": "breaking",
-      "category": "usa",
-      "badge": "Politics",
-      "headline": "Trump targets birthright citizenship again",
-      "excerpt": "US President Donald Trump has signed two new executive orders targeting birthright citizenship.",
-      "source": "Al Jazeera",
-      "date": "09 Aug 2026",
-      "timestamp": "2026-08-09T14:20:31Z",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/9/trump-targets-birthright-citizenship-again?traffic_source=rss",
-      "image": ""
     }
   ]
 }
