@@ -1,6 +1,71 @@
 {
-  "last_updated": "2026-08-09T23:58:28.502786+02:00",
+  "last_updated": "2026-08-10T00:27:42.465625+02:00",
   "articles": [
+    {
+      "id": "icymi-20260809-361d54",
+      "type": "icymi",
+      "category": "africa",
+      "badge": "Politics",
+      "headline": "Crews battle wildfires in western U.S. and Canada",
+      "excerpt": "There have been 183 new wildfires, including eight large ones, across the U.S. since Saturday, the National Interagency Fire Center reported on Sunday.",
+      "source": "NPR",
+      "date": "09 Aug 2026",
+      "timestamp": "2026-08-09T18:03:09Z",
+      "url": "https://www.npr.org/2026/08/09/nx-s1-5926463/western-us-wildfires-canada-utah",
+      "image": ""
+    },
+    {
+      "id": "icymi-20260809-3c9447",
+      "type": "icymi",
+      "category": "africa",
+      "badge": "Politics",
+      "headline": "Demi Vollering wins Tour de France for the 2nd time",
+      "excerpt": "Vollering, who first won the competition in 2023, finished the stage more than a minute ahead of Spaniard Paula Blasi Cairol and 2024 champion Polish rider Katarzyna Niewiadoma-Phinney.",
+      "source": "NPR",
+      "date": "09 Aug 2026",
+      "timestamp": "2026-08-09T18:00:52Z",
+      "url": "https://www.npr.org/2026/08/09/g-s1-137991/demi-vollering-tour-de-france-winner",
+      "image": ""
+    },
+    {
+      "id": "icymi-20260809-21b4a8",
+      "type": "icymi",
+      "category": "europe",
+      "badge": "Spain",
+      "headline": "How to spot the Perseid meteor shower, a summer light show that promises\u2026",
+      "excerpt": "The meteor shower's peak Wednesday night into Thursday morning coincides with a total solar eclipse across Spain, Iceland and Greenland and a six-planet parade \u2014 though the best time to view the fireballs will come\u2026",
+      "source": "PBS",
+      "date": "09 Aug 2026",
+      "timestamp": "2026-08-09T18:05:27Z",
+      "url": "https://www.pbs.org/newshour/science/how-to-spot-the-perseid-meteor-shower-a-summer-light-show-that-promises-to-dazzle",
+      "image": "https://d3i6fh83elv35t.cloudfront.net/static/2026/08/2024-08-12T050910Z_298061794_RC22E9ADT0Q0_RTRMADP_3_METEOR-SHOWER-SPAIN-1024x683.jpg"
+    },
+    {
+      "id": "icymi-20260809-b61ec4",
+      "type": "icymi",
+      "category": "finance",
+      "badge": "Inflation",
+      "headline": "S&P 500 futures tick lower as traders wait for possible Strait of Hormuz\u2026",
+      "excerpt": "The three major indexes are coming off their best weeks since April, and the S&P 500 finished Friday at an all-time closing high.",
+      "source": "CNBC",
+      "date": "09 Aug 2026",
+      "timestamp": "2026-08-09T22:18:53Z",
+      "url": "https://www.cnbc.com/2026/08/09/stock-market-today-live-updates.html",
+      "image": ""
+    },
+    {
+      "id": "icymi-20260809-67db74",
+      "type": "icymi",
+      "category": "usa",
+      "badge": "Politics",
+      "headline": "Trump names Will Scharf as White House counsel",
+      "excerpt": "Will Scharf \u200cwill become the White House's top lawyer \u200bafter overseeing the administrative work of the Oval Office in his current \u2060role.",
+      "source": "CNBC",
+      "date": "09 Aug 2026",
+      "timestamp": "2026-08-09T22:15:28Z",
+      "url": "https://www.cnbc.com/2026/08/09/trump-will-scharf-white-house-counsel.html",
+      "image": ""
+    },
     {
       "id": "icymi-20260809-908699",
       "type": "icymi",
@@ -2535,71 +2600,6 @@
       "timestamp": "2026-08-09T15:13:45Z",
       "url": "https://www.sabcnews.com/sabcnews/dffe-probes-dead-sardines-along-western-cape-coast/",
       "image": ""
-    },
-    {
-      "id": "icymi-20260809-53c019",
-      "type": "icymi",
-      "category": "africa",
-      "badge": "Western Cape",
-      "headline": "Currie Cup result: Cheetahs stun wasteful Stormers in Cape Town",
-      "excerpt": "The Cheetahs trailed for the majority of the game, before sneaking in and stealing a win at the death from Stormers.",
-      "source": "The Citizen",
-      "date": "09 Aug 2026",
-      "timestamp": "2026-08-09T15:16:10Z",
-      "url": "https://www.citizen.co.za/sport/rugby/cheetahs-stun-wasteful-stormers/",
-      "image": "https://media.citizen.co.za/wp-content/uploads/2026/08/Prince-Nkabinde-1.jpg"
-    },
-    {
-      "id": "icymi-20260809-57da2a",
-      "type": "icymi",
-      "category": "africa",
-      "badge": "Politics",
-      "headline": "AfriForum convinces NPA to pursue prosecution of Malema over Cwecwe\u2026",
-      "excerpt": "AfriForum want EFF leader Julius Malema prosecuted for crimen injuria for 'rapist' remarks made against former Bergview College principal Jaco Pieterse.",
-      "source": "The Citizen",
-      "date": "09 Aug 2026",
-      "timestamp": "2026-08-09T14:59:11Z",
-      "url": "https://www.citizen.co.za/news/south-africa/courts/afriforum-npa-prosecution-malema-over-cwecwe-accusations/",
-      "image": "https://media.citizen.co.za/wp-content/uploads/2026/08/Malema.jpg"
-    },
-    {
-      "id": "icymi-20260809-6052a6",
-      "type": "icymi",
-      "category": "africa",
-      "badge": "Africa",
-      "headline": "FIFA defends Infantino hitting out at critics trying to 'undermine' him",
-      "excerpt": "Its latest defence comes after UEFA confirmed a 'departure payment' made to an alleged mistress when he was working with them.",
-      "source": "AfricaNews",
-      "date": "09 Aug 2026",
-      "timestamp": "2026-08-09T15:10:36Z",
-      "url": "http://www.africanews.com/2026/08/09/fifa-defends-infantino-hitting-out-at-critics-trying-to-undermine-him/",
-      "image": "http://images.euronews.com/articles/stories/09/86/77/13/640x360_cmsv2_444dda72-ff66-516d-aa12-6664fa2a4816-9867713.jpg?1786269303"
-    },
-    {
-      "id": "icymi-20260809-79e4c9",
-      "type": "icymi",
-      "category": "africa",
-      "badge": "Africa",
-      "headline": "Iran says its close to finalising a shipping route agreement with Oman",
-      "excerpt": "However, its foreign minister warned a deal would not automatically result in the reopening of the crucial waterway.",
-      "source": "AfricaNews",
-      "date": "09 Aug 2026",
-      "timestamp": "2026-08-09T14:24:44Z",
-      "url": "http://www.africanews.com/2026/08/09/iran-says-its-close-to-finalising-a-shipping-route-agreement-with-oman/",
-      "image": "http://images.euronews.com/articles/stories/09/86/78/41/640x360_cmsv2_3c7274b0-6078-5c61-8274-b5a6d18f8f05-9867841.jpg?1786282069"
-    },
-    {
-      "id": "icymi-20260809-f3b5e7",
-      "type": "icymi",
-      "category": "africa",
-      "badge": "Africa",
-      "headline": "Spain imposes temporary retaliatory border checks for Italians",
-      "excerpt": "The border checks started at midnight on Saturday, a week after Italy introduced similar restrictions on Spanish visitors.",
-      "source": "AfricaNews",
-      "date": "09 Aug 2026",
-      "timestamp": "2026-08-09T08:57:29Z",
-      "url": "http://www.africanews.com/2026/08/09/spain-imposes-temporary-retaliatory-border-checks-for-italians/",
-      "image": "http://images.euronews.com/articles/stories/09/86/76/22/640x360_cmsv2_0d7b9bbd-b3e8-5cd1-9fcb-3f2680471329-9867622.jpg?1786261548"
     }
   ]
 }
