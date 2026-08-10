@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-08-10T07:26:26.017885+00:00",
-  "total_articles_analyzed": 108,
+  "last_updated": "2026-08-10T09:16:15.929937+00:00",
+  "total_articles_analyzed": 107,
   "risks": [
     {
       "id": "middle-east",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 12
     },
     {
       "id": "trade-war",
@@ -100,7 +100,7 @@
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
       "likelihood": "medium",
-      "score": 7.7,
+      "score": 7.8,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,13 +125,13 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 16
     },
     {
       "id": "cyber-warfare",
       "name": "Major Cyber Attack",
       "likelihood": "medium",
-      "score": 6.9,
+      "score": 7.0,
       "description": "State-sponsored cyber operations targeting critical infrastructure, financial systems, and energy grids.",
       "impacts": [
         "Cybersecurity Stocks",
@@ -155,7 +155,7 @@
           "Crypto Exchanges"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     },
     {
       "id": "energy-crisis",
@@ -216,7 +216,7 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 2
     },
     {
       "id": "africa-instability",
@@ -252,7 +252,7 @@
       "id": "crypto-regulation",
       "name": "Crypto Regulatory Crackdown",
       "likelihood": "medium",
-      "score": 6.3,
+      "score": 6.2,
       "description": "Global regulatory frameworks tightening. U.S. SEC enforcement actions. EU MiCA implementation creating compliance burdens.",
       "impacts": [
         "Bitcoin",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "debt-crisis",
