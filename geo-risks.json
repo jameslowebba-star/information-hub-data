@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-08-14T10:58:32.529204+00:00",
-  "total_articles_analyzed": 109,
+  "last_updated": "2026-08-14T11:49:55.363317+00:00",
+  "total_articles_analyzed": 108,
   "risks": [
     {
       "id": "middle-east",
       "name": "Middle East Regional War",
       "likelihood": "high",
-      "score": 9.4,
+      "score": 9.5,
       "description": "Regional conflict has escalated following U.S.-Israel 'Epic Fury' operation targeting Iran's leadership and military infrastructure. Iran retaliating with strikes on Israel, U.S. assets, and regional targets.",
       "impacts": [
         "Oil & Gas",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 12
     },
     {
       "id": "us-china",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 22
+      "newsAttention": 24
     },
     {
       "id": "cyber-warfare",
