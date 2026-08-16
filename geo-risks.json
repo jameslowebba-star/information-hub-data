@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-16T08:24:31.274305+00:00",
+  "last_updated": "2026-08-16T09:23:29.635245+00:00",
   "total_articles_analyzed": 107,
   "risks": [
     {
@@ -37,7 +37,7 @@
       "id": "us-china",
       "name": "U.S.\u2013China Strategic Competition",
       "likelihood": "high",
-      "score": 8.7,
+      "score": 8.6,
       "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
       "impacts": [
         "Tech Stocks",
@@ -63,13 +63,13 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 2
     },
     {
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.4,
+      "score": 8.2,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -94,13 +94,13 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 0
     },
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
       "likelihood": "medium",
-      "score": 7.7,
+      "score": 7.9,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 12
     },
     {
       "id": "cyber-warfare",
