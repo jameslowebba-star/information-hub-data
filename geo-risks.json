@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-08-20T22:23:00.822031+00:00",
-  "total_articles_analyzed": 107,
+  "last_updated": "2026-08-20T23:21:38.375465+00:00",
+  "total_articles_analyzed": 108,
   "risks": [
     {
       "id": "middle-east",
@@ -125,13 +125,13 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 18
+      "newsAttention": 16
     },
     {
       "id": "cyber-warfare",
       "name": "Major Cyber Attack",
       "likelihood": "medium",
-      "score": 6.9,
+      "score": 7.0,
       "description": "State-sponsored cyber operations targeting critical infrastructure, financial systems, and energy grids.",
       "impacts": [
         "Cybersecurity Stocks",
