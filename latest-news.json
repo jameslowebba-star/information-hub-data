@@ -1,6 +1,71 @@
 {
-  "last_updated": "2026-08-24T00:43:41.374003+02:00",
+  "last_updated": "2026-08-24T01:10:07.728313+02:00",
   "articles": [
+    {
+      "id": "brk-20260823-7d3c17",
+      "type": "breaking",
+      "category": "world",
+      "badge": "World",
+      "headline": "Dozens of co-ordinated arson attacks hit southern Thailand",
+      "excerpt": "No group has claimed responsibility for the attacks, which the military said \"aimed at creating unrest\".",
+      "source": "BBC News",
+      "date": "23 Aug 2026",
+      "timestamp": "2026-08-23T11:50:59Z",
+      "url": "https://www.bbc.co.uk/news/articles/c8enegx4xy3o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cb09/live/98ca1da0-9ee8-11f1-9ebe-a78ab900c4a7.jpg"
+    },
+    {
+      "id": "icymi-20260823-7e3593",
+      "type": "icymi",
+      "category": "finance",
+      "badge": "Markets",
+      "headline": "Les used a QR code to download a parking app - but it was a scam",
+      "excerpt": "Scammers set up a monthly subscription of \u00a360 from Les Howard's account after he downloaded an app.",
+      "source": "BBC Business",
+      "date": "23 Aug 2026",
+      "timestamp": "2026-08-23T06:23:54Z",
+      "url": "https://www.bbc.co.uk/news/articles/cwyjqg578e1o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/580f/live/a3bddc80-9ca2-11f1-a5a0-114ca9d4a1bc.jpg"
+    },
+    {
+      "id": "icymi-20260823-504e35",
+      "type": "icymi",
+      "category": "europe",
+      "badge": "UK",
+      "headline": "Russia withdraws ambassador to UK as Kremlin raises pressure over Ukraine\u2026",
+      "excerpt": "Embassy in London says Andrey Kelin left last month after seven years in diplomatic postRussia has withdrawn its ambassador to the UK, it has emerged, as the Kremlin continues to try to put pressure on Britain over its\u2026",
+      "source": "The Guardian",
+      "date": "23 Aug 2026",
+      "timestamp": "2026-08-23T13:01:11Z",
+      "url": "https://www.theguardian.com/world/2026/aug/23/russia-withdraws-ambassador-uk-kremlin-pressure-ukraine-andrey-kelin",
+      "image": ""
+    },
+    {
+      "id": "icymi-20260823-dbc68d",
+      "type": "icymi",
+      "category": "africa",
+      "badge": "Politics",
+      "headline": "As Flock battles public scrutiny, other police surveillance companies see\u2026",
+      "excerpt": "Dozens of cities have canceled their contracts with Flock. Some are switching to other companies, but privacy experts say they're no better than Flock.",
+      "source": "NPR",
+      "date": "22 Aug 2026",
+      "timestamp": "2026-08-22T07:43:32Z",
+      "url": "https://www.npr.org/2026/08/22/nx-s1-5931446/flock-fallout-competitors-see-opportunity",
+      "image": ""
+    },
+    {
+      "id": "icymi-20260823-456e92",
+      "type": "icymi",
+      "category": "africa",
+      "badge": "Politics",
+      "headline": "Sullivan endorses Sullivan against Sullivan in Alaska",
+      "excerpt": "Three Dan Sullivan\u2019s are wading in to Alaska\u2019s Senate race but only one has earned the support of another incumbent lawmaker with his namesake. Sen. Dan S. Sullivan (R-Alaska) was endorsed by former Anchorage Mayor Dan\u2026",
+      "source": "The Hill",
+      "date": "23 Aug 2026",
+      "timestamp": "2026-08-23T22:26:13Z",
+      "url": "https://thehill.com/homenews/campaign/6046069-alaska-senate-race-three-sullivan/",
+      "image": "https://thehill.com/wp-content/uploads/sites/2/2026/07/On-the-ballot-INSIDER_070926_Mueller_AP_J-Scott-Applwhite-and-Katie-Holmlund.png?w=900"
+    },
     {
       "id": "icymi-20260823-f8f3a3",
       "type": "icymi",
@@ -2535,71 +2600,6 @@
       "timestamp": "2026-08-23T12:17:01Z",
       "url": "https://www.pbs.org/newshour/health/as-the-lindsay-clancy-case-highlights-postpartum-psychosis-a-mom-stricken-by-it-shares-her-story-of-hope",
       "image": "https://d3i6fh83elv35t.cloudfront.net/static/2026/08/2026-08-18T175845Z_339129142_RC231NADKD5C_RTRMADP_3_MASSACHUSETTS-CRIME-CLANCY-1024x695.jpg"
-    },
-    {
-      "id": "icymi-20260823-68f371",
-      "type": "icymi",
-      "category": "crypto",
-      "badge": "Crypto",
-      "headline": "63% of Religious Books on Amazon Are Likely AI-Written, Study Finds",
-      "excerpt": "Witchcraft books had the highest rate of likely AI-generated content at 78%, according to an Originality.ai analysis of more than 2,000 titles.",
-      "source": "Decrypt",
-      "date": "23 Aug 2026",
-      "timestamp": "2026-08-23T16:31:04Z",
-      "url": "https://decrypt.co/376295/religious-books-amazon-ai-written-study",
-      "image": "https://cdn.decrypt.co/wp-content/uploads/2025/07/amazon-logo-1-gID_7.png"
-    },
-    {
-      "id": "brk-20260823-718c40",
-      "type": "breaking",
-      "category": "africa",
-      "badge": "Elections",
-      "headline": "SACP marks first election contest since \u201994 in Cape Town",
-      "excerpt": "The SACP in the Western Cape has launched its election manifesto in Cape Town on Sunday.",
-      "source": "SABC News",
-      "date": "23 Aug 2026",
-      "timestamp": "2026-08-23T16:31:28Z",
-      "url": "https://www.sabcnews.com/sabcnews/sacp-marks-first-election-contest-since-94-in-cape-town/",
-      "image": ""
-    },
-    {
-      "id": "brk-20260823-2aa9b5",
-      "type": "breaking",
-      "category": "africa",
-      "badge": "Western Cape",
-      "headline": "Infrastructure symposium seeks to close SA\u2019s R1 trillion funding gap",
-      "excerpt": "This year\u2019s Sustainable Infrastructure Development Symposium of SA is being held in Cape Town.",
-      "source": "SABC News",
-      "date": "23 Aug 2026",
-      "timestamp": "2026-08-23T16:25:16Z",
-      "url": "https://www.sabcnews.com/sabcnews/infrastructure-symposium-seeks-to-close-sas-r1trillion-funding-gap/",
-      "image": ""
-    },
-    {
-      "id": "icymi-20260823-ffe5fd",
-      "type": "icymi",
-      "category": "africa",
-      "badge": "Africa",
-      "headline": "McLaren\u2019s Norris wins Dutch GP after Verstappen crash",
-      "excerpt": "\"I made it tough for myself today, but a good race. Well fought. Probably one of my better wins. We had to fight for it well, but the pace was very strong.\"",
-      "source": "The Citizen",
-      "date": "23 Aug 2026",
-      "timestamp": "2026-08-23T16:43:23Z",
-      "url": "https://www.citizen.co.za/sport/mclaren-norris-wins-dutch-go-verstappen-crash/",
-      "image": "https://media.citizen.co.za/wp-content/uploads/2026/08/AFP__20260823__C6BY7CQ__v1__HighRes__AutoPrixF1Ned-2500x1667.jpg"
-    },
-    {
-      "id": "icymi-20260823-ffad9d",
-      "type": "icymi",
-      "category": "africa",
-      "badge": "Congo",
-      "headline": "Africa: The Deadly Bundibugyo Ebola Outbreak Can Be Stopped",
-      "excerpt": "[allAfrica] Each time we travel to the Democratic Republic of the Congo (DRC), we first go to listen.",
-      "source": "AllAfrica",
-      "date": "23 Aug 2026",
-      "timestamp": "2026-08-23T10:55:38Z",
-      "url": "https://allafrica.com/stories/202608230040.html",
-      "image": ""
     }
   ]
 }
