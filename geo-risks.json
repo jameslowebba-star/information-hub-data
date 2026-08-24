@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-08-24T17:27:20.846063+00:00",
-  "total_articles_analyzed": 111,
+  "last_updated": "2026-08-24T18:35:19.678136+00:00",
+  "total_articles_analyzed": 112,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 40
+      "newsAttention": 42
     },
     {
       "id": "us-china",
@@ -63,13 +63,13 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 40
+      "newsAttention": 42
     },
     {
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.7,
+      "score": 8.8,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 24
+      "newsAttention": 26
     },
     {
       "id": "russia-nato",
