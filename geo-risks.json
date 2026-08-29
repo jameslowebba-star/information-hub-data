@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-29T19:09:51.816881+00:00",
+  "last_updated": "2026-08-29T22:19:03.220001+00:00",
   "total_articles_analyzed": 115,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 30
+      "newsAttention": 24
     },
     {
       "id": "us-china",
@@ -63,13 +63,13 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 10
     },
     {
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.6,
+      "score": 8.7,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -99,8 +99,8 @@
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
-      "likelihood": "medium",
-      "score": 7.9,
+      "likelihood": "high",
+      "score": 8.0,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 16
+      "newsAttention": 14
     },
     {
       "id": "cyber-warfare",
