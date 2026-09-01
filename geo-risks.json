@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-01T07:13:40.119586+00:00",
-  "total_articles_analyzed": 117,
+  "last_updated": "2026-09-01T13:03:17.663647+00:00",
+  "total_articles_analyzed": 121,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 40
+      "newsAttention": 46
     },
     {
       "id": "us-china",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 20
+      "newsAttention": 22
     },
     {
       "id": "cyber-warfare",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 2
     },
     {
       "id": "western-alliance",
@@ -222,7 +222,7 @@
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.7,
+      "score": 6.6,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 4
     },
     {
       "id": "crypto-regulation",
