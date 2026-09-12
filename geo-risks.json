@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-12T05:22:59.663700+00:00",
-  "total_articles_analyzed": 110,
+  "last_updated": "2026-09-12T10:03:26.460353+00:00",
+  "total_articles_analyzed": 102,
   "risks": [
     {
       "id": "middle-east",
@@ -31,13 +31,13 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 42
+      "newsAttention": 38
     },
     {
       "id": "us-china",
       "name": "U.S.\u2013China Strategic Competition",
       "likelihood": "high",
-      "score": 9.0,
+      "score": 9.1,
       "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
       "impacts": [
         "Tech Stocks",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 18
+      "newsAttention": 20
     },
     {
       "id": "trade-war",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 24
+      "newsAttention": 22
     },
     {
       "id": "cyber-warfare",
@@ -161,7 +161,7 @@
       "id": "energy-crisis",
       "name": "Global Energy Disruption",
       "likelihood": "high",
-      "score": 8.2,
+      "score": 8.1,
       "description": "Strait of Hormuz chokepoint under active threat. Oil supply disruptions from Middle East conflict. OPEC+ production cuts maintaining price pressure.",
       "impacts": [
         "Brent Crude",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 14
+      "newsAttention": 10
     },
     {
       "id": "western-alliance",
