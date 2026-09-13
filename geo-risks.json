@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-13T08:49:06.907650+00:00",
-  "total_articles_analyzed": 104,
+  "last_updated": "2026-09-13T13:38:25.751653+00:00",
+  "total_articles_analyzed": 103,
   "risks": [
     {
       "id": "middle-east",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 42
+      "newsAttention": 56
     },
     {
       "id": "us-china",
@@ -161,7 +161,7 @@
       "id": "energy-crisis",
       "name": "Global Energy Disruption",
       "likelihood": "high",
-      "score": 8.2,
+      "score": 8.1,
       "description": "Strait of Hormuz chokepoint under active threat. Oil supply disruptions from Middle East conflict. OPEC+ production cuts maintaining price pressure.",
       "impacts": [
         "Brent Crude",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 2
     },
     {
       "id": "crypto-regulation",
