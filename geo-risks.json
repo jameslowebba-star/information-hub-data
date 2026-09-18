@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-18T21:24:08.820510+00:00",
+  "last_updated": "2026-09-18T23:51:34.835987+00:00",
   "total_articles_analyzed": 102,
   "risks": [
     {
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 46
+      "newsAttention": 44
     },
     {
       "id": "us-china",
@@ -69,7 +69,7 @@
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.4,
+      "score": 8.5,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 12
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 20
+      "newsAttention": 22
     },
     {
       "id": "cyber-warfare",
