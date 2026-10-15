@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-10-15T08:49:19.517683+00:00",
-  "total_articles_analyzed": 112,
+  "last_updated": "2026-10-15T13:55:08.537900+00:00",
+  "total_articles_analyzed": 107,
   "risks": [
     {
       "id": "middle-east",
       "name": "Middle East Regional War",
       "likelihood": "high",
-      "score": 9.7,
+      "score": 9.6,
       "description": "Regional conflict has escalated following U.S.-Israel 'Epic Fury' operation targeting Iran's leadership and military infrastructure. Iran retaliating with strikes on Israel, U.S. assets, and regional targets.",
       "impacts": [
         "Oil & Gas",
@@ -31,13 +31,13 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 30
+      "newsAttention": 26
     },
     {
       "id": "us-china",
       "name": "U.S.\u2013China Strategic Competition",
       "likelihood": "high",
-      "score": 8.7,
+      "score": 9.0,
       "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
       "impacts": [
         "Tech Stocks",
@@ -63,13 +63,13 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 18
     },
     {
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.4,
+      "score": 8.5,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -94,7 +94,7 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 8
+      "newsAttention": 10
     },
     {
       "id": "russia-nato",
@@ -125,7 +125,7 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 46
+      "newsAttention": 56
     },
     {
       "id": "cyber-warfare",
@@ -161,7 +161,7 @@
       "id": "energy-crisis",
       "name": "Global Energy Disruption",
       "likelihood": "medium",
-      "score": 7.9,
+      "score": 7.8,
       "description": "Strait of Hormuz chokepoint under active threat. Oil supply disruptions from Middle East conflict. OPEC+ production cuts maintaining price pressure.",
       "impacts": [
         "Brent Crude",
@@ -186,7 +186,7 @@
           "Manufacturing"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "western-alliance",
@@ -216,13 +216,13 @@
           "U.S. Treasury Bonds"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 2
     },
     {
       "id": "africa-instability",
       "name": "African Political Instability",
       "likelihood": "medium",
-      "score": 6.6,
+      "score": 6.5,
       "description": "Coup contagion in Sahel region. Resource nationalism rising. South Africa political uncertainty.",
       "impacts": [
         "JSE All Share",
@@ -246,13 +246,13 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 4
+      "newsAttention": 0
     },
     {
       "id": "crypto-regulation",
       "name": "Crypto Regulatory Crackdown",
       "likelihood": "medium",
-      "score": 6.3,
+      "score": 6.2,
       "description": "Global regulatory frameworks tightening. U.S. SEC enforcement actions. EU MiCA implementation creating compliance burdens.",
       "impacts": [
         "Bitcoin",
@@ -276,13 +276,13 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "debt-crisis",
       "name": "Emerging Market Debt Crisis",
       "likelihood": "medium",
-      "score": 6.0,
+      "score": 6.1,
       "description": "High USD rates straining EM debt sustainability. Several frontier economies approaching default.",
       "impacts": [
         "EM Bonds",
@@ -308,7 +308,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 2
     }
   ],
   "events": []
