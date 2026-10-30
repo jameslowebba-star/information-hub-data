@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-30T00:35:07.246866+00:00",
-  "total_articles_analyzed": 107,
+  "last_updated": "2026-10-30T06:46:17.671819+00:00",
+  "total_articles_analyzed": 109,
   "risks": [
     {
       "id": "middle-east",
@@ -31,13 +31,13 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 54
+      "newsAttention": 48
     },
     {
       "id": "us-china",
       "name": "U.S.\u2013China Strategic Competition",
       "likelihood": "high",
-      "score": 8.8,
+      "score": 8.9,
       "description": "Technology decoupling accelerating. Semiconductor export controls tightened. Taiwan Strait tensions elevated with increased PLA military exercises.",
       "impacts": [
         "Tech Stocks",
@@ -63,7 +63,7 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 10
+      "newsAttention": 14
     },
     {
       "id": "trade-war",
@@ -94,13 +94,13 @@
           "Global Trade ETFs"
         ]
       },
-      "newsAttention": 6
+      "newsAttention": 8
     },
     {
       "id": "russia-nato",
       "name": "Russia\u2013NATO Confrontation",
       "likelihood": "medium",
-      "score": 7.9,
+      "score": 7.7,
       "description": "Risk of miscalculation remains elevated. Ukraine war continues with no ceasefire in sight. NATO eastern flank reinforcement ongoing.",
       "impacts": [
         "European Equities",
@@ -125,13 +125,13 @@
           "EUR/USD"
         ]
       },
-      "newsAttention": 22
+      "newsAttention": 12
     },
     {
       "id": "cyber-warfare",
       "name": "Major Cyber Attack",
       "likelihood": "medium",
-      "score": 6.9,
+      "score": 7.0,
       "description": "State-sponsored cyber operations targeting critical infrastructure, financial systems, and energy grids.",
       "impacts": [
         "Cybersecurity Stocks",
@@ -155,7 +155,7 @@
           "Crypto Exchanges"
         ]
       },
-      "newsAttention": 0
+      "newsAttention": 4
     },
     {
       "id": "energy-crisis",
