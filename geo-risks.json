@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-11-20T01:01:05.820252+00:00",
-  "total_articles_analyzed": 118,
+  "last_updated": "2026-11-20T09:38:40.398489+00:00",
+  "total_articles_analyzed": 117,
   "risks": [
     {
       "id": "middle-east",
       "name": "Middle East Regional War",
       "likelihood": "high",
-      "score": 9.7,
+      "score": 9.6,
       "description": "Regional conflict has escalated following U.S.-Israel 'Epic Fury' operation targeting Iran's leadership and military infrastructure. Iran retaliating with strikes on Israel, U.S. assets, and regional targets.",
       "impacts": [
         "Oil & Gas",
@@ -31,7 +31,7 @@
           "Emerging Market Equities"
         ]
       },
-      "newsAttention": 32
+      "newsAttention": 26
     },
     {
       "id": "us-china",
@@ -63,13 +63,13 @@
           "Taiwan ETFs"
         ]
       },
-      "newsAttention": 30
+      "newsAttention": 28
     },
     {
       "id": "trade-war",
       "name": "Global Trade Fragmentation",
       "likelihood": "high",
-      "score": 8.2,
+      "score": 8.3,
       "description": "U.S. pursuing transactional foreign policy with broad tariff threats. WTO system under strain. Supply chain restructuring accelerating across industries.",
       "impacts": [
         "S&P 500",
@@ -192,7 +192,7 @@
       "id": "western-alliance",
       "name": "Western Alliance Fractures",
       "likelihood": "medium",
-      "score": 6.7,
+      "score": 6.8,
       "description": "Transactional U.S. foreign policy straining traditional alliances. European defense autonomy push.",
       "impacts": [
         "EUR/USD",
@@ -246,7 +246,7 @@
           "USD/ZAR"
         ]
       },
-      "newsAttention": 12
+      "newsAttention": 10
     },
     {
       "id": "crypto-regulation",
@@ -276,7 +276,7 @@
           "Exchange Tokens"
         ]
       },
-      "newsAttention": 2
+      "newsAttention": 0
     },
     {
       "id": "debt-crisis",
